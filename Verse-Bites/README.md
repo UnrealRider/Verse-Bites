@@ -1,1 +1,59 @@
+# Verse Basic Course
+- **Lesson 1:** Creating a Verse Device  
+- **Lesson 2:** Creating a Verse Device That Interacts With a UEFN Device  
+- **Lesson 3:** Commenting Verse Code  
+- **Lesson 4:** Creating Fields (1): Constants and Variables  
+- **Lesson 5:** Common Type – String  
+- **Lesson 6:** Common Types – int, float & Math  
+- **Lesson 7:** Creating Fields (2)  
+- **Lesson 8:** `if` Statement  
+- **Lesson 9:** Comparison  
+- **Lesson 10:** Decision Statements  
+- **Lesson 11:** Failable Expressions  
+- **Lesson 12:** Converting Between int, float and string  
+- **Lesson 13:** Common Type – Logic  
+- **Lesson 14:** Query  
+- **Lesson 15:** Scope  
+- **Lesson 16:** Functions (1)  
+- **Lesson 17:** Functions (2)  
+- **Lesson 18:** Functions (3)  
+- **Lesson 19:** Functions (4)  
+- **Lesson 20:** Option Type  
+- **Lesson 21:** Using UEFN Devices & Exploring the Verse API  
+- **Lesson 22:** Block  
+- **Lesson 23:** Array (1)  
+- **Lesson 24:** `for` Loop & `range`  
+- **Lesson 25:** Array (2)  
+- **Lesson 26:** Array (3)  
+- **Lesson 27:** Map (1)  
+- **Lesson 28:** Map (2)  
+- **Lesson 29:** Tuple (1)  
+- **Lesson 30:** Tuple (2)  
+- **Lesson 31:** Tuple (3)  
+- **Lesson 32:** `suspends` Keyword & `spawn`  
+- **Lesson 33:** `sleep`  
+- **Lesson 34:** `loop`, `return` & `break`  
+- **Lesson 35:** Class  
+
+# Verse Introductory Course
+- **Lesson 36:** Event & Await  
+- **Lesson 37:** Struct  
+- **Lesson 38:** Enum  
+- **Lesson 39:** Player & Character  
+- **Lesson 40:** Props & Teleportation  
+- **Lesson 41:** Persistent Data  
+- **Lesson 42:** Verse UI  
+- **Lesson 43:** Animation  
+- **Lesson 44:** Multiplayer  
+- **Lesson 45:** Flow – Defer  
+- **Lesson 46:** Flow – Task  
+- **Lesson 47:** Flow – Branch  
+- **Lesson 48:** Flow – Sync  
+- **Lesson 49:** Flow – Race  
+- **Lesson 50:** Flow – Rush  
+- **Lesson 51:** Class (Part 2)  
+- **Lesson 52:** Functions (Part 2)  
+- **Lesson 53:** `for` Loop (Part 2)  
+- **Lesson 54:** Code Blocks (Part 2)  
+- **Lesson 55:** Failable Expressions (Part 2)  
 
