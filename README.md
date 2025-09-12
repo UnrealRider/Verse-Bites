@@ -31,7 +31,8 @@ This project takes a non-traditional, hands-on approach—focused on quick, mini
 
 Verse-Bites resources are organized into four main sections:
 
-- **Verse-Bites** — Essential beginner content and syntax basics.
+- **Lesson-Bites** — Concise, need-to-know Verse lessons (Lesson 1-55)
+- **Verse-Bites** — Essential syntax quick reference
 - **Quick-Bites** — Short tips, best practices, and common bug fixes.
 - **Game-Bites** — Ready-to-use gameplay modules (e.g. Lucky Wheel, simple systems).
 - **Pattern-Bites** — Standardized, reusable code snippets for your own projects.
