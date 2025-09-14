@@ -17,9 +17,12 @@
 - [**Pattern-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)  
 ---
 
-社群入口
-教学视频入口
+## 相关链接
 
+| 最新消息 | 社群 | 课程视频 |
+| - | - | - |
+| [**X**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**Tiktok**](http://discord.gg/AhU7WkUdUD) |
+|  | | [**Youtube**](http://discord.gg/AhU7WkUdUD) |
 
 ---
 
@@ -82,3 +85,5 @@ Happy learning and building with Verse! 🚀
 - 经常光顾我的岛屿
 - 为教学视频点赞
 - 通过 Github/Fortnite 等平台资助
+
+- https://www.fortnite.com/@satoru-games?lang=en-US
