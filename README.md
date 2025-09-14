@@ -1,16 +1,21 @@
 # Verse-Bites
 
 ## Updates
-
 ### Latest Updates
-**Date:** 2025/09/07  
-- Item 1  
-- Item 2  
+**Date:** 2025/09/17 (UTC)
+- 测试版本课程
 
-### Roadmap / Upcoming Plans
-- Item 1  
-- Item 2  
+### 下次的更新计划
+- 正式版本课程
+
+### Roadmap
 - [See Full Roadmap...](#)  
+
+---
+
+社群入口
+教学视频入口
+
 
 ---
 
