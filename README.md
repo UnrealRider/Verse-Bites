@@ -3,14 +3,18 @@
 ## Updates
 ### Latest Updates
 **Date:** 2025/09/17 (UTC)
-- 测试版本课程
+- 1-19 课，测试版课程代码
+- 1-5 课，测试版本课程短视频
 
 ### 下次的更新计划
-- 正式版本课程
+- 1-35 课，正式版本课程代码
+- 1-5 课，课程短视频
 
-### Roadmap
-- [See Full Roadmap...](#)  
-
+### Detailed Description and Roadmap
+- [**Lesson-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)
+- [**Verse-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)  
+- [**Game-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)  
+- [**Pattern-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)  
 ---
 
 社群入口
