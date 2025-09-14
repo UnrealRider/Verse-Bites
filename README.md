@@ -25,6 +25,7 @@ This project takes a non-traditional, hands-on approach—focused on quick, mini
 - **Practicality:** Don’t worry about mastering everything up front. Learn just enough to get started, then copy/paste and tweak real examples as you go.
 - **Reference First:** When you get stuck or hit something unfamiliar, treat Verse-Bites as your “Verse dictionary.”
 
+
 ---
 
 ## Module Structure
@@ -51,6 +52,20 @@ You don’t need to study everything—just focus on the first few modules, then
 2. Start from the very first lesson—use the accompanying videos if available.
 3. ...and continue building, learning, and referencing as needed!
 
+Happy learning and building with Verse! 🚀
+
 ---
 
-Happy learning and building with Verse! 🚀
+## Verse-Bites 的起源:
+
+**Verse-Bites** 的起源是我个人学习 Verse 的个人笔记, 这个笔记延续到我每个项目中，它就像是一个字典，我会经常的查找功能并新增内容.
+现在, Verse-Bites 将传承我过去在学习 Verse 的功能，成为大家在学习 Verse 的一共实用工具，并且 Verse-Bites 还会持续的扩充。
+
+---
+
+## 支持我:
+
+你可以通过以下方式支持我:
+- 经常光顾我的岛屿
+- 为教学视频点赞
+- 通过 Github/Fortnite 等平台资助
