@@ -27,9 +27,9 @@ This project takes a non-traditional, hands-on approach—focused on quick, mini
 
 ### 面向对象
 
-**Verse-Bites** 是专为零代码基础的创作者设计的内容，目的是让
-所以，教学的内容将不会是正统的代码学习方式、专有名词与流程，内容甚至与传统的学习观念与逻辑有冲突或不一致。
-如果你对这样的内容反感，我完全可以理解与同意你的反感，但如果有人需要或认可，我便不会修正我的内容。
+**Verse-Bites** 是专为零代码基础的创作者设计的，这是一个实验性的教学内容。
+所以教学的内容将可能不是正统学习代码的方式、专有名词与学习流程，甚至与传统的代码观念与逻辑有冲突或不一致。
+如果你对这样的内容反感，我完全可以理解与同意你的反感，但我不会修正我的内容，你可以选择其他更合适你的教学内容。
 
 ---
 
@@ -38,8 +38,7 @@ This project takes a non-traditional, hands-on approach—focused on quick, mini
 Verse-Bites resources are organized into four main sections:
 
 - **Lesson-Bites** — Concise, need-to-know Verse lessons (Lesson 1-55)
-- **Verse-Bites** — Essential syntax quick reference
-- **Quick-Bites** — Short tips, best practices, and common bug fixes.
+- **Verse-Bites** — Essential syntax quick reference,  Short tips, best practices, and common bug fixes.
 - **Game-Bites** — Ready-to-use gameplay modules (e.g. Lucky Wheel, simple systems).
 - **Pattern-Bites** — Standardized, reusable code snippets for your own projects.
 
