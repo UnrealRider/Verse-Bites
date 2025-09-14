@@ -25,6 +25,11 @@ This project takes a non-traditional, hands-on approach—focused on quick, mini
 - **Practicality:** Don’t worry about mastering everything up front. Learn just enough to get started, then copy/paste and tweak real examples as you go.
 - **Reference First:** When you get stuck or hit something unfamiliar, treat Verse-Bites as your “Verse dictionary.”
 
+### 面向对象
+
+**Verse-Bites** 是专为零代码基础的创作者设计的内容，目的是让
+所以，教学的内容将不会是正统的代码学习方式、专有名词与流程，内容甚至与传统的学习观念与逻辑有冲突或不一致。
+如果你对这样的内容反感，我完全可以理解与同意你的反感，但如果有人需要或认可，我便不会修正我的内容。
 
 ---
 
