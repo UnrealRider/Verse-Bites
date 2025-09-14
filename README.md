@@ -51,8 +51,8 @@ Verse-Bites resources are organized into four main sections:
 
 - **Lesson-Bites** — Concise, need-to-know Verse lessons (Lesson 1-55)
 - **Verse-Bites** — Essential syntax quick reference,  Short tips, best practices, and common bug fixes.
+- **Pattern-Bites** — Standardized, reusable code snippets for your own projects (e.g. 持久数据, 玩家管理).
 - **Game-Bites** — Ready-to-use gameplay modules (e.g. Lucky Wheel, simple systems).
-- **Pattern-Bites** — Standardized, reusable code snippets for your own projects.
 
 ---
 
