@@ -9,7 +9,6 @@
   <a href="https://github.com/UnrealRider/Verse-Bites/tree/main?tab=License-2-ov-file"><img src="https://img.shields.io/badge/Content License-CC BY 4.0-lightgrey.svg" alt="Content License"></a>
   <a href="http://discord.gg/AhU7WkUdUD"><img src="https://img.shields.io/discord/YOUR_SERVER_ID?logo=discord&label=Discord" alt="Discord"></a>
   <a href="https://x.com/_PizzaVsBurger"><img src="https://img.shields.io/twitter/follow/_PizzaVsBurger?style=social" alt="Twitter"></a>
-  <a href="https://github.com/sponsors/UnrealRider"><img src="https://img.shields.io/github/sponsors/UnrealRider?logo=github" alt="GitHub Sponsors"></a>
 </p>
 
 ---
@@ -101,8 +100,7 @@
 如果你觉得这个项目对你有帮助，可以通过以下方式支持我：
 - **关注 & 点赞**: 在 [X (Twitter)](https://x.com/_PizzaVsBurger) 和 [TikTok](https://www.tiktok.com/@_pizza.vs.burger) 上关注我，并为内容点赞。
 - **代码贡献**: 参与项目开发，成为贡献者之一。
-- **资金赞助 1**: 通过 [GitHub Sponsors](https://github.com/sponsors/UnrealRider)。
-- **资金赞助 2**: 或通过 Fortnite 中使用我的创作者代码支持我: `satoru-games` ([创作者页面](https://www.fortnite.com/@satoru-games?lang=en-US))。
+- **资金赞助**: 通过 Fortnite 中使用我的创作者代码支持我: `satoru-games` ([创作者页面](https://www.fortnite.com/@satoru-games?lang=en-US))。
 
 ---
 
