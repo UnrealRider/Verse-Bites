@@ -32,7 +32,7 @@
 | 最新消息 | 加入社群 | 观看课程 | 支持项目 |
 | :---: | :---: | :---: | :---: |
 | 关注我的 X, 获取一手更新资讯. | 加入 Discord, 反馈问题与建议. | 配合源码的教学视频. | 你的支持是项目前进的动力. |
-| [**X (Twitter)**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**TikTok**](https://www.tiktok.com/@YOUR_TIKTOK) / [**YouTube**](https://www.youtube.com/YOUR_CHANNEL) | [**GitHub Sponsors**](https://github.com/sponsors/UnrealRider) |
+| [**X (Twitter)**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**TikTok**](https://www.tiktok.com/@_pizza.vs.burger) / [**YouTube**](https://www.youtube.com/@UnrealRiderX) | [**GitHub Sponsors**](https://github.com/sponsors/UnrealRider) |
 
 ---
 
@@ -99,7 +99,7 @@
 ## ❤️ 支持我 (Support Me)
 
 如果你觉得这个项目对你有帮助，可以通过以下方式支持我：
-- **关注 & 点赞**: 在 [X (Twitter)](https://x.com/_PizzaVsBurger) 和 [TikTok](https://www.tiktok.com/@YOUR_TIKTOK) 上关注我，并为内容点赞。
+- **关注 & 点赞**: 在 [X (Twitter)](https://x.com/_PizzaVsBurger) 和 [TikTok](https://www.tiktok.com/@_pizza.vs.burger) 上关注我，并为内容点赞。
 - **代码贡献**: 参与项目开发，成为贡献者之一。
 - **资金赞助 1**: 通过 [GitHub Sponsors](https://github.com/sponsors/UnrealRider)。
 - **资金赞助 2**: 或通过 Fortnite 中使用我的创作者代码支持我: `satoru-games` ([创作者页面](https://www.fortnite.com/@satoru-games?lang=en-US))。
