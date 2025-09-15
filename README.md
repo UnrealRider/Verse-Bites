@@ -85,9 +85,6 @@ Happy learning and building with Verse! 🚀
 你可以通过以下方式支持我:
 - 关注我的 X 与 Tiktok，并为内容点赞
 - 通过 Github 资助这个项目
-- 通过 Fortnite 资助我的创作
+- 通过 Fortnite 资助我的创作 : [**创作者页面**](https://www.fortnite.com/@satoru-games?lang=en-US)  
 
 
-
-
-- https://www.fortnite.com/@satoru-games?lang=en-US
