@@ -22,8 +22,7 @@
 | 最新消息 | 社群 | 课程视频 |
 | - | - | - |
 | 关注我的 X, 最新的信息都在这里发布. | 加入 Discord 社群，反馈你的问题与建议. | 配合源代码的教学视频都在这里. |
-| [**X**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**Tiktok**](http://discord.gg/AhU7WkUdUD) |
-|  | | [**Youtube**](http://discord.gg/AhU7WkUdUD) |
+| [**X**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**Tiktok**](http://discord.gg/AhU7WkUdUD) 、[**Youtube**](http://discord.gg/AhU7WkUdUD) |
 
 ---
 
