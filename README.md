@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="URL_TO_YOUR_LOGO_OR_BANNER" alt="Verse-Bites Logo" width="600"/>
-</p>
-
 <h1 align="center">Verse-Bites</h1>
 
 <p align="center">
