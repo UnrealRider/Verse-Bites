@@ -4,17 +4,20 @@
 > > @howtwoboss (进阶)
 
 ---
-## 初步知道 Verse 的优劣势
-- 视频 : [Verse 的优劣势](https://code.visualstudio.com/) 
+## 粗浅的认识 Verse 的优劣势
+- 视频 : [Verse 的优劣势](https://code.visualstudio.com/)
+- UEFN 的优劣势有很多可以说，但是就初学的情况我就简单的知道下面几点就可以了
+
 ### 优势
+- 用更简单高效的方法实现 UEFN Device 需要复杂的组合才能实现的游戏功能
 - 大幅降低 UEFN Device 的使用来优化与提升岛屿的内存使用
-- 实现与突破 UEFN Device 的制作瓶颈
-- 实现 UEFN 快速的编辑与测试
+- 实现快速的修改推送，提升开发的测试效率
+- 可以实现一些 UEFN Device 无法制作的功能逻辑
 
 ### 问题
-- 实际上 Verse 的许多功能实现是被 UEFN Device 所限制的
-- Verse 还有很多功能没有被开放
-- 总结：Verse 没有你想的自由
+- 实际上 Verse 的许多游戏功能会被 UEFN Device 所限制的，如果 Verse 本身没有提供你需要的功能机制，或是 UEFN Device 的功能没有开放给 Verse，你就无法做一些你想做的事情，总之我需要先提醒你，Verse 有许多你想不到的限制
+- Verse 在动画与 UI 的处理与支持非常少，但再制作复杂 UI 界面的时候又只能使用 Verse 实现
+- Veres 设备在项目中的参数无法迁移到其他项目上
 
 ---
 ## 学习 Verse 前的准备
@@ -31,9 +34,16 @@
 - 在 UEFN 上方的工具栏点击 `Verse > Open Project in Vs Code`, 这将开启 VS Code，并直接进入项目的工作文件夹。
 <img width="976" height="294" alt="image" src="https://github.com/user-attachments/assets/0939d3dd-6f33-4d93-a4e2-66e4480ac6b4" />
 
-- VS Code 显示的文件夹与 UEFN 的项目文件夹是一致的
+- VS Code 显示的文件夹与 UEFN 的 `Content Browser` 项目文件夹是同样的内容。
+<img width="1065" height="440" alt="0b0bbedd-0b9e-4e09-b2ef-4ec68480482f" src="https://github.com/user-attachments/assets/315a4b9d-0774-414d-9c8d-8288a0bb4f18" />
 
-- 我们直接在 VS Code 中建立 Verse 的文件，请按照下面的结果建立文件夹
+- 我们直接在 VS Code 中建立 Verse 的文件，请按照下面的结构建立文件夹:
+  - Verse
+    - VerseBites     
+<img width="885" height="375" alt="0123c254-0ac0-4f11-bdcb-6c125b72d816" src="https://github.com/user-attachments/assets/97435a06-f3f9-46fb-a658-2accba765df1" />
+
+- Verse 文件夹是你存放你自己项目的 Verse 代码文件的地方
+- VerseBites 文件夹是存放所有 Verse-Bites 资源的地方
 
 ### 第4步 : 复制 Lesson-Bites 的代码
 
