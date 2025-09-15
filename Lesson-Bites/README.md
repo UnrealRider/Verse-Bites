@@ -39,21 +39,23 @@
 
 - 我们直接在 VS Code 中建立 Verse 的文件，请按照下面的结构建立文件夹:
   - Verse
-    - VerseBites     
+    - VerseBites
+      - LessonBites     
   - <img width="885" height="375" alt="0123c254-0ac0-4f11-bdcb-6c125b72d816" src="https://github.com/user-attachments/assets/97435a06-f3f9-46fb-a658-2accba765df1" />
 
 - Verse 文件夹是你存放你自己项目的 Verse 代码文件的地方
 - VerseBites 文件夹是存放所有 Verse-Bites 资源的地方
+- LessonBites 学习课程的相关资源刚在这文件夹内
 
 ### 第4步 : 复制 Lesson-Bites 的代码
-- 在你的 VerseBites 文件夹下建立一个 Lesson-Bites_L1.verse 文件
+- 在 VS Code 你的 LessonBites 文件夹下建立一个 Lesson-Bites_L1.verse 文件
 - 将 Github 上的 [Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse) 代码内容复制到你的 Lesson-Bites_L1.verse 文件内, 然后存档    
   - <img width="1890" height="743" alt="7b50bf8c-455d-4adc-a7e5-0f136c43cc6b" src="https://github.com/user-attachments/assets/a371a7da-b0ef-414f-97e1-46fc8000f9a6" />
 - 按下 VS Code 右上的 Build 按钮，或 UEFN 中的 Build 按钮
   - <img width="1273" height="409" alt="014d7298-52da-4418-bf69-5611bd8dd644" src="https://github.com/user-attachments/assets/8b6d9a4b-69bc-4ead-b147-a11193b349de" />
-- Build 成功将会显示信息
+- Build 成功将会显示信息，如果错误，请查看下面的排错处理
   - <img width="1273" height="946" alt="50ac188f-d48a-4f17-957a-958150a54328" src="https://github.com/user-attachments/assets/3226b258-50aa-4536-a9c3-99127f222b64" />
-- 如果错误，请查看这里的排错信息:
+- Build 成功后 UEFN 的 LessonBites 文件夹下将会产生多个 Verse Device
 
 ### 第5步 : 跟着代码的注释内容与教学视频操作
 - 进入 [Lesson-Bites Roadmap.md](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md), 选择对应的课程视频，开始学习
