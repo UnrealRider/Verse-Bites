@@ -28,19 +28,19 @@
 
 ### 第2步 : 开启你的 UEFN 项目
 - 开启或新建你学习用的 UEFN 项目，推荐使用 Blank 模板，这个模板作为学习或正式项目的测试环境是最佳的选择，干净极简的环境有助于专注力的提高与加载的效率.    
-<img width="1469" height="879" alt="5a98389c-12d6-4e05-9e31-31c55356e098" src="https://github.com/user-attachments/assets/517c3530-8e93-42c6-8eb2-548a6f7a73b5" />
+  - <img width="1469" height="879" alt="5a98389c-12d6-4e05-9e31-31c55356e098" src="https://github.com/user-attachments/assets/517c3530-8e93-42c6-8eb2-548a6f7a73b5" />
 
 ### 第3步 : 构建 Verse 目录
 - 在 UEFN 上方的工具栏点击 `Verse > Open Project in Vs Code`, 这将开启 VS Code，并直接进入项目的工作文件夹。
-<img width="976" height="294" alt="image" src="https://github.com/user-attachments/assets/0939d3dd-6f33-4d93-a4e2-66e4480ac6b4" />
+  - <img width="976" height="294" alt="image" src="https://github.com/user-attachments/assets/0939d3dd-6f33-4d93-a4e2-66e4480ac6b4" />
 
 - VS Code 显示的文件夹与 UEFN 的 `Content Browser` 项目文件夹是同样的内容。
-<img width="1065" height="440" alt="0b0bbedd-0b9e-4e09-b2ef-4ec68480482f" src="https://github.com/user-attachments/assets/315a4b9d-0774-414d-9c8d-8288a0bb4f18" />
+  - <img width="1065" height="440" alt="0b0bbedd-0b9e-4e09-b2ef-4ec68480482f" src="https://github.com/user-attachments/assets/315a4b9d-0774-414d-9c8d-8288a0bb4f18" />
 
 - 我们直接在 VS Code 中建立 Verse 的文件，请按照下面的结构建立文件夹:
   - Verse
     - VerseBites     
-<img width="885" height="375" alt="0123c254-0ac0-4f11-bdcb-6c125b72d816" src="https://github.com/user-attachments/assets/97435a06-f3f9-46fb-a658-2accba765df1" />
+  - <img width="885" height="375" alt="0123c254-0ac0-4f11-bdcb-6c125b72d816" src="https://github.com/user-attachments/assets/97435a06-f3f9-46fb-a658-2accba765df1" />
 
 - Verse 文件夹是你存放你自己项目的 Verse 代码文件的地方
 - VerseBites 文件夹是存放所有 Verse-Bites 资源的地方
@@ -48,17 +48,16 @@
 ### 第4步 : 复制 Lesson-Bites 的代码
 - 在你的 VerseBites 文件夹下建立一个 Lesson-Bites_L1.verse 文件
 - 将 Github 上的 [Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse) 代码内容复制到你的 Lesson-Bites_L1.verse 文件内, 然后存档    
-<img width="1890" height="743" alt="7b50bf8c-455d-4adc-a7e5-0f136c43cc6b" src="https://github.com/user-attachments/assets/a371a7da-b0ef-414f-97e1-46fc8000f9a6" />
+  - <img width="1890" height="743" alt="7b50bf8c-455d-4adc-a7e5-0f136c43cc6b" src="https://github.com/user-attachments/assets/a371a7da-b0ef-414f-97e1-46fc8000f9a6" />
 - 按下 VS Code 右上的 Build 按钮，或 UEFN 中的 Build 按钮
-<img width="1273" height="409" alt="014d7298-52da-4418-bf69-5611bd8dd644" src="https://github.com/user-attachments/assets/8b6d9a4b-69bc-4ead-b147-a11193b349de" />
+  - <img width="1273" height="409" alt="014d7298-52da-4418-bf69-5611bd8dd644" src="https://github.com/user-attachments/assets/8b6d9a4b-69bc-4ead-b147-a11193b349de" />
 - Build 成功将会显示信息
-<img width="1273" height="946" alt="50ac188f-d48a-4f17-957a-958150a54328" src="https://github.com/user-attachments/assets/3226b258-50aa-4536-a9c3-99127f222b64" />
-- Build 成功将会显示信息
+  - <img width="1273" height="946" alt="50ac188f-d48a-4f17-957a-958150a54328" src="https://github.com/user-attachments/assets/3226b258-50aa-4536-a9c3-99127f222b64" />
+- 如果错误，请查看这里的排错信息:
 
 ### 第5步 : 跟着代码的注释内容与教学视频操作
-- 现在你可以开始进行第一课了
-
-
+- 进入 [Lesson-Bites Roadmap.md](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md), 选择对应的课程视频，开始学习
+- 第一个课程会说明如何使用 Lesson-Bites_L1.verse，当你已经熟悉使用了，后续的课程内容你可以直接参照代码中的注释直接学习
 
 ---
 
