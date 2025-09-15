@@ -28,10 +28,10 @@
 
 ## 🚀 快速导航 (Quick Links)
 
-| 最新消息 | 加入社群 | 观看课程 | 支持项目 |
-| :---: | :---: | :---: | :---: |
-| 关注我的 X, 获取一手更新资讯. | 加入 Discord, 反馈问题与建议. | 配合源码的教学视频. | 你的支持是项目前进的动力. |
-| [**X (Twitter)**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**TikTok**](https://www.tiktok.com/@_pizza.vs.burger) / [**YouTube**](https://www.youtube.com/@UnrealRiderX) | [**GitHub Sponsors**](https://github.com/sponsors/UnrealRider) |
+| 最新消息 | 加入社群 | 观看课程 |
+| :---: | :---: | :---: |
+| 关注我的 X, 获取一手更新资讯. | 加入 Discord, 反馈问题与建议. | 配合源码的教学视频. |
+| [**X (Twitter)**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**TikTok**](https://www.tiktok.com/@_pizza.vs.burger) / [**YouTube**](https://www.youtube.com/@UnrealRiderX) |
 
 ---
 
