@@ -1,91 +1,107 @@
-# Verse-Bites
+<p align="center">
+  <img src="URL_TO_YOUR_LOGO_OR_BANNER" alt="Verse-Bites Logo" width="600"/>
+</p>
 
-## Updates
-### Latest Updates
-**Date:** 2025/09/17 (UTC)
-- 1-19 课，测试版课程代码
-- 1-5 课，测试版本课程短视频
+<h1 align="center">Verse-Bites</h1>
 
-### 下次的更新计划
-- 1-35 课，正式版本课程代码
-- 1-5 课，课程短视频
+<p align="center">
+  专为 UEFN Verse 打造的极简、实用的代码片段、课程与工具集。
+</p>
 
-### Detailed Description and Roadmap
-- [**Verse-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)
-- [**Lesson-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)
-- [**Pattern-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)
-- [**Game-Bites**](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)  
----
-
-## 相关链接
-
-| 最新消息 | 社群 | 课程视频 |
-| - | - | - |
-| 关注我的 X, 最新的信息都在这里发布. | 加入 Discord 社群，反馈你的问题与建议. | 配合源代码的教学视频都在这里. |
-| [**X**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**Tiktok**](http://discord.gg/AhU7WkUdUD) 、[**Youtube**](http://discord.gg/AhU7WkUdUD) |
+<p align="center">
+  <a href="https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+  <a href="http://discord.gg/AhU7WkUdUD"><img src="https://img.shields.io/discord/YOUR_SERVER_ID?logo=discord&label=Discord" alt="Discord"></a>
+  <a href="https://x.com/_PizzaVsBurger"><img src="https://img.shields.io/twitter/follow/_PizzaVsBurger?style=social" alt="Twitter"></a>
+  <a href="https://github.com/sponsors/UnrealRider"><img src="https://img.shields.io/github/sponsors/UnrealRider?logo=github" alt="GitHub Sponsors"></a>
+</p>
 
 ---
 
-## About Verse-Bites
-**Verse-Bites** 是一个 UEFN Verse 的开源项目，旨在提供 Verse 创作过程的辅助与学习，侧重于快速、最小化的学习片段，而非深入理论或全面文档。
-然后以 Verse-Bites 为核心，延伸发展学习课程、通用化核心模块、游戏小功能组件等内容。
+## 📖 项目简介 (About)
 
-### **Verse-Bites** 哲学
-- **极简主义**：项目高度聚焦于“你只需知道的内容”，减少冗长解释或深度探讨。
-- **实用至上**：别担心一开始就要掌握所有内容。先学到能开始动手的程度，然后在实践中**复制**、**粘贴**并尝试**修改**示例。
-- **先查参考**：当你卡住或遇到不熟悉的东西时，把 Verse-Bites 视为你的 “Verse 词典”。
+**Verse-Bites** 是一个开源的 UEFN Verse 学习与辅助项目。我们不追求深入的理论或完整的官方文档，而是专注于提供**快速上手、开箱即用**的学习片段和代码模块。
 
-### **Lesson-Bites** 实验性的教学内容
-**Lesson-Bites** 是专为零代码基础的创作者设计的，这是一个实验性的教学内容。
-所以教学的内容将可能不是正统学习代码的方式、专有名词与学习流程，甚至与传统的代码观念与逻辑有冲突或不一致。
-如果你对这样的内容反感，我完全可以理解，但我不会修正我的内容，你可以选择其他更合适你的教学内容。
+项目以 `Verse-Bites` 为核心，延伸出三大辅助模块：为初学者设计的 `Lesson-Bites` 课程、标准化的 `Pattern-Bites` 代码模式，以及即插即用的 `Game-Bites` 游戏功能。
+
+### 核心哲学
+- **🎯 极简主义**：只提供“你当前需要知道的”，摒弃冗长解释。
+- **🛠️ 实用至上**：先动手，再深入。鼓励直接**复制**、**粘贴**并**修改**示例来学习。
+- **📚 你的速查手册**：遇到问题时，将这里当成你的 "Verse 词典" 来查阅。
 
 ---
 
-## **Verse-Bites** 开源内容的体系
-Resources are organized into four main sections:
+## 🚀 快速导航 (Quick Links)
 
-### **Lesson-Bites** (测试版发布)
-Concise, need-to-know Verse lessons (Lesson 1-35) 与进阶课程 (Lesson 36-55+)
-**Lesson-Bites** 是为没有任何编程经验的 Verse 初学者设计, 这将是你学习 Verse 旅程的最佳起点。
-你不需要一次学习所有代码的各种内容与知识，然后才开始学习如何使用他们组合成一个完整的代码内容。
-现在你只需要关注每个课程内容所专注的知识点，然后尝试复杂并修改他们来观察结果，跟随这课程的进度，一步一步你自然就会了解 Verse 的运作，然后学会使用它。
-Happy learning and building with Verse! 🚀
-
-### **Verse-Bites** (即将发布)
-语法速查要点、简短提示、最佳实践与常见错误修复。
-
-### **Pattern-Bites** (准备中)
-最基础标准化、可重用的代码片段，完全开源供你在项目中使用。
-主要模块有 : 持久数据、玩家管理经理、Tools模组、Verse UI Base 模组等。
-
-### **Game-Bites** (规划中)
-简单易用的小功能模组，例如幸运转盘、动画功能等。
+| 最新消息 | 加入社群 | 观看课程 | 支持项目 |
+| :---: | :---: | :---: | :---: |
+| 关注我的 X, 获取一手更新资讯. | 加入 Discord, 反馈问题与建议. | 配合源码的教学视频. | 你的支持是项目前进的动力. |
+| [**X (Twitter)**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**TikTok**](https://www.tiktok.com/@YOUR_TIKTOK) / [**YouTube**](https://www.youtube.com/YOUR_CHANNEL) | [**GitHub Sponsors**](https://github.com/sponsors/UnrealRider) |
 
 ---
 
-## 如何使用
-**Verse-Bites** 系列的内容就只是开源的 Verse 代码，你只需要将代码或Verse文件复制到你的项目中就可以了。
-如果你是初学者，建议你完全参照我的文档管理方案 : [推荐的 Verse-Bites 文档架构](https://github.com/UnrealRider/Verse-Bites/edit/main/README.md)  
+## 🧩 核心模块 (Core Modules)
+
+整个开源内容体系分为四个主要部分：
+
+### 📚 Lesson-Bites (测试版发布中)
+**定位**: 专为零代码基础创作者设计的入门课程 (L1-35) 与进阶课程 (L36-55+)。
+**特点**: 这是你学习 Verse 的最佳起点。无需一次性掌握所有知识，跟着课程的节奏，通过实践逐步理解 Verse 的运作方式。
+> **请注意**: 本课程为实验性教学，可能采用非传统方式，旨在快速上手。若您是经验丰富的开发者，可能会觉得其方法与传统编程教学有所不同。
+
+### 💡 Verse-Bites (即将发布)
+**定位**: Verse 语法速查要点、开发技巧与最佳实践。
+**内容**: 包含简短提示、常见错误修复、高效代码片段等，是你日常开发的“备忘录”。
+
+### 📦 Pattern-Bites (准备中)
+**定位**: 标准化、可重用的基础代码模式，完全开源。
+**内容**: 包含持久化数据、玩家管理器、UI 框架、工具模块等，助你搭建稳固的项目地基。
+
+### 🎮 Game-Bites (规划中)
+**定位**: 即插即用的小型游戏功能模块。
+**内容**: 提供如幸运转盘、动画控制器等趣味功能，可以快速为你的项目增添亮点。
 
 ---
 
-## Verse-Bites 的起源
-**Verse-Bites** 的起源是我个人学习 Verse 的个人笔记, 这个笔记延续到我每个项目中，它就像是一个字典，我会经常的查找功能并新增内容.
-现在, Verse-Bites 将传承我过去在学习 Verse 的功能，成为大家在学习 Verse 的一共实用工具，并且 Verse-Bites 还会持续的扩充。
+## ⚙️ 如何使用 (How to Use)
+
+1.  **浏览模块**: 根据你的需求，在上方核心模块中找到对应的文件夹。
+2.  **复制文件**: 将所需的 `.verse` 代码文件直接复制到你 UEFN 项目的 `CreativeDevices` 文件夹中。
+3.  **遵循架构 (推荐)**: 如果你是初学者，强烈建议参考我们推荐的 [**Verse 文件架构方案**](https://github.com/UnrealRider/Verse-Bites/blob/main/YOUR_ARCHITECTURE_GUIDE.md) 来组织你的项目，以便于管理。
 
 ---
 
-## 团队与合作
-目前团队只有我一个人，所以工作的进展相对缓慢。
-我欢迎与任何志同道合的朋友一起合作，例如你分享你的代码等合作，如果有任何想法，请在 X 上私信我。
+## 🗓️ 更新日志 (Updates)
+
+### 最新更新
+* **日期:** 2025/09/17 (UTC)
+* **内容:**
+    * `Lesson-Bites`: 新增 1-19 课测试版代码。
+    * `Lesson-Bites`: 新增 1-5 课测试版短视频。
+
+### 下次更新计划
+* `Lesson-Bites`: 发布 1-35 课正式版代码。
+* `Lesson-Bites`: 更新 1-5 课短视频。
 
 ---
 
-## 支持我
+## 🤝 贡献与合作 (Contributing)
 
-你可以通过以下方式支持我:
-- 关注我的 X 与 Tiktok，并为内容点赞
-- 通过 Github 资助这个项目
-- 通过 Fortnite 资助我的创作 : [**创作者页面**](https://www.fortnite.com/@satoru-games?lang=en-US)  
+目前项目主要由我个人维护，进展可能相对缓慢。
+我非常欢迎任何形式的合作！如果你有好的代码片段、功能模块，或任何改进建议，请通过以下方式联系我：
+- 在 X (Twitter) 上私信我: [@_PizzaVsBurger](https://x.com/_PizzaVsBurger)
+- 提交一个 [Issue](https://github.com/UnrealRider/Verse-Bites/issues) 或 [Pull Request](https://github.com/UnrealRider/Verse-Bites/pulls)。
 
+---
+
+## ❤️ 支持我 (Support Me)
+
+如果你觉得这个项目对你有帮助，可以通过以下方式支持我：
+- **关注 & 点赞**: 在 [X (Twitter)](https://x.com/_PizzaVsBurger) 和 [TikTok](https://www.tiktok.com/@YOUR_TIKTOK) 上关注我，并为内容点赞。
+- **代码贡献**: 参与项目开发，成为贡献者之一。
+- **资金赞助**: 通过 [GitHub Sponsors](https://github.com/sponsors/UnrealRider) 或在 Fortnite 中使用我的创作者代码支持我: `YOUR_CREATOR_CODE` ([创作者页面](https://www.fortnite.com/@satoru-games?lang=en-US))。
+
+---
+
+## 📜 许可证 (License)
+
+本项目采用 [MIT License](https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE) 开源协议。
