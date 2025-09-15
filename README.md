@@ -65,7 +65,7 @@
 ## ⚙️ 如何使用 (How to Use)
 
 1.  **浏览模块**: 根据你的需求，在上方核心模块中找到对应的文件夹。
-2.  **复制文件**: 将所需的 `.verse` 代码文件直接复制到你 UEFN 项目的 `CreativeDevices` 文件夹中。
+2.  **复制**: 将所需的代码内容或 `.verse` 文件直接复制到你的 UEFN 项目中。
 3.  **遵循架构 (推荐)**: 如果你是初学者，强烈建议参考我们推荐的 [**Verse 文件架构方案**](https://github.com/UnrealRider/Verse-Bites/blob/main/YOUR_ARCHITECTURE_GUIDE.md) 来组织你的项目，以便于管理。
 
 ---
