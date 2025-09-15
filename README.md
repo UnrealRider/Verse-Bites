@@ -21,6 +21,7 @@
 
 | 最新消息 | 社群 | 课程视频 |
 | - | - | - |
+| 关注我的 X, 最新的信息都在这里发布. | 加入 Discord 社群，反馈你的问题与建议. | 配合源代码的教学视频都在这里. |
 | [**X**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**Tiktok**](http://discord.gg/AhU7WkUdUD) |
 |  | | [**Youtube**](http://discord.gg/AhU7WkUdUD) |
 
@@ -82,8 +83,11 @@ Happy learning and building with Verse! 🚀
 ## 支持我:
 
 你可以通过以下方式支持我:
-- 经常光顾我的岛屿
-- 为教学视频点赞
-- 通过 Github/Fortnite 等平台资助
+- 关注我的 X 与 Tiktok，并为内容点赞
+- 通过 Github 资助这个项目
+- 通过 Fortnite 资助我的创作
+
+
+
 
 - https://www.fortnite.com/@satoru-games?lang=en-US
