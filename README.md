@@ -5,12 +5,12 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+  <a href="https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE"><img src="https://img.shields.io/badge/Code License-MIT-blue.svg" alt="Code License"></a>
+  <a href="https://github.com/UnrealRider/Verse-Bites/tree/main?tab=License-2-ov-file"><img src="https://img.shields.io/badge/Content License-CC BY 4.0-lightgrey.svg" alt="Content License"></a>
   <a href="http://discord.gg/AhU7WkUdUD"><img src="https://img.shields.io/discord/YOUR_SERVER_ID?logo=discord&label=Discord" alt="Discord"></a>
   <a href="https://x.com/_PizzaVsBurger"><img src="https://img.shields.io/twitter/follow/_PizzaVsBurger?style=social" alt="Twitter"></a>
   <a href="https://github.com/sponsors/UnrealRider"><img src="https://img.shields.io/github/sponsors/UnrealRider?logo=github" alt="GitHub Sponsors"></a>
 </p>
-
 ---
 
 ## 📖 项目简介 (About)
@@ -101,4 +101,12 @@
 
 ## 📜 许可证 (License)
 
-本项目采用 [MIT License](https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE) 开源协议。
+本项目的不同部分采用不同的开源协议。请根据您的使用范围，遵循对应的协议要求。
+
+* ### 源代码 (Source Code)
+    所有 `.verse` 源代码文件均采用 [**MIT License**](https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE) 开源。
+    您可以自由地使用、复制、修改、合并、出版、分发、再授权和/或销售源代码的副本。
+
+* ### 文档与教学内容 (Documentation & Educational Content)
+    包括本 Readme 文件、教程说明、课程视频、图片等所有非代码内容，均采用 [**Creative Commons Attribution 4.0 International (CC BY 4.0)**](https://github.com/UnrealRider/Verse-Bites/tree/main?tab=License-2-ov-file) 协议。
+    您可以自由地分享和修改这些内容，但**必须给出适当的署名**，并指明是否作出了更改。
