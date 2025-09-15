@@ -3,7 +3,9 @@
 > > @GraemeBull (新手到入门)   
 > > @howtwoboss (进阶)
 
-## 初步知道 Verse 的优势与问题
+---
+## 初步知道 Verse 的优劣势
+- 视频 : [Verse 的优劣势](https://code.visualstudio.com/) 
 ### 优势
 - 大幅降低 UEFN Device 的使用来优化与提升岛屿的内存使用
 - 实现与突破 UEFN Device 的制作瓶颈
@@ -14,11 +16,11 @@
 - Verse 还有很多功能没有被开放
 - 总结：Verse 没有你想的自由
 
+---
 ## 开始学习
+- 视频 : [开始学习 Verse](https://code.visualstudio.com/) 
 ### 第1步 : 开始前的准备
-1. 在开启你的 UEFN 之前，请先安装完成 VS Code (Visual Studio Code)
-  - [VS Code 网址](https://code.visualstudio.com/) 
-2. 第二部
+在开启你的 UEFN 之前，请先安装完成 VS Code (Visual Studio Code), [VS Code 网址](https://code.visualstudio.com/) 
 
 ### 第2步 : 开启你的 UEFN 项目
 
@@ -34,7 +36,7 @@ Verse 文件架构方案
 
 ### 最后1步 : 新的冒险
 
-
+---
 # Verse 经常性错误问题
 ## 删除某个 Verse 文件导致编译错误
 
