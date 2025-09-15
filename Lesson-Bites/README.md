@@ -46,10 +46,19 @@
 - VerseBites 文件夹是存放所有 Verse-Bites 资源的地方
 
 ### 第4步 : 复制 Lesson-Bites 的代码
-
-
+- 在你的 VerseBites 文件夹下建立一个 Lesson-Bites_L1.verse 文件
+- 将 Github 上的 [Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse) 代码内容复制到你的 Lesson-Bites_L1.verse 文件内, 然后存档    
+<img width="1890" height="743" alt="7b50bf8c-455d-4adc-a7e5-0f136c43cc6b" src="https://github.com/user-attachments/assets/a371a7da-b0ef-414f-97e1-46fc8000f9a6" />
+- 按下 VS Code 右上的 Build 按钮，或 UEFN 中的 Build 按钮
+<img width="1273" height="409" alt="014d7298-52da-4418-bf69-5611bd8dd644" src="https://github.com/user-attachments/assets/8b6d9a4b-69bc-4ead-b147-a11193b349de" />
+- Build 成功将会显示信息
+<img width="1273" height="946" alt="50ac188f-d48a-4f17-957a-958150a54328" src="https://github.com/user-attachments/assets/3226b258-50aa-4536-a9c3-99127f222b64" />
+- Build 成功将会显示信息
 
 ### 第5步 : 跟着代码的注释内容与教学视频操作
+- 现在你可以开始进行第一课了
+
+
 
 ---
 
