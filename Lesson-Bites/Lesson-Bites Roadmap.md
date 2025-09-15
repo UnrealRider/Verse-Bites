@@ -1,4 +1,5 @@
 # Verse Basic Course
+## Lesson-Bites_L1.verse
 - **Lesson 1:** Creating a Verse Device  
 - **Lesson 2:** Creating a Verse Device That Interacts With a UEFN Device  
 - **Lesson 3:** Commenting Verse Code  
@@ -36,6 +37,7 @@
 - **Lesson 35:** Class  
 
 # Verse Introductory Course
+## Lesson-Bites_L2.verse
 - **Lesson 36:** Event & Await  
 - **Lesson 37:** Struct  
 - **Lesson 38:** Enum  
@@ -57,4 +59,5 @@
 - **Lesson 54:** Code Blocks (Part 2)  
 - **Lesson 55:** Failable Expressions (Part 2)  
 
-
+# Verse 专题课程
+## Lesson-Bites_L3.verse
