@@ -3,10 +3,10 @@
 ### UEFN Verse: Foundational Course
 
 #### Lessons 00 - 19 🧪 (Public Beta)
-* #### Lesson 00 – Before You Start Learning
+* #### Lesson 00 – Before You Start Learning - 🎥 [Watch Video]()
     * Preparation of the environment and files before learning.
 
-* #### Lesson 01 – Creating Your First Verse Device
+* #### Lesson 01 – Creating Your First Verse Device - 🎥 [Video Coming Soon...]()
     * Learn to create a basic `creative_device` and use the `Print` function to display text in the game.
 
 * #### Lesson 02 – Making a Device "Talk" to a Button
