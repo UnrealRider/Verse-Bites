@@ -25,7 +25,7 @@ The project is centered around `Verse-Bites` and extends into three main auxilia
   - **🛠️ Practicality First**: Get hands-on first, then dive deeper. We encourage learning by directly **copying**, **pasting**, and **modifying** examples.
   - **📚 Your Quick Reference**: When you run into problems, use **Verse-Bites** as your "Verse dictionary" for quick lookups.
 
-[Jump to .Lesson-Bites Roadmap](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+[⚡️Jump to .Lesson-Bites Roadmap](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 -----
 
