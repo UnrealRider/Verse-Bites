@@ -60,7 +60,8 @@ A good directory structure is key to effective project management.
           * `LessonBites`: The folder for all learning resources related to this course (`LessonBites`).
 
     The image below shows the corresponding structure in VS Code and the UEFN Content Browser:
-    <img width="885" height="375" alt="0123c254-0ac0-4f11-bdcb-6c125b72d816" src="https://github.com/user-attachments/assets/97435a06-f3f9-46fb-a658-2accba765df1" />
+    <img width="680" height="375" alt="b034a99b-5481-4f89-80af-3f86b1d2f26e" src="https://github.com/user-attachments/assets/d28aa0ee-b6b6-4944-bdeb-ad91b6448946" />
+
 
 4.  **❗ Important Note:** Creative Devices generated from `.verse` files will appear in the same folder as their source file. The hierarchical relationship between folders affects how code can be accessed and called. Therefore, planning your directory structure from the start is crucial.
 
@@ -70,15 +71,16 @@ A good directory structure is key to effective project management.
 
 2.  Go to GitHub, copy the entire content of **[Lesson-Bites\_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)**, paste it into your local file of the same name, and save it.
 
-    <img width="1890" height="743" alt="7b50bf8c-455d-4adc-a7e5-0f136c43cc6b" src="https://github.com/user-attachments/assets/a371a7da-b0ef-414f-97e1-46fc8000f9a6" />
+    <img width="2051" height="725" alt="d2100bd3-d420-4b65-ab0c-7f0f7ee81cbb" src="https://github.com/user-attachments/assets/ea538f22-bf6d-4139-9b6e-bdf00df3689f" />
+
 
 3.  **Build the Code**: You can either click the `Build Verse Code` button in the top-right corner of VS Code or go back to UEFN and click `Verse` \> `Build Verse Code`.
 
-    <img width="1273" height="409" alt="014d7298-52da-4418-bf69-5611bd8dd644" src="https://github.com/user-attachments/assets/8b6d9a4b-69bc-4ead-b147-a11193b349de" />
+    <img width="1749" height="410" alt="82586122-f3fb-406a-8468-75609d569da0" src="https://github.com/user-attachments/assets/64776612-f9d6-4b9f-8e90-8bdeec55ba54" />
 
 4.  **Check the Build Result**: Upon successful compilation, the `OUTPUT` window in VS Code will display a success message. Simultaneously, several Verse-generated Devices will appear in the `LessonBites` folder in UEFN.
 
-    <img width="1273" height="946" alt="50ac188f-d48a-4f17-957a-958150a54328" src="https://github.com/user-attachments/assets/3226b258-50aa-4536-a9c3-99127f222b64" />
+    <img width="875" height="674" alt="1354d4a2-1164-4888-b190-580f89dd36f2" src="https://github.com/user-attachments/assets/c3c38cb2-3f06-4952-939c-2d94ea839b5a" />
 
     > If the build fails, please take a screenshot of the complete error message and ask for help in our Discord community.
 
