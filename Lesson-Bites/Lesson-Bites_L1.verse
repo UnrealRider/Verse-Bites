@@ -13,7 +13,7 @@
 # --- Lesson Content Starts Below ---
 
 # Lesson-Bites Level 1
-# Version: 1.0
+# Version: beta 1.0
 
 using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
