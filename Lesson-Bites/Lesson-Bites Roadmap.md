@@ -3,10 +3,10 @@
 ### UEFN Verse: Foundational Course
 
 #### Lessons 00 - 19 🧪 (Public Beta)
-* #### Lesson 00 – Before You Start Learning - 🎥 [Watch Video]()
+* #### Lesson 00 – Before You Start Learning - 🎥 [Watch Video](https://github.com/UnrealRider/Verse-Bites/edit/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
     * Preparation of the environment and files before learning.
 
-* #### Lesson 01 – Creating Your First Verse Device - 🎥 [Video Coming Soon...]()
+* #### Lesson 01 – Creating Your First Verse Device - 🎥 [Video Coming Soon...](https://github.com/UnrealRider/Verse-Bites/edit/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
     * Learn to create a basic `creative_device` and use the `Print` function to display text in the game.
 
 * #### Lesson 02 – Making a Device "Talk" to a Button
