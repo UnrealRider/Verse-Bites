@@ -1,4 +1,3 @@
-### 📦 Pattern-Bites (准备中)
-**定位**: 标准化、可重用的基础代码模式，完全开源。
-
-**内容**: 包含持久化数据、玩家管理器、UI 框架、工具模块等，助你搭建稳固的项目地基。
+## 📦 **Pattern-Bites (In Preparation)**
+#### **Focus**: Standardized, reusable, and fully open-source foundational code patterns.
+#### **Content**: Includes modules for persistent data, player management, UI frameworks, utilities, and more to help you build a solid project foundation.
