@@ -64,6 +64,7 @@
 * #### Lesson 19 – Functions (4) Return
     * Learn how to create a function with a "return value" that provides a result after its execution.
 
+---
 
 - **Lesson 20:** Option Type  
 - **Lesson 21:** Using UEFN Devices & Exploring the Verse API  
