@@ -31,7 +31,7 @@ Visual Studio Code (VS Code) is the official tool for writing Verse code. Before
 
     <img width="1469" height="879" alt="5a98389c-12d6-4e05-9e31-31c55356e098" src="https://github.com/user-attachments/assets/517c3530-8e93-42c6-8eb2-548a6f7a73b5" />
 
-### Step 3: Create the Verse File Structure
+### Step 3: Create the Verse 6 Structure
 
 A good directory structure is key to effective project management.
 
@@ -80,7 +80,16 @@ A good directory structure is key to effective project management.
 
     > If the build fails, please take a screenshot of the complete error message and ask for help in our Discord community.
 
-### Step 5: Start Learning\!
+### Step 5: Create `MyBites.verse`
+
+1.  In VS Code, create a new file named `MyBites.verse` inside the `Verse` folder. `MyBites.verse` will be your personal workspace for practicing Verse code.
+
+2.  **Important!** You should not modify the content of `Lesson-Bites_L1.verse` directly. Instead, copy the snippets you are studying from the lesson file into `MyBites.verse` to work with them.
+
+3.  After you build the code in `MyBites.verse`, any Verse Devices generated from it will be located inside the `Verse` folder.
+
+
+### Step 6: Start Learning\!
 
 You're all set\! Now you can officially begin your learning journey.
 
