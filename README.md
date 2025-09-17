@@ -77,12 +77,11 @@
 ### 最新更新
 * **日期:** 2025/09/17 (UTC)
 * **内容:**
-    * `Lesson-Bites`: 新增 1-19 课测试版代码。
-    * `Lesson-Bites`: 新增 1-5 课测试版短视频。
+    * `Lesson-Bites`: 新增 0-19 课测试版代码。
 
 ### 下次更新计划
-* `Lesson-Bites`: 发布 1-35 课正式版代码。
-* `Lesson-Bites`: 更新 1-5 课短视频。
+* `Lesson-Bites`: 发布 0-35 课正式版代码。
+* `Lesson-Bites`: 更新 0-5 课短视频。
 
 ---
 
@@ -90,8 +89,8 @@
 
 目前项目主要由我个人维护，进展可能相对缓慢。
 我非常欢迎任何形式的合作！如果你有好的代码片段、功能模块，或任何改进建议，请通过以下方式联系我：
+- 在 Discord 私信我
 - 在 X (Twitter) 上私信我: [@_PizzaVsBurger](https://x.com/_PizzaVsBurger)
-- 提交一个 [Issue](https://github.com/UnrealRider/Verse-Bites/issues) 或 [Pull Request](https://github.com/UnrealRider/Verse-Bites/pulls)。
 
 ---
 
