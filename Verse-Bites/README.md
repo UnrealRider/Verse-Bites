@@ -1,4 +1,3 @@
-### 💡 Verse-Bites (即将发布)
-**定位**: Verse 语法速查要点、开发技巧与最佳实践。
-
-**内容**: 包含简短提示、常见错误修复、高效代码片段等，是你日常开发的“备忘录”。
+## 💡**Verse-Bites (Coming Soon)**
+#### **Focus**: Quick reference points for Verse syntax, development tips, and best practices.
+#### **Content**: Includes short tips, common bug fixes, efficient code snippets, and more—your daily development "cheatsheet".
