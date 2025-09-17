@@ -32,7 +32,7 @@ The project is centered around `Verse-Bites` and extends into three main auxilia
 | Latest News | Join the Community | Watch the Lessons |
 | :---: | :---: | :---: |
 | Follow me on X for the latest updates. | Join our Discord to provide feedback and suggestions. | Video tutorials that accompany the source code. |
-| [**X (Twitter)**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | [**TikTok**](https://www.tiktok.com/@_pizza.vs.burger) / [**YouTube**](https://www.youtube.com/@UnrealRiderX) |
+| [**X (Twitter)**](https://x.com/_PizzaVsBurger) | [**Discord**](http://discord.gg/AhU7WkUdUD) | 🎥 Coming Soon... |
 
 -----
 
