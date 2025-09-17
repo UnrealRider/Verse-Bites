@@ -15,7 +15,7 @@ Before diving deep into Verse, we **strongly recommend** you have a basic operat
 
 Please follow the steps below to set up your learning environment.
 
-> 🎥 **Video Tutorial (Coming Soon):** [Click here for the video setup guide](https://github.com/UnrealRider/Verse-Bites/tree/main/Lesson-Bites)
+> 🎥 **Video Tutorial (Coming Soon):**
 
 ### Step 1: Install Visual Studio Code
 
