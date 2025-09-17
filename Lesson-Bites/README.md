@@ -11,7 +11,7 @@ Before diving deep into Verse, we **strongly recommend** you have a basic operat
 
 -----
 
-## Environment Setup: Get Ready in Five Steps
+## Environment Setup: Get Ready in 6 Steps
 
 Please follow the steps below to set up your learning environment.
 
@@ -31,7 +31,7 @@ Visual Studio Code (VS Code) is the official tool for writing Verse code. Before
 
     <img width="1469" height="879" alt="5a98389c-12d6-4e05-9e31-31c55356e098" src="https://github.com/user-attachments/assets/517c3530-8e93-42c6-8eb2-548a6f7a73b5" />
 
-### Step 3: Create the Verse 6 Structure
+### Step 3: Create the Verse File Structure
 
 A good directory structure is key to effective project management.
 
