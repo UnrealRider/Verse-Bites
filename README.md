@@ -1,15 +1,15 @@
-\<h1 align="center"\>Verse-Bites\</h1\>
+<h1 align="center">Verse-Bites</h1>
 
-\<p align="center"\>
-A minimalist and practical collection of code snippets, lessons, and toolsets designed for UEFN Verse.
-\</p\>
+<p align="center">
+  A minimalist and practical collection of code snippets, lessons, and toolsets designed for UEFN Verse.
+</p>
 
-\<p align="center"\>
-\<a href="[https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE](https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE)"\>\<img src="[https://img.shields.io/badge/Code](https://img.shields.io/badge/Code) License-MIT-blue.svg" alt="Code License"\>\</a\>
-\<a href="[https://github.com/UnrealRider/Verse-Bites/tree/main?tab=License-2-ov-file](https://github.com/UnrealRider/Verse-Bites/tree/main?tab=License-2-ov-file)"\>\<img src="[https://img.shields.io/badge/Content](https://img.shields.io/badge/Content) License-CC BY 4.0-lightgrey.svg" alt="Content License"\>\</a\>
-\<a href="[http://discord.gg/AhU7WkUdUD](http://discord.gg/AhU7WkUdUD)"\>\<img src="[https://img.shields.io/discord/YOUR\_SERVER\_ID?logo=discord\&label=Discord](https://img.shields.io/discord/YOUR_SERVER_ID?logo=discord&label=Discord)" alt="Discord"\>\</a\>
-\<a href="[https://x.com/\_PizzaVsBurger](https://x.com/_PizzaVsBurger)"\>\<img src="[https://img.shields.io/twitter/follow/\_PizzaVsBurger?style=social](https://img.shields.io/twitter/follow/_PizzaVsBurger?style=social)" alt="Twitter"\>\</a\>
-\</p\>
+<p align="center">
+  <a href="https://github.com/UnrealRider/Verse-Bites/blob/main/LICENSE"><img src="https://img.shields.io/badge/Code License-MIT-blue.svg" alt="Code License"></a>
+  <a href="https://github.com/UnrealRider/Verse-Bites/tree/main?tab=License-2-ov-file"><img src="https://img.shields.io/badge/Content License-CC BY 4.0-lightgrey.svg" alt="Content License"></a>
+  <a href="http://discord.gg/AhU7WkUdUD"><img src="https://img.shields.io/discord/YOUR_SERVER_ID?logo=discord&label=Discord" alt="Discord"></a>
+  <a href="https://x.com/_PizzaVsBurger"><img src="https://img.shields.io/twitter/follow/_PizzaVsBurger?style=social" alt="Twitter"></a>
+</p>
 
 -----
 
