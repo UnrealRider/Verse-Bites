@@ -1,6 +1,8 @@
-# Verse Basic Course
+# Lesson-Bites Course Roadmap
 ## Lesson-Bites_L1.verse
-### UEFN Verse Teaching Course List
+### UEFN Verse: Foundational Course
+
+#### Lessons 00 - 19 🧪 (Public Beta)
 * #### Lesson 00 – Before You Start Learning
     * Preparation of the environment and files before learning.
 
@@ -65,25 +67,54 @@
     * Learn how to create a function with a "return value" that provides a result after its execution.
 
 ---
+#### Lessons 20 - 35 📦 (Completed - Awaiting Release)
+* #### Lesson 20 – Block | Placeholder
+    * Understand the use of the `block` expression, primarily as a temporary code placeholder in functions or control flows.
 
-- **Lesson 20:** Option Type  
-- **Lesson 21:** Using UEFN Devices & Exploring the Verse API  
-- **Lesson 22:** Block  
-- **Lesson 23:** Array (1)  
-- **Lesson 24:** `for` Loop & `range`  
-- **Lesson 25:** Array (2)  
-- **Lesson 26:** Array (3)  
-- **Lesson 27:** Map (1)  
-- **Lesson 28:** Map (2)  
-- **Lesson 29:** Tuple (1)  
-- **Lesson 30:** Tuple (2)  
-- **Lesson 31:** Tuple (3)  
-- **Lesson 32:** `suspends` Keyword & `spawn`  
-- **Lesson 33:** `sleep`  
-- **Lesson 34:** `loop`, `return` & `break`  
-- **Lesson 35:** Class  
+* #### Lesson 21 – Option | Optional Values
+    * Learn how to handle a special type of variable that may "have a value" or "have no value."
 
-# Verse Introductory Course
+* #### Lesson 22 – API & Device Interaction
+    * Learn how to use UEFN's built-in devices and call their functions, as well as how to view the Verse API files to discover more functionalities.
+
+* #### Lesson 23 – Array (1) Creation & Access
+    * Learn how to create arrays, access and modify specific elements by index, and get the array's length.
+
+* #### Lesson 24 – For | Looping
+    * Learn to use the `for` loop to iterate over a range or all elements of an array.
+
+* #### Lesson 25 – Array (2) Dynamic Modification
+    * Learn how to dynamically add one or more new elements to an existing array.
+
+* #### Lesson 26 – Array (3) Removing Elements
+    * Learn the common method for removing an element from an array: by creating a new array that excludes the element.
+
+* #### Lesson 27 – Map (1) Key-Value Pairs
+    * Get to know the `map` data structure, learning how to store and access a "Value" using its corresponding "Key."
+
+* #### Lesson 28 – Map (2) Add, Remove, Modify
+    * Learn how to add new key-value pairs to a `map`, modify existing values, and remove specified pairs.
+
+* #### Lesson 29 – Tuple (1) Compound Data
+    * Learn the basics of the `tuple`, a structure that can group a fixed collection of different data types.
+
+* #### Lesson 30 – Tuple (2) Tuple as a Parameter
+    * Learn how to pass an entire `tuple` as a parameter to a function for convenient handling of structured data.
+
+* #### Lesson 31 – Tuple (3) Function Return
+    * Learn how to make a function return a `tuple`, allowing it to pass back multiple results of different types at once.
+
+* #### Lesson 32 – suspends Keyword & spawn
+  
+* #### Lesson 33 – Sleep
+  
+* #### Lesson 34 – loop, return & break
+  
+* #### Lesson 35 – Class
+
+---
+
+# UEFN Verse: Intermediate Course ✏️ (In Design)
 ## Lesson-Bites_L2.verse
 - **Lesson 36:** Event & Await  
 - **Lesson 37:** Struct  
@@ -100,11 +131,14 @@
 - **Lesson 48:** Flow – Sync  
 - **Lesson 49:** Flow – Race  
 - **Lesson 50:** Flow – Rush  
-- **Lesson 51:** Class (Part 2)  
-- **Lesson 52:** Functions (Part 2)  
-- **Lesson 53:** `for` Loop (Part 2)  
-- **Lesson 54:** Code Blocks (Part 2)  
-- **Lesson 55:** Failable Expressions (Part 2)  
+- **Lesson 51:** Class (Level 2)  
+- **Lesson 52:** Functions (Level 2)  
+- **Lesson 53:** For (Level 2)  
+- **Lesson 54:** Scope (Level 2)  
+- **Lesson 55:** Failable Expressions (Level 2)  
 
-# Verse 专题课程
+---
+
+# UEFN Verse: Specialized Topics ✏️ (In Design)
 ## Lesson-Bites_L3.verse
+* *(Topics to be determined)*
