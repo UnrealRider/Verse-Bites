@@ -1,4 +1,3 @@
-🎮 Game-Bites (规划中)
-定位: 即插即用的小型游戏功能模块。
-
-内容: 提供如幸运转盘、动画控制器等趣味功能，可以快速为你的项目增添亮点。
+## 🎮 **Game-Bites (In Planning)**
+#### **Focus**: Plug-and-play mini-game feature modules.
+#### **Content**: Provides fun features such as a prize wheel, animation controllers, etc., to quickly add highlights to your project.
