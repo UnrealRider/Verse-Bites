@@ -1,7 +1,3 @@
-Of course. Here is the English translation of your final guide. I've ensured the tone is welcoming and encouraging for new learners.
-
------
-
 # Welcome to the Verse-Bites Learning Journey\!
 
 Ready to dive into the world of Verse programming? This guide will walk you through all the necessary preparations to get you started smoothly with your first lesson.
