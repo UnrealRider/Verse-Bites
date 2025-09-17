@@ -1,153 +1,183 @@
+# ═════════════════════════════════════════════════════════════════════════════
+#   Verse-Bites: Level 1 (UEFN Verse Tutorial)
+#   Author: UnrealRider
+#   Project Homepage:   https://github.com/UnrealRider/Verse-Bites
+#   Description: This Verse file contains the complete source code for the Verse-Bites Level 1 tutorial series (Lessons 00-19).
+# -----------------------------------------------------------------------------
+#   Copyright & License:
+#   Copyright (c) 2025 UnrealRider
+#   This project is licensed under the terms of the MIT License.
+#   The full license text can be found at: https://github.com/UnrealRider/Verse-Bites/tree/main?tab=MIT-1-ov-file
+# ═════════════════════════════════════════════════════════════════════════════
+
+# --- Lesson Content Starts Below ---
+
+# Lesson-Bites Level 1
+# Version: 1.0
+
 using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
 
-# 名称
-# 版本
-# 授权声明
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 00 – 开始学习之前
+#   Lesson 00 – Before You Begin
 # ────────────────────────────────────────────────────────────────────────────
-<# 
-- 学习 Verse 前必须对 UEFN 有基础的使用与理解
-    - 推荐的 UEFN Youtube 内容作者
-        - @GraemeBull (新手到入门)
-        - @howtwoboss (进阶)
-- 安装 VS Code
-- Verse 修改的差异与便利性
-- 系统常态错误
-- 安装 Verse Bites
-- 建立 MyBites
-- 经常性错误问题
-    - 删除某个 Verse 文件导致编译错误
-#>
+# Before starting, please complete the preparations outlined at the following URL:
+# https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/README.md
 # ═════════════════════════════════════════════════════════════════════════════
 
 
+
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 01 – 建立第一个 Verse Device
+#   Lesson 01 – Creating Your First Verse Device
 # ────────────────────────────────────────────────────────────────────────────
+
 # bites_a_device
 bites_a_device := class(creative_device):
-# `bites_a_device` 会作为 UEFN 中显示的装置名称，你可以随意修改
-# `bites_a_device := class(creative_device):` 这是一个 Class, 你现在只需要知道: 这是一个 Class 这件事
+    # Think of the `class` line above as a [blueprint] for a device.
+    # `bites_a_device` is the name you give this blueprint, which you'll see later in UEFN.
 
-    # OnBegin 这段语法会在开始游戏时执行一次
-    # `OnBegin<override>()<suspends>:void =` 这是一个 Function, 你现在只需要知道: 这是一个 Function 这件事
+    # `OnBegin` is a special [action command] that [automatically runs once] when the game starts.
+    # It's like a "startup program" you set for your device.
     OnBegin<override>()<suspends>:void =
-        # Print ("文字") 会把括号中的文字显示在画面左上角
-        Print ("这是一个 Verse Device，现在它只会显示这行文字！")
+        # `Print` displays the text inside the parentheses in the top-left corner of the game screen.
+        Print("Hello! This is my first Verse device!")
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
-# 1. 复制整个 bites_a_device 类到 MyBites.verse 中
-# 2. 把类名称 `bites_a_device` 改成你喜欢的命名，例如 my_first_device
-# 3. Build Verse
-# 4. 在 UEFN 的项目 Content Browser 下找到项目文件夹下的 Verse 文件夹，将 my_first_device 放到场景中
-# 5. 启动游戏会话并查看结果
+# 1. Copy the entire [blueprint] into your MyBites.verse file.
+# 2. Change the blueprint name `bites_a_device` to something you like, for example, `my_awesome_device`.
+#    ✨ Tip: It's normal to see an error after copying! All .verse files in a project belong to the
+#    same "jurisdiction," so every Class (blueprint) name must be [unique]. You [must rename] it.
+# 3. Click the "Build Verse" button to have UEFN "manufacture" the device from your blueprint.
+# 4. In the UEFN Content Browser, find your device and drag it into the game scene.
+# 5. Start the game. Did your `Print` message appear successfully?
+
+# Lesson 01 – 1
+# Meet the bug's friend: the red squiggly line (Error)!
+    # Verse has strict naming rules. Names can only use [English letters, numbers, and underscores], and [cannot start with a number].
+    # Try changing the device name to `1bites_a_device` or `bites-device`. See the red squiggly line appear?
+    # This line is reminding you: "This name is invalid." When you try to build, it will turn into an official error report.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 02 – 让 Verse Device 与 UEFN 按钮互动
+#   Lesson 02 – Making a Device and a Button "Talk"
 # ────────────────────────────────────────────────────────────────────────────
-#   目标：当玩家按下 UEFN Button Device 时，在画面显示提示文字
-#   在这段学习中，你只需要稍微知道运行的流程即可，不需要立即对所有内容进行了解
+#   Goal: Make our Verse device react when a player presses a UEFN button.
+#   For this lesson, you only need a general idea of the process; you don't need to understand every detail right away.
+
 # bites_a_button_device
 bites_a_button_device := class(creative_device):
 
-    # 这段语法可以在 Verse Device 上实现与 UEFN Device 关联的接口
+    # `@editable` adds a [configurable property] to the UEFN Details panel.
+    # After building the code, we'll see this `Button` property in the Details panel, allowing us to link a Button Device.
     @editable Button : button_device = button_device{}
- 
+
     # OnBegin
     OnBegin<override>()<suspends>:void =
-        # 当游戏开始时，使用 Subscribe 来订阅玩家按下 Button 的事件，这个事件会执行 `OnButton` 
-        Button.InteractedWithEvent.Subscribe( OnButton )
+        # `Subscribe` is a "subscription" function. It subscribes to the button's `InteractedWithEvent`.
+        # Whenever a player presses the Button, `OnButtonPushed` will be executed.
+        Button.InteractedWithEvent.Subscribe(OnButtonPushed)
 
-    # 每当玩家按下按钮，就会调用这个 OnButton
-    OnButton(Agent:agent):void =
-        Print ("你按下了按钮！")
-
-    # `OnButton(Agent:agent):void =` 这也是一个 Function, 那么你将会有以下的问题:
-        # 这里的 `Agent:agent` 是什么? 在 Lesson 18 之前，你先不需要理解，只需要完整的 Copy 贴上使用即可
-        # 如何识别 Class 与 Function? 在 Lesson 19 之前，你只要识别带有 `class` 的就是 Class，带有 void 的就是 Function
+    # This `OnButtonPushed` function runs whenever a player presses the button.
+    OnButtonPushed(Agent:agent):void =
+        Print ("Hey, someone pushed the button!")
+    # `OnButtonPushed(Agent:agent):void =` is also a Function. You might have some questions:
+        # What is `Agent:agent` here? I can tell you that `agent` represents the player who pushed the button, but before Lesson 18,
+        # knowing this won't be very helpful. I suggest you don't worry about understanding it for now; just copy and paste it.
+        # How do I tell the difference between a Class and a Function? Before Lesson 19, just remember that anything with `class` is a Class, and anything with `void` is a Function.
 
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
-# 1. 复制整个 bites_a_button_device 类到 MyBites.verse 中
-# 2. Build Verse 后将设备放到 UEFN 的场景中
-# 3. 选择你的 Verse Device ，然后细节面板将 Button 选项关联一个 UEFN Button Device
-# 4. 进入游戏并点击按钮，查看画面上是否出现文字
-# 5. 想改别的讯息？直接改 Print 里的句子！
+# 1. Copy `bites_a_button_device` into your MyBites.verse file and remember to give it a new name.
+# 2. Build Verse to "manufacture" this new Verse Device, then place it in your UEFN scene.
+# 3. Place a Button Device in your UEFN scene.
+# 4. In the Details panel of your Verse Device, find the "Button" property and select the Button Device you just added.
+# 5. Start the game, press the button, and see if your device reacts!
 # ═════════════════════════════════════════════════════════════════════════════
-
 
 
 # ═════════════════════════════════════════════════════════════════════════════
 #   Lesson 03 – Comments
 # ────────────────────────────────────────────────────────────────────────────
-#   目标：认识两种常用的注释写法
+#   Goal: Learn the two common ways to write comments.
+
 # bites_comments
 bites_comments := class(creative_device):
 
     # OnBegin
     OnBegin<override>()<suspends>:void =
-        # 1. 行内注释   以 `#` 开头，到行尾结束
-        # 下面演示行内注释：代码右侧用 # 写说明
-        Print ("Comments 1")   # 这是一段行内注释
+        # 1. Single-line comments start with `#` and go to the end of the line.
+        #    Below is an example of an inline comment: using # to the right of the code for explanation.
+        Print("Comments 1")   # This is an inline comment.
 
-        # 注释放在代码上一行, 这行注释不会影响下一行代码
-        Print ("Comments 2")
+        # A comment on the line above the code. This comment will not affect the next line of code.
+        Print("Comments 2")
 
-        # ❌ 注释结束后再写代码是无效的示范，会被当成注释
+        # ❌ Invalid example: writing code after a comment symbol will be treated as part of the comment.
         # Print("Comments 3")
 
-        # 2. 区块注释   以 `<#` 开头，`#>` 结束，可跨多行
-        # 以下三行被 `<# #>` 区块注释包围，游戏中不会执行
-        <# 
+        # 2. Block comments start with `<#` and end with `#>`, and can span multiple lines.
+        #    The three lines below are enclosed in a `<# #>` block comment and will not be executed in the game.
+        <#
         Print("Comments 4")
         Print("Comments 5")
         #>
 
-        Print ("Comments 6")   # 最终只会在游戏里看到 1、2、6 三行
+        Print("Comments 6")   # In the end, you will only see lines 1, 2, and 6 in the game.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
-# 尝试添加或删除注释，观察打印结果
+# Copy the code into MyBites.verse to test it.
+# Try adding or removing comments and observe the changes in the printed output.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 04 – 创建 Field（Constant 与 Variable）
+#  Lesson 04 – Creating Fields (Constants and Variables)
 # ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn how to store data in a device and understand the difference between a "constant" and a "variable".
+
 # bites_create_field
 bites_create_field := class(creative_device):
 
-    # `Value_1` 与 `Value_2` 都是 Field, Field 是由你自己命名的，可以是任何的名称
-    # 下面 2 个 Field 分别代表2种属性, 发现了吗 ? Constant 与 Variable 的差别就在有没有 `var`
-    Value_1 : int = 10          # 这是一个 Constant 属性的 Field
-    var Value_2 : int = 20      # 这是一个 Variable 属性的 Field
+    # In our code, we need "containers" to store numbers, text, or other data. These containers are called [Fields].
+    # Fields come in two types: constants and variables.
+    # The key difference between them is the `var` keyword.
+
+    # Without `var`, this is a [constant]. Once set, it can never be changed.
+    Value_1 : int = 10
+
+    # With `var`, it becomes a [variable]. You can change its value at any time later.
+    var Value_2 : int = 20
     
     # OnBegin
     OnBegin<override>()<suspends>:void =
-        # set Value_1 = 100   # ❌ 会编译错误，因为 Value_1 是 Constant
-        Print ("Value_1 = {Value_1}")
+        # set Value_1 = 100      # ❌ Compile error! Trying to change the constant Value_1 will cause the program to fail to build.
+        Print("The value of the constant Value_1 is: {Value_1}")
 
-        # 使用 set 指令为 Variable 赋新值
+        # Variables can be assigned a new value using the `set` expression.
         set Value_2 = 200
-        Print ("Value_2 = {Value_2}")
+        Print("The modified value of the variable Value_2 is: {Value_2}")
 
-    # 更简单的理解, Constant 的参数是固定的无法被修改, Variable 是可以修改的
+    # Simple Summary
+    # Constant: Like words [carved in stone], once set, it never changes.
+    # Variable: Like words [written on a whiteboard], you can use `set` to erase and rewrite it anytime.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
-# 尝试添加更多 Constant 或 Variable，观察能否修改
+# 1. In your code, add a new constant and a new variable of your own.
+# 2. Try to modify them using `set` and see for yourself that the constant really does cause an error.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson Template – 在 MyBites.verse 中创建一个测试用的通用模板
+#   Lesson Template – Create a generic template for testing in MyBites.verse
 # ────────────────────────────────────────────────────────────────────────────
+# This is the generic template that will be used in the upcoming lessons. Copy it into your MyBites.verse.
+# You will also need to prepare 3 Button Devices in your UEFN scene.
+
 # test_generic_template
 test_generic_template := class(creative_device):
 
@@ -157,13 +187,13 @@ test_generic_template := class(creative_device):
 
     # OnBegin
     OnBegin<override>()<suspends>:void =
-        BTN_1.InteractedWithEvent.Subscribe( OnBTN_1 )
-        BTN_2.InteractedWithEvent.Subscribe( OnBTN_2 )
-        BTN_3.InteractedWithEvent.Subscribe( OnBTN_3 )
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
 
     # OnBTN_1
     OnBTN_1(Agent:agent):void =
-        # 当你还没有建立任何功能的时候，使用 `block:` 替代，否则代码会报错
+        # When you haven't implemented any functionality yet, use `block:` as a placeholder to avoid errors.
         block:
             
     # OnBTN_2
@@ -174,14 +204,15 @@ test_generic_template := class(creative_device):
     OnBTN_3(Agent:agent):void =
         block:
 
-# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 05 – Common Type - String
+#  Lesson 05 – Common Type: string
 # ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn how to use strings to handle text and display it on the screen.
+
 # bites_string
 bites_string := class(creative_device):
 
@@ -191,257 +222,327 @@ bites_string := class(creative_device):
 
     # OnBegin
     OnBegin<override>()<suspends>:void =
-        BTN_1.InteractedWithEvent.Subscribe( OnBTN_1 )
-        BTN_2.InteractedWithEvent.Subscribe( OnBTN_2 )
-        BTN_3.InteractedWithEvent.Subscribe( OnBTN_3 )
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
         
-    # 创建 Field, 还记得吗 ? Constant 与 Variable 的差别就在有没有 `var`
+    # In programming, any text enclosed in [double quotes " "] is a string.
     Name : string = "Unreal Rider" 
     var Time : int = 7
     var Day : string = "AM"
 
     # OnBTN_1
     OnBTN_1(Agent:agent):void =
-        # Step_1 : Print 括弧内 "" 输入的 Name 是输入的内容，而不是前面设置的 Field `Name`
-        Print ("Step_1 : Name")
-        # 在 Print 中使用 {}, 就可以将 Field 的内容打印出来
-        Print ("Step_2 : {Name}")                 
-        # 因为 Name 已经是 string 类型了，所以可以不一定需要 {} 的方法来输入, 而是直接将它放入 () 中
-        Print (Name)
-        # 同样的，我们将 `Time` 这个 Field 使用 Print 打印试试
-        Print ("Step_4 : {Time}")
+        # 1. Printing the "literal text" vs. printing the "field's content"
+        Print("Name")   # This will only print the four letters N-a-m-e.
+        Print(Name)     # This will read the content stored in the Name field, which is "Unreal Rider".
+
+        # 2. [Embedding] field content within a string
+        #    No matter what the field type is (string, int, float...), as long as it's wrapped in `{}`,
+        #    its value will be automatically converted and inserted into the string.
+        Print("Embedding Name(string) with braces: {Name}")
+        Print("Embedding Time(int) with braces: {Time}")
 
     # OnBTN_2
     OnBTN_2(Agent:agent):void =
-        # 字符串可以拼接
-        Print( Name + " {Time} {Day} 正在学习 Verse" )
+        # You can concatenate strings using the `+` operator.
+        # Note: Only {Time} and {Day} will display the variable content, because they are wrapped in `{}`.
+        Print(Name + " is learning Verse at {Time} {Day}")
 
     # OnBTN_3
     OnBTN_3(Agent:agent):void =
-        # 修改 Variable Field
+        # Modify variables with `set` and observe the result.
         set Time = 10
         set Day = "PM"
-        Print( Name + " {Time} {Day} 正在学习 Verse" )
+        # Print again, and you'll find the message has been updated!
+        Print(Name + " is learning Verse at {Time} {Day}")
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Add your own string constant, for example, `MyName : string = "Your Name"`.
+# 2. Add an integer variable, for example, `var MyScore : int = 100`.
+# 3. In OnBTN_1, try to print a sentence that includes both your name and score.
+#    For example: Print("{MyName}'s score is {MyScore}")
+# 4. In OnBTN_2, give yourself 50 more points using `set MyScore += 50`, then print the sentence again.
+#    See if the score has really increased!
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#  Lesson 06 – Common Type - int、float & Math
+#   Lesson 06 – Common Types: int, float & Math
 # ────────────────────────────────────────────────────────────────────────────
-#  目标：了解整数、浮点数与基本算术符号（+ - * /）的用法
+#   Goal: Learn about the number types int (integer) and float (floating-point number), and how to use basic math operators `+ - * /`.
+#   First, let's understand the two number types:
+#   `int`  : Integers, which are numbers without a decimal point, like -10, 0, 99.
+#   `float`: Floating-point numbers, which are numbers with a decimal point, like -0.5, 3.14, 100.0.
+
 # bites_value_and_math
 bites_value_and_math := class(creative_device):
 
     @editable BTN_1 : button_device = button_device{}
     @editable BTN_2 : button_device = button_device{}
     @editable BTN_3 : button_device = button_device{}
+    @editable BTN_Reset : button_device = button_device{}      # Add a reset button
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
-        BTN_1.InteractedWithEvent.Subscribe( OnBTN_1 )
-        BTN_2.InteractedWithEvent.Subscribe( OnBTN_2 )
-        BTN_3.InteractedWithEvent.Subscribe( OnBTN_3 )
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+        BTN_Reset.InteractedWithEvent.Subscribe(OnBTN_Reset)  # Subscribe the reset button
 
-    # Value   
-    var IntValue_1 : int = 1001          # 可变整数
-    IntValue_2 : int = 3                 # 常量整数
-    var FloatValue : float = 10.01       # 可变浮点数
+    # Field definitions
+    DefaultValue : int = 100      # This is a constant, used for presets or calculations
+    var IntValue_1 : int = 100
+    var FloatValue : float = 50.0
 
-    # OnBTN_1
+    # OnBTN_Reset: When this button is pressed, all mutable values are restored to their initial state.
+    OnBTN_Reset(Agent:agent):void =
+        # Direct assignment using `set`
+        set IntValue_1 = DefaultValue
+        set FloatValue = 50.0
+        Print("--- Values have been reset ---")
+        Print("Current state -> IntValue_1 = {IntValue_1}, FloatValue = {FloatValue}")
+
+    # OnBTN_1: Learning compound assignment operators (+=, -=)
     OnBTN_1(Agent:agent):void =
-        # 1. 直接赋值
-        set IntValue_1 = 10
-        Print ("IntValue_1 Step_1 `SET=10` = {IntValue_1}")
-            
-    # OnBTN_2
-    OnBTN_2(Agent:agent):void =
-        # 2. 基本加法
+        # Basic addition
         set IntValue_1 = IntValue_1 + 10
-        Print ("IntValue_1 Step_2 `+10` = {IntValue_1}")
+        Print ("IntValue_1 `IntValue_1 + 10` = {IntValue_1}")
 
-        # 3. 复合运算符（推荐使用）
-        set IntValue_1 += 10  # 等同于 IntValue_1 = IntValue_1 + 10
-        Print ("IntValue Step_3 `+=10` = {IntValue_1}")
+        # Compound assignment (recommended)
+        set IntValue_1 += 10    # Equivalent to IntValue_1 = IntValue_1 + 10
+        Print ("IntValue_1 `+=10` = {IntValue_1}")
 
         # `+=` `-=` `*=` `/=`
-        set IntValue_1 *= 10  # 乘以 10
-        Print ("IntValue Step_4 `*=10` = {IntValue_1}")
+        set IntValue_1 *= 2   # Multiply by 2
+        Print ("IntValue_1 `*=2` = {IntValue_1}")
 
-    # OnBTN_3
+    # OnBTN_2: Learning order of operations and parentheses ()
+    OnBTN_2(Agent:agent):void =
+        # Verse follows the rule of [multiplication/division before addition/subtraction], just like in math.
+        # `()` can be used to force a different order of operations; expressions inside parentheses are calculated first.
+        set IntValue_1 = 2 * (DefaultValue - (25 + 45))
+        Print("set IntValue_1 = 2 * (DefaultValue - (25 + 45)) = {IntValue_1}")
+
+        # Additionally, `Print` can perform calculations inside {} and output the result.
+        Print("DefaultValue - 45 = {DefaultValue - 45}")
+
+    # OnBTN_3: Special rules for division (/)
     OnBTN_3(Agent:agent):void =
-        # 4. 使用括号改变运算顺序
-        set IntValue_1 = 20 * ( (7 + 5) - IntValue_2 )
-        Print("IntValue_1 Step5 20*( (7+5)-{IntValue_2} ) → {IntValue_1}")
+        # ⚠️ Verse is very strict about number types, especially with division!
+        # set IntValue /= 10      # ❌ Example 1: Integers cannot be directly divided using `/`.
+        # set FloatValue /= 20    # ❌ Example 2: A float cannot be directly divided by an integer.
 
-        # set IntValue /= 10      # ⚠️ int 不能使用除法，後面内容将说明如何实现 int 除法
-        # set FloatValue /= 20    # ⚠️ float 与 int 不能相除
-
-        # 5. 浮点数除法（必须确保分子或分母带小数点）
+        # ✅ Correct way: Ensure at least one side of the division is a float (i.e., has a decimal point).
         set FloatValue /= 20.0
-        Print("FloatValue Step1  /=20.0   → {FloatValue}")
+        Print("FloatValue /= 20.0   → {FloatValue}")
 
-# ⚠️ 注意  
-# Verse 中 **判断相等** 使用 `=` ，**赋值** 使用 `set`，两者不要搞混！  
+        # So how do we divide an int? We will learn how to handle type conversions in Lesson 12.
+
+    # ⚠️ Important
+    # In Verse, a single equals sign `=` is used for [conditional checks] (e.g., if A = B).
+    # The `set` keyword is used for [assignment] (e.g., set A = B).
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Create a treasure chest health variable: `var BoxHealth : int = 500`.
+# 2. Modify OnBTN_Reset so it also resets `BoxHealth`.
+# 3. Make BTN_1 a "light attack" that deals 75 damage to the chest (`-= 75`).
+# 4. Make BTN_2 a "heavy attack" that deals 150 damage.
+# 5. Make BTN_3 a "healing potion" that restores 200 health to the chest (`+= 200`).
+# 6. After each action, print the chest's remaining health. Experience attacking and healing, then use the reset button to restore it to full health!
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#  Lesson 07 – 创建 Field 进阶：可编辑字段
+#   Lesson 07 – Advanced Fields: Fields & @editable
 # ────────────────────────────────────────────────────────────────────────────
-#  本节延伸 Lesson 04，介绍 @editable 与 var 的组合应用
+#   Goal: Learn how to use the `@editable` keyword to make your fields appear in the UEFN Details panel,
+#   allowing you to modify them directly in the editor without changing code!
+
 # bites_create_field_2
 bites_create_field_2 := class(creative_device):
 
-    # -------- Field --------
-    # 以 "Int_A : int = 5" 为例 :
-    #   "Int_A" : 由你创建的一个 Field 名称, "int" 是这个 Field 的类型, "5" 这个 Field 的值
-    #   "Int_A" 与 "int" 之间使用 ":", "int" 与 "5" 之间使用 "="
-    #   "Int_A : int = 5" 用口语表 : 创建一个名为 "Int_A" 的 Field, Field 的类型是 "int", 并且数值等于 "5"
+    # --- 1. Field Syntax Review and Definition ---
+    # Let's use the line below as an example to break down the structure of a field again:
+    PlayerName : string = "Hero"
 
-    # -------- 基本字段 --------
-    Int_A : int = 5
-    Float_A : float = 10.0
-    String_A : string = "Pizza"
+    # → `PlayerName` : The [name] of the field, defined by you.
+    # → `:`          : The [separator] between the name and the type.
+    # → `string`     : The [data type] of the field (a string in this case).
+    # → `=`          : The [assignment operator] between the type and the initial value.
+    # → `"Hero"`     : The [initial value] assigned to the field.
+    # Read all together, it means: "Create a field named PlayerName, its type is `:` string, and its value is `=` 'Hero'."
 
-    # -------- 可编辑字段 --------
-    # @editable 不仅是关联 UEFN Device 的方法
-    # 可以让你在 UEFN 细节面板中输入数值，方便关卡设计应用，是不是感觉更像是一个 Device 了!
-    @editable Int_B : int = 0
-    @editable Float_B : float = 0.0
-    @editable String_B : string = ""
+    # The value of this field is fixed. To change it, you must come back to the Verse file.
+    BaseDamage : int = 100
+
+    # --- 2. Fields Adjustable in the UEFN Editor ---
+    # `@editable` is not just for linking UEFN Devices.
+    # It also allows you to input values in the UEFN Details panel, which is convenient for level design. Doesn't it feel more like a real Device now?
+    @editable PlayerTitle : string = "Shining"
+    @editable WeaponBonus : int = 25
 
     OnBegin<override>()<suspends>:void =
-        Print("Int_A + Int_B = {Int_A + Int_B}")
-        Print(String_A + " VS " + String_B)
+        # When the game starts, we add the fixed value and the editable value together and print the result.
+        TotalDamage := BaseDamage + WeaponBonus
+        Print("{PlayerTitle} {PlayerName}'s total damage is: {TotalDamage}")
+
+    # Simple Summary
+    # `@editable` is the bridge between [Verse code] and the [UEFN editor].
+    # It allows us to expose frequently adjusted values (like damage, health, speed, text, etc.) in the editor,
+    # letting us use it as a configurable Device, ⚠️ with each instance having its own parameters to run the game.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
-# 在 UEFN 编辑器里修改 Int_B / Float_B / String_B，修改代码并查看打印变化
+# Try placing multiple instances of this Verse Device in the scene and configuring different parameters for each to observe the results.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 08 – 控制流程：if / else / then
+#   Lesson 08 – Control Flow: Making Decisions with if
 # ────────────────────────────────────────────────────────────────────────────
-#   目标：学习 if 最常用的条件判断写法
-# bites_if_basic
-bites_if_basic := class(creative_device):
+#   Goal: Learn how to use the `if` statement to make your program execute different code based on different conditions.
 
-    # Value    
-    Value_A : int   = 2 
-    var Value_B : float = 10.0 
+# bites_if
+bites_if := class(creative_device):
 
-    # OnBTN_1
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+    @editable BTN_4 : button_device = button_device{}
+
+    OnBegin<override>()<suspends>:void =
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+        BTN_4.InteractedWithEvent.Subscribe(OnBTN_4)
+
+    Value_A : int = 2
+    var Value_B : float = 10.0
+
+    # OnBTN_1: Independent `if` statements
+    # Think of these as a series of [separate true/false questions]. The program will check every single one.
     OnBTN_1(Agent:agent):void =
-        # 1. 只有 if
+        Print("--- Starting independent if checks ---")
         if (Value_A = 1):
-            Print("Only if :: Value_A = 1")
+            Print("Question 1: Does Value_A equal 1? -> No") # ← This example will not print
 
         if (Value_A = 2):
-            Print("Only if :: Value_A = 2")         # ← 本例会打印这一行
+            Print("Question 2: Does Value_A equal 2? -> Yes") # ← This example will print
 
-        if (Value_A = 10.0):
-            Print("Only if :: Value_A = 10.0")      # ← 不会执行
-            
-    # OnBTN_2
+        if (Value_A > 1):
+            Print("Question 3: Is Value_A greater than 1? -> Yes") # ← This example will also print
+
+    # OnBTN_2: `if...else`
+    # Unlike the previous example, when the `if` condition is false, the code in the `else` block will be executed.
     OnBTN_2(Agent:agent):void =
-        # 2. if … else
         if (Value_A = 2):
-            Print("if else :: Value_A = 2 → true")  # ← 本例会打印
+            Print("if else A:: Value_A equals 2 -> true")   # ← This example will print
         else:
-            Print("if else :: Value_A = 2 → false")
+            Print("if else A:: Value_A equals 2 -> false")
 
-    # OnBTN_3
+        if (Value_A = 1):
+            Print("if else B:: Value_A equals 1 -> true")
+        else:
+            Print("if else B:: Value_A equals 1 -> false")  # ← This example will print
+
+    # OnBTN_3: `if...else if...else`
+    # The program checks from top to bottom. Once it finds a `true` condition and executes its code, the entire structure is [immediately exited], and all subsequent parts are skipped.
     OnBTN_3(Agent:agent):void =
-        # 3. if … else if … else
-        if (Value_A = 10.0):
-            Print("else if :: Value_A = 10.0")
-        else if (Value_A = 4):
-            Print("else if :: Value_A = 4")
-        else if (Value_A = 2):
-            Print("else if :: Value_A = 2")         # ← 本例会打印
+        if (Value_A = 10):
+            Print("else if :: Value_A is 10")
+        else if (Value_A > 5):
+            Print("else if :: Value_A is greater than 5")
+        else if (Value_A = 2):                               # ← It finds this is true, executes, and exits.
+            Print("else if :: Value_A is 2")                 # Executes this and exits.
+        else if (Value_A > 0):
+            Print("else if :: Value_A is greater than 0")    # Although this is also true, it [will not be executed] because the previous condition was met.
         else:
-            Print("else if :: All false!!")
+            Print("None of the above conditions were met")
 
-    # OnBTN_4
+    # OnBTN_4: `if...then` (Multiple "AND" conditions)
+    # Use this when you need [all conditions to be true at the same time].
     OnBTN_4(Agent:agent):void =
-        # 4. if … then   (多条件 AND 写法)
-        if (Value_A = 2, Value_B = 10.0):           # 两个条件同时为 true 才会执行
-            Print("if then :: A=2 AND B=10.0 → true")
+        # Condition: Value_A must equal 2, AND Value_B must equal 10.0
 
-        # 下面的内容你现在可以知道，但建议现在可以忘记
-        # 同功能的区块写法（可读性更高）
+        # Style 1: Separated by a comma `,` on the same line. More concise, and the style used most often in this course.
+        if (Value_A = 2, Value_B = 10.0): 
+            Print("if...then A:: Both conditions are met!")
+
+        # Style 2: Block format. More readable and functionally identical. Recommended when you have many conditions.
         if:
             Value_A = 2
             Value_B = 10.0
         then:
-            Print("if then (block) :: A=2 AND B=10.0 → true")
+            Print("if...then B:: Both conditions are also met!")
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
-# 1. 复制整个 bites_if_basic 类到 MyBites.verse，并改名为 bites_if_test
-# 2. 修改 Value_A / Value_B 的数值，观察哪些 Print 会出现
-# 3. 把其中一段 if … else if … else 的顺序调整，体会执行顺序差异
-# 4. 尝试加入 @editable，让 Value_A / Value_B 在 UEFN 细节面板中可调整
+# Try adjusting the execution order and the conditions to get a feel for the effect of execution order and logic.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 09 – 比较运算符：<  <=  >  >=  =  <>
+#   Lesson 09 – Making More Precise Decisions: Comparison Operators
 # ────────────────────────────────────────────────────────────────────────────
-#   目标：学会使用 6 种常见的「比较运算符」
-#   ▸ `<`   小于
-#   ▸ `<=`  小于或等于
-#   ▸ `>`   大于
-#   ▸ `>=`  大于或等于
-#   ▸ `=`   等于   （⚠️ 判断相等，用 `=`，不是赋值）
-#   ▸ `<>`  不等于
-# bites_comparison_basic
-bites_comparison_basic := class(creative_device):
+#   Goal: Learn to use the 6 common "comparison operators".
+#   `>`  : Greater than
+#   `>=` : Greater than or equal to
+#   `<`  : Less than
+#   `<=` : Less than or equal to
+#   `=`  : Equal to   (‼️Reminder: This is for comparison, not assignment with `set`!)
+#   `<>` : Not equal to
 
-    # Value
-    @editable Value_A : int = 5
-    @editable Value_B : int = 3
+# bites_comparison
+bites_comparison := class(creative_device):
 
-    # OnBTN_1
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+    @editable BTN_4 : button_device = button_device{}
+
+    OnBegin<override>()<suspends>:void =
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+        BTN_4.InteractedWithEvent.Subscribe(OnBTN_4)
+
+    Value_A : int = 5
+    Value_B : int = 3
+
+    # OnBTN_1: Greater than, Less than
     OnBTN_1(Agent:agent):void =
         if (Value_A < Value_B):
             Print("Value_A <  Value_B → true")
         else:
-            Print("Value_A <  Value_B → false")   # ← 本例会打印
+            Print("Value_A <  Value_B → false")   # ← This example will print
 
-    # OnBTN_2
+    # OnBTN_2: Greater than or equal to, Less than or equal to
     OnBTN_2(Agent:agent):void =
         if (Value_A <= Value_B):
             Print("Value_A <= Value_B → true")
         else:
-            Print("Value_A <= Value_B → false")   # ← 本例会打印
+            Print("Value_A <= Value_B → false")   # ← This example will print
 
-    # OnBTN_3
+    # OnBTN_3: Equal to
     OnBTN_3(Agent:agent):void =
         if (Value_A = Value_B):
             Print("Value_A  = Value_B → true")
         else:
-            Print("Value_A  = Value_B → false")   # ← 本例会打印
+            Print("Value_A  = Value_B → false")   # ← This example will print
 
-    # OnBTN_4
+    # OnBTN_4: Not equal to
     OnBTN_4(Agent:agent):void =
         if (Value_A <> Value_B):
-            Print("Value_A <> Value_B → true")    # ← 本例会打印
+            Print("Value_A <> Value_B → true")    # ← This example will print
         else:
             Print("Value_A <> Value_B → false")
 
-#   可用于类型
-#   ───────────────────────────────────────────
-#   运算符           支援类型
-#   <  <=  >  >=    int, float
-#   =  <>           int, float, logic, string, enum
+    # Tip
+    # Different operators support different data types:
+    # `>` `>=` `<` `<=`  are mainly used for `int` and `float` numerical comparisons.
+    # `=` `<>`           can be used for almost all types, like `int`, `float`, `logic`, and `string`.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # ═════════════════════════════════════════════════════════════════════════════
@@ -449,156 +550,200 @@ bites_comparison_basic := class(creative_device):
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 10 – 逻辑决策：or / and 复合条件
+#  Lesson 10 – Compound Conditions: or & and
 # ────────────────────────────────────────────────────────────────────────────
-#   目标：使用 `or` 与 `and` 实现「喝魔药 ➜ 施放火球」的决策逻辑
-#   ▸ `or`  只要 **任一条件** 成立就执行         （逻辑或）
-#   ▸ `and` 必须 **全部条件** 成立才执行         （逻辑与）
+# Goal: Learn how to combine multiple conditions to implement more complex decision logic.
 
-# bites_decision_basic
-bites_decision_basic := class(creative_device):
+# Sometimes, an `if` statement needs to consider more than one thing. This is where the logical operators `or` and `and` come in.
+# → `or`: If [any one] of the multiple conditions is true, the result is true.
+#   (e.g., To get into a movie theater, you need "a movie ticket" OR "a membership card". One is enough.)
+# → `and`: [All] of the multiple conditions must be true for the result to be true.
+#   (e.g., To drive a car, you need "a driver's license" AND "the car keys". You need both.)
 
-    @editable var MyMana : int = 5   # 玩家当前魔力（可在 UEFN 调整）
+# bites_decision
+bites_decision := class(creative_device):
 
-    # Value
-    MaxMana     : int = 20      # 玩家魔力上限
-    PotionGain  : int = 10      # 喝药水回复值
-    FireCost    : int = 15      # 火球消耗值
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
 
-    # OnBegin
+    @editable var MyMana : int = 5    # Player's current mana
+
+    # Values
+    MaxMana    : int = 20     # Max mana
+    PotionGain : int = 10     # Mana restored by a potion
+    FireCost   : int = 15     # Mana cost of a fireball
+
     OnBegin<override>()<suspends>:void =
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
         Print("GAME START -- MyMana = {MyMana}")
 
-    # OnBTN_1
+    # OnBTN_1: `or` logic — "Do I have [at least one way] to cast a fireball?"
+    # (This button only checks for possibilities; it doesn't actually consume mana)
     OnBTN_1(Agent:agent):void =
-        # or 逻辑：只要其中一条路可行，就提示玩家
-        #    A. 现在就能放火球   (MyMana ≥ FireCost)
-        #    B. 先喝药也能放火球 (MyMana + PotionGain ≥ FireCost)
+        # Condition A: I have enough mana right now (MyMana >= FireCost)
+        # Condition B: I'll have enough mana after drinking a potion (MyMana + PotionGain >= FireCost)
         if ((MyMana >= FireCost) or (MyMana + PotionGain >= FireCost)):
-            Print("可行方案：直接 Fireball，或 Potion 后再 Fireball")
+            Print("Tip: You can cast a fireball! (Either directly, or after drinking a potion)")
         else:
-            Print("Mana 不足：无论如何都放不了 Fireball")
+            Print("Tip: Not enough mana. You can't cast a fireball either way.")
+        Print("Check complete -- Current mana is still: {MyMana}")
 
-        Print("End   -- MyMana = {MyMana}")
-
-    # OnBTN_2
+    # OnBTN_2: `and` logic — "Do I meet [all conditions] to drink a potion and then cast a fireball?"
+    # (This button checks the conditions, and if they pass, it will actually perform the actions)
     OnBTN_2(Agent:agent):void =
-        # and 逻辑：两个条件都满足才执行「喝药 ➜ 放火球」
-        #    1) 当前 Mana 未满 (MyMana < MaxMana)
-        #    2) 喝药后扣火球，不会溢出且仍 ≥ 0
+        # Condition 1: Current mana is not full, so drinking a potion isn't a waste (MyMana < MaxMana)
+        # Condition 2: After drinking the potion and casting the fireball, remaining mana must not be negative
         if ((MyMana < MaxMana) and (MyMana + PotionGain - FireCost >= 0)):
-            # 顺序：先喝药再放火球
+            # Both conditions are met, perform the actions!
+            Print("Conditions met, taking action...")
             set MyMana += PotionGain
+            Print("Drank a potion, current mana: {MyMana}")
             set MyMana -= FireCost
-            Print("Potion ➜ Fireball 成功！剩余 Mana = {MyMana}")
+            Print("Cast a fireball! Remaining mana: {MyMana}")
         else:
-            Print("Potion ➜ Fireball 失败（条件不足）")
-
-        Print("End   -- MyMana = {MyMana}")
+            Print("Action failed (mana is full or final mana would be < 0), no action taken.")
+        Print("Action finished -- Current mana is: {MyMana}")
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# Want a challenge?
+# 1. Add a `logic` variable for day/night, `IsDay`.
+# 2. Add constants for two new spells: `LightCost` and `ShadowCost`.
+# 3. Implement more complex logic:
+#    The condition to cast [Light Magic] is: enough mana (`MyMana >= LightCost`) AND [it must be daytime] (`IsDay = true`).
+#    The condition to cast [Shadow Magic] is: enough mana (`MyMana >= ShadowCost`) AND [it must be nighttime] (`IsDay = false`).
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 11 – Failable Expressions
+#   Lesson 11 – Core Verse Concept: Failable Expressions
 # ────────────────────────────────────────────────────────────────────────────
-#   目標 ：初步認識 **Failable Expression**（可失敗運算式）這個概念  
+#   Goal: Gain a preliminary understanding of one of Verse's most core and unique concepts: failable expressions.
 
-# bites_failable_expr_basic
-bites_failable_expr_basic := class(creative_device):
+#   Imagine you are casting a spell:
+#   If the conditions are met (enough mana, correct incantation), the spell is [successful].
+#   If the conditions are not met (e.g., not enough mana), the spell [fails]. But crucially, you don't explode or get hurt;
+#   it's just that "nothing happens," and you can then do something else.
+#   Verse's "failable expressions" are this [safe spellcasting] mechanism.
 
-    # Value
+#   ‼️ Important: Failure ≠ Error
+#   - Error: Like saying a spell wrong. This will cause a compile error (a red squiggly line), and the program cannot run at all.
+#   - Failure: Like not having enough mana. This is an expected, normal outcome. The program will gracefully skip it and continue executing the subsequent code.
+#   Summary: Your game won't crash the entire server because of a code failure; the failed code simply won't have an effect.
+
+# bites_failable_expr
+bites_failable_expr := class(creative_device):
+
     MaxMana : int = 20
     var MyMana : int = 5
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
-        # ↓ 這個 if，其實就是一個「可失敗運算式」：
-        #    條件成立 → 傳回 true，執行 Print
-        #    條件失敗 → 傳回 false，整段不產生值
-        if (MyMana >= MaxMana):
-            Print("Mana Full!")
+        Print("Game start, checking mana status...")
 
-# TIPS
-# 1. 在 Verse 裏 **所有東西都是表達式**，都會產生一個結果（value）。  
-# 2. **Failable Expression** 就是「可能成功、也可能失敗」的表達式：  
-#    ‣ 成功 → 產生值　‣ 失敗 → 不產生值（相當於什麼都沒發生）  
-# 3. 你可以把它想成魔法師施法時的「安全保險機制」——條件不符就根本不施法，避免爆炸。
-# 💡 你現在可以先這樣理解：**Failable Expression ≈ if 條件判斷**
+        # The conditional part of this `if` (MyMana = MaxMana) is a "failable expression."
+        # Because 5 is not equal to 20, this expression will [fail].
+        # After it fails, the `Print()` inside is simply skipped, and nothing happens.
+        if (MyMana = MaxMana):
+            Print("Mana is full! You can use your ultimate ability!")
 
-# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+        # The conditional part of this `if` (MyMana > 0) will also be attempted.
+        # Because 5 is greater than 0, this expression will be [successful].
+        # After it succeeds, the `Print()` inside will be executed.
+        if (MyMana > 0):
+            Print("You still have mana and can fight!")
+        
+        Print("Check complete.") # Even though the first if failed, the program still continues to execute this line.
+
+    # Core Summary
+    # 1. Everything is an Expression: In Verse, almost everything (including `if` statements) is an "expression" that produces a result after execution.
+    # 2. Failing Safely: Some expressions can fail. On success, they produce a value; on failure, they produce no value, and the program acts as if it "never happened."
+    # 3. `if` is the classic example: The condition after an `if` is a failable expression.
+    #    - Condition is `true` -> Expression [succeeds] -> The code inside the `if` is executed.
+    #    - Condition is `false`-> Expression [fails] -> The code inside the `if` is skipped.
+    # 💡 You can think of it this way: **Failable Expression ≈ if**
+
+# ── TRY IT YOURSELF (Thought Experiment) ──────────────────────────────────
+# 1. Start the game and observe the output log. Did you only see "Game start...", "You still have mana...", and "Check complete."?
+#    This proves that the first `if` was indeed skipped due to "failure."
+# 2. Change the value of `MyMana` to 20 and test again.
+#    Now predict, how many sentences will be printed? Did the messages from both `if` statements get printed out?
+# 3. This is the practical application of failable expressions: allowing our code to safely handle all sorts of possible situations.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 12 – int, float 与 string 的转换
+#   Lesson 12 – Data Type Conversion: int, float & string
 # ────────────────────────────────────────────────────────────────────────────
-#   目標:
-#   ▸ 把 int 轉成 float（相容運算）  
-#   ▸ 把 float 轉成 int（截斷 / 取整）  
-#   ▸ 認識 Floor / Ceil / Round 常用取整函式  
-#   ▸ 把數值轉成 string（輸出 / 顯示）  
+#   Goal:
+#   ▸ Convert int (integer) to float (floating-point)
+#   ▸ Convert float to int (truncating/rounding)
+#   ▸ Convert numbers to string for display
 
 # bites_value_conversion
 bites_value_conversion := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+    @editable BTN_4 : button_device = button_device{}
 
-    # Value
     Value_A : int   = 18
     Value_B : float = 54.5
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
-        Print ("Value_A={Value_A}, Value_B={Value_B}")
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+        BTN_4.InteractedWithEvent.Subscribe(OnBTN_4)
+        Print("--- Initial Values --- Value_A(int) = {Value_A}, Value_B(float) = {Value_B}")
 
-    # OnBTN_1
+    # OnBTN_1: int → float (integer → floating-point)
     OnBTN_1(Agent:agent):void =
-        # 1. int → float
-        #    最簡單的方式：乘上 1.0
-        NewValue_A : float = Value_A * 1.0
-        Print("Value_A = {Value_A}  ➜  NewValue_A = {NewValue_A}")
+        # The easiest way is to multiply by 1.0, which forces the result of the whole expression to become a float type.
+        NewFloat_A : float = Value_A * 1.0
+        Print("int to float: {Value_A} * 1.0  ➜  {NewFloat_A}")
 
-    # OnBTN_2
+    # OnBTN_2: float → int (direct truncation)
     OnBTN_2(Agent:agent):void =
-        # 2. float → int
-        #    用 Int[ ] 將 float 轉 int（小數點後直接截斷）
+        # ‼️ Connection to Lesson 11: `Int[]` is a [failable expression]!
+        # `Int[]` will [truncate] all decimal parts, without rounding.
         if (NewInt_B := Int[Value_B]):
-            Print("Value_B = {Value_B}  ➜  NewInt_B  = {NewInt_B}")
+            Print("float to int (truncate): Int[{Value_B}]  ➜  {NewInt_B}")
 
-    # OnBTN_3
+    # OnBTN_3: float → int (professional rounding tools)
     OnBTN_3(Agent:agent):void =
-        # 3. 其他取整工具
-        #    Floor  → 永遠「向下」取整
-        #    Ceil   → 永遠「向上」取整
-        #    Round  → 四捨五入取整
+        # `Floor[]` (Floor): Always rounds [down] to the nearest integer, no matter the decimal.
         if (Floor_B := Floor[Value_B]):
-            Print("Floor[Value_B]  = {Floor_B}")   # 54
+            Print("Floor (round down): Floor[{Value_B}]  ➜  {Floor_B}")  # 54
 
+        # `Ceil[]` (Ceiling): Always rounds [up] to the nearest integer, no matter the decimal.
         if (Ceil_B := Ceil[Value_B]):
-            Print("Ceil[Value_B]  = {Ceil_B}")    # 55
+            Print("Ceil (round up): Ceil[{Value_B}]  ➜  {Ceil_B}")   # 55
 
-        if (Round_C := Round[Value_B]):
-            Print("Round[Value_B]  = {Round_C}")   # 6
+        # `Round[]` (Round): Standard rounding.
+        if (Round_B := Round[Value_B]):
+            Print("Round (standard): Round[{Value_B}]  ➜  {Round_B}") # 55
 
-        if (Round_D := Round[Value_B - 0.2]):
-            Print("Round[Value_B - 0.2]  = {Round_D}")   # 5
-
-    # OnBTN_4
+    # OnBTN_4: Number → string (for display)
     OnBTN_4(Agent:agent):void =
-        # 4. Value To String
-        # 使用 ToString() 方法
-        #    方法 A：先创建一个新的 string 变量，再用 set 指令賦值
-        var String_A : string = "123"
-        set String_A = ToString(Value_A)
+        # Use `ToString()` to convert any number type to a string.
+        # Method A: Create a [new constant] to store the converted string.
+        String_A := ToString(Value_A)
 
-        #    方法 B：使用这种方法的限制是必须使用常量，不能为变量
-        String_B := ToString(Value_B)
+        # Method B: Update an [existing variable].
+        var TempString : string = ""
+        set TempString = ToString(Value_B)
 
-        Print( "String_A = " + String_A + " String_B = " + String_B )
+        Print("Conversion results: " + String_A + " and " + TempString)
 
-# ⚠️ 目前 Verse **無法** 把 string 直接轉回 int / float
+        # Of course, the easier way is to embed directly in `Print` with {}, Verse will convert it for you automatically.
+        Print("The easier way: {Value_A} and {Value_B}")
+
+
+    # Important Notes
+    # 1. Currently, Verse cannot convert a string back to an int or float.
+    # 2. ⚠️⚠️⚠️ Type conversion converts the *result*, not the type of the field itself. So, Value_A and Value_B in the example do not change their types during execution.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # ═════════════════════════════════════════════════════════════════════════════
@@ -606,52 +751,65 @@ bites_value_conversion := class(creative_device):
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 13 – Common Type：logic
+#   Lesson 13 – Common Type: logic
 # ────────────────────────────────────────────────────────────────────────────
-#   目標:
-#   ▸ 認識 `logic` 类型（只有 `true` / `false`）  
-#   你可以更简单的理解 logic 就是 ON/OFF (true/flase)
-#       ▸ `true`  相當於 **ON**  
-#       ▸ `false` 相當於 **OFF**
+#   Goal: Learn about the `logic` type and how to use it to represent and toggle switch states.
+#   You can simply think of `logic` as ON/OFF (true/false).
+#   `true` : Represents "true," "yes," "on."
+#   `false`: Represents "false," "no," "off."
 
 # bites_logic_basic
 bites_logic_basic := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+    
+    # Scenario: We have two states, one for "Is the door locked?" and another for "Is the security system active?"
+    var IsDoorLocked : logic = true
+    var IsSecurityActive : logic = true
 
-    # Value
-    var LogicFlag : logic = true
-
-    # OnBTN_1
+    OnBegin<override>()<suspends>:void =
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+        
+    # OnBTN_1: Check the current state
     OnBTN_1(Agent:agent):void =
-        # 1. 判断當前狀態
-        if (LogicFlag = true):
-            Print("LogicFlag is ON")
+        # Use `if` to check the current value of a logic variable.
+        if (IsDoorLocked = true):
+            Print("The current state of the door is: Locked")   # `IsDoorLocked` is initially true, so this line will print.
         else:
-            Print("LogicFlag is OFF")          # ← 會打印這行
+            Print("The current state of the door is: Unlocked")
 
-    # OnBTN_2
+    # OnBTN_2: Toggle a single state
     OnBTN_2(Agent:agent):void =
-        # 2. 切換狀態（false ➜ true）
-        set LogicFlag = true
+        # To reverse a state (on->off, off->on), we need to check the current state, then set it to the opposite.
+        if (IsDoorLocked = true):
+            set IsDoorLocked = false    # If it's true, make it false.
+            Print("Action --- Unlocking")
+        else:    
+            set IsDoorLocked = true     # If it's false, make it true.
+            Print("Action --- Locking")
 
-        if (LogicFlag = true):
-            Print("LogicFlag is ON")            # ← 此時會打印 ON
+        if (IsDoorLocked = true):
+            Print("State after action: The door is locked.")
         else:
-            Print("LogicFlag is OFF")
+            Print("State after action: The door is unlocked.")
 
-    # OnBTN_3
+    # OnBTN_3: Compare two logic states
     OnBTN_3(Agent:agent):void =
-        # 3. logic 比較運算
-        AnotherFlag : logic = false
-
-        # = 　等於
-        if (LogicFlag = AnotherFlag):
-            Print("兩者相等")
+        # 1. Use `=` to check if two logic values are [equal].
+        #    Use case: Check if two systems have a consistent state.
+        if (IsDoorLocked = IsSecurityActive):
+            Print("Systems synced: Door lock and security states are consistent.")
         else:
-            Print("兩者不相等")                 # ← 本例會打印
-
-        # <>  不等於
-        if (LogicFlag <> AnotherFlag):
-            Print("Logic comparison <> 為 true") # ← 本例會打印
+            Print("Systems out of sync! Please check!")
+        
+        # 2. Use `<>` to check if two logic values are [not equal].
+        if (IsDoorLocked <> IsSecurityActive):
+            Print("Check result: States do not match.")
+        else:
+            Print("Check result: States match.")
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # ═════════════════════════════════════════════════════════════════════════════
@@ -659,44 +817,66 @@ bites_logic_basic := class(creative_device):
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 14 – Query
+#   Lesson 14 – Query & not
 # ────────────────────────────────────────────────────────────────────────────
+#   Goal: Learn to use `?` and `not` to write more concise and professional `if` conditional statements.
+
 # bites_query
 bites_query := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
 
-    # Value
-    @editable IsMorning : logic = false     # 用面板切換早/晚
+    # We define the variable's initial value directly in the code.
+    var IsMorning : logic = false
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
-        block:
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
 
-    # OnBTN_1
+    # OnBTN_1: Querying with `?`
     OnBTN_1(Agent:agent):void =
-        # 1. 在要查询的 Logic 字段後面加上 `?`
+        # Adding `?` after a `logic` variable is like asking it a question: "Are you true?"
+        # `if (IsMorning?)` is completely equivalent to `if (IsMorning = true)`, but this is the recommended style.
         if (IsMorning?):
-            Print("Logic Query : Good Morning!")
+            Print("Query `?`: It is morning.")
         else:
-            Print("Logic Query : Good Evening!")
+            Print("Query `?`: It is evening.")
 
-    # OnBTN_2
+    # OnBTN_2: Inverting a query with `not`
     OnBTN_2(Agent:agent):void =
-        # 2. not + Query
+        # The `not` keyword can [invert] the success/failure result of any failable expression.
+        # It is completely equivalent to `if (IsMorning = false)`.
         if (not IsMorning?):
-            Print("not Query   : Good Evening!")
+            Print("Query `not ?`: It is evening.")
         else:
-            Print("not Query   : Good Morning!")
+            Print("Query `not ?`: It is morning.")
 
-    # OnBTN_3
+    # OnBTN_3: Combining `not` with other comparisons
     OnBTN_3(Agent:agent):void =
-        # 3. not + 比較
+        # `not` can also be used to invert the result of other comparison operations.
         Value : int = 5
+        # `not Value > 20` means: "If the check 'Value > 20' is not true..."
         if (not Value > 20):
-            Print("Value NOT > 20")          # ← 本例會打印
+            Print("`not >`: {Value} is indeed not greater than 20.") # ← This example will print
         else:
-            Print("Value > 20")
+            Print("`not >`: {Value} is somehow greater than 20.")
+        
+        # Tip: `not Value > 20` is logically equivalent to `Value <= 20`.
+
+    # Simple Summary
+    #  - Use `if (LogicVariable?)` instead of `if (LogicVariable = true)`
+    #  - Use `if (not LogicVariable?)` instead of `if (LogicVariable = false)`
+    #  - `not` can invert the result of any conditional check.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Go back to your "Door Access System" code from Lesson 13.
+# 2. Find all instances of `if (IsDoorLocked = true)` and change them to the more professional `if (IsDoorLocked?)`.
+# 3. If you wrote a check like `if (HasKey = false)`, change it to `if (not HasKey?)`.
+# 4. Challenge: Using the `if-then` syntax from Lesson 8 and the knowledge from this lesson, implement a compound check:
+#    If the player [does not have the key] AND [the door is locked], print "You are locked out!"
+#    (Hint: `if (not HasKey?, IsDoorLocked?):`)
 # ═════════════════════════════════════════════════════════════════════════════
 
 
@@ -704,165 +884,214 @@ bites_query := class(creative_device):
 # ═════════════════════════════════════════════════════════════════════════════
 #   Lesson 15 – Scope
 # ────────────────────────────────────────────────────────────────────────────
-#   目標
-#   ▸ 體會「誰能看見誰」與「誰不能看見誰」  
-#   ▸ 4 種常見作用域層級 : Global、Class、Block、Function, 但是我们今天不学这些传统的内容
-#   ▸ 我将用更简单粗暴的方式说明 !!! 本小节课程请搭配教学视频学习
-#   ▸ 我们将 Scope 比作一个公司的组织
+#   Goal: Use the analogy of a company and its meetings to understand the logic of Scope.
 
-# 〓Layer_1 : 靠在代码最左侧的，就是 Global Scope
-# 这是一个名为 CEO 的全局 string field
-# 现在你知道了，字段也可以设置在 Class 外部
-CEO : string = "(Unreal)"                   # 所有 Layer 都能进入
+# 0. You should go through this lesson once for a preliminary understanding, but you don't need to grasp everything completely.
+#      Come back to review it after you finish Lesson 19. If it's still not perfectly clear, review it again after Lesson 35.
 
-# 现在你知道了，Function 也可以设置在 Class 外部
-Function_Scope_Mobile_Office():void =       # 所有 Layer 都能进入
-    # 〓Layer_2 : 这是第2层的 Scope
-    SpecialAssistant : string = "(Zoe)"     # 只在此函式内有效
-    Print ( "Mobile Office Meeting:" + CEO + SpecialAssistant )
+# 1. The 4 Common Scope Levels
+#   → Global: Anything at the far left of the code is in the Global Scope.
+#   → Class: Anything inside a Class is in the Class Scope.
+#   → Function: Anything inside a Function is in the Function Scope.
+#   → Block: The indented code block under statements like `if`, `loop`, etc.
+#   → Scope across Verse files: Remember how we can't use the same Class name in the same project?
+#     That's related to scope across files, but we'll cover that after Lesson 36.
 
-# bites_scope_office_a
+# 2. Observing Global Scope
+#   → Look at `CEO` and `Scope_Mobile_Office()`. They are a global Field and a global Function that can be used anywhere.
+#   → You now know that Fields and Functions can be defined outside of a Class. More things can too, which we'll learn later.
+#   → Resources at the same level in Global Scope can call each other, and there is `no sequential order` requirement.
+
+# 3. Observing Class Scope
+#   → Resources at the same level in Class Scope can also call each other, and there is also `no sequential order` requirement.
+#     In this example, we intentionally placed the constants `Manager` and `MeetingRoom1` at the very end of the class to prove this.
+#   → Observe Office A. We can have `Scope_Mobile_Office()` "enter" Office A, and we can have the `CEO` "participate" in the meeting.
+#   → Observe Office A and Office B. They both have their own `Room_1()`, and they do not interfere with each other.
+
+# 4. Observing Function Scope
+#   → Look at `Room_1()`. It can access `Manager`, which was created in the Class Scope, but it cannot access `Customer_1`, which was created in `MeetingRoom()`.
+#   → Inside a Function Scope, ⚠️ there is a `sequential order` requirement.
+#   → Look at `MeetingRoom()`. The order of execution is `Customer_1` > `if (MeetingRoom1?)` > `Customer_2` > `if (MeetingRoom2?)`.
+#   → Look at `MeetingRoom()`. `Customer_2` is created after the first `if`, so `if (MeetingRoom1?)` cannot access `Customer_2`.
+
+# 5. Observing Block Scope
+#   → Inside a Block Scope, ⚠️ there is a `sequential order` requirement.
+#   → Look at `if (MeetingRoom2?)`. There's a `LateEmployee` who is created at the very end of the Block Scope, so he can't participate in the earlier part of the meeting!
+
+
+# 〓 Global Scope
+CEO : string = "(Unreal)"   
+
+# 〓 Global Scope
+Scope_Mobile_Office():void = 
+    # 〓 Function Scope
+    SpecialAssistant : string = "(Zoe)"
+    Print("Mobile office meeting: Participants " + CEO + " and " + SpecialAssistant)
+    # Room_1() # ❌ `Room_1()` is a function inside Office A and B; it cannot be called directly from the global scope.
+
+# 〓 Global Scope
+# bites_scope_office_a (Office A)
 bites_scope_office_a := class(creative_device):
-    # 〓Layer_2
-    Manager : string = "(Ann)"     
+    # 〓 Class Scope
+    OnBegin<override>()<suspends>:void =
+        # 〓 Function Scope
+        Print ("Who will lead the meeting?")
+        Room_1()
+        MeetingRoom()
+        Scope_Mobile_Office()    
+
+    Room_1():void =
+        # 〓 Function Scope
+        Employee_3 : string = "(Jack)"
+        Print ( "Office A-Room1 Meeting:" + CEO + Manager + Employee_3)
+        # Print ( "Office A-Room1 Meeting:" + CEO + Manager + Employee_1)   # ❌ Cannot see Eva / Lily / Ben
+
+    MeetingRoom():void =
+        # 〓 Function Scope
+        Customer_1 : string = "(Lily)"
+
+        if (MeetingRoom1?):
+            # 〓 Block Scope
+            Employee_1 : string = "(Eva)"
+            Print ( "Meeting : " + Manager + Employee_1 + Customer_1)
+            # Print ( "Meeting : " + Manager + Employee_2 + Customer_2)    # ❌ Cannot see Isaac / Ben (not yet declared)
+
+        Customer_2 : string = "(Isaac)"
+
+        if (MeetingRoom2?):
+            # 〓 Block Scope
+            Employee_2 : string = "(Ben)"
+            Print ( "Meeting : " + CEO + Manager + Employee_2 + Customer_1 + Customer_2)
+
+            # Print ( "Meeting : " + CEO + Manager + LateEmployee + Customer_1 + Customer_2)    # ❌ Cannot see Late (not yet declared)
+            LateEmployee : string = "(Late)"
+
+    Manager : string = "(Ann)"   
     MeetingRoom1 : logic = true
     MeetingRoom2 : logic = true
 
-    # OnBegin
-    OnBegin<override>()<suspends>:void =
-        # 〓Layer_3 : 这是第3层的 Scope
-        Print ("Who will lead the meeting?")
-        Function_Scope_Mobile_Office()      # 呼叫 Layer_1 的函式
-        Room_1()                            # 呼叫 Layer_2 的函式
-        MeetingRoom()                       # 呼叫 Layer_2 的函式
-
-    # Room_1
-    Room_1():void =
-        Employee_3 : string = "(Jack)"      # 僅此函式可見
-        Print ( "Office A-Room1 Meeting:" + CEO + Manager + Employee_3)
-        # ⚠️ 看不到 Employee_1 / Customer_1 / Employee_2
-
-    # MeetingRoom
-    MeetingRoom():void =
-        Customer_1 : string = "(Lily)"
-        if (MeetingRoom1?):
-            # 〓Layer_4 : 这是第4层的 Scope
-            Employee_1 : string = "(Eva)"   # 僅此 if 內有效
-            Print ( "Meeting : " + Manager + Employee_1 + Customer_1)
-            # ⚠️ 看不到 Customer_2 / Employee_2 （尚未宣告）
-
-        Customer_2 : string = "(Isaac)"
-        if (MeetingRoom2?):
-            Employee_2 : string = "(Ben)"
-            Print ( "Meeting : " + Manager + Employee_2 + Customer_1 + Customer_2)    
-
-# bites_scope_office_b
+# 〓 Global Scope    
+# bites_scope_office_b (Office B)
 bites_scope_office_b := class(creative_device):
-
+    # 〓 Class Scope
     Manager : string = "(Peter)"
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
-        Function_Scope_Mobile_Office()      # 呼叫 Layer_1 的函式
+        # 〓 Function Scope
+        Scope_Mobile_Office()
         Room_1()
         Room_2()
 
     # Room_1
     Room_1():void =
+        # 〓 Function Scope
         Employee_1 : string = "(Sam)"
-        Print ( "Office B-Room1 Meeting:" + CEO + Manager + Employee_1 )     # ⚠️ 看不到 Eva
+        Print ( "Office B-Room1 Meeting:" + CEO + Manager + Employee_1 )
+        # Print ( "Office B-Room1 Meeting:" + CEO + Manager + Employee_2 )    # ❌ Cannot see Eva
 
     # Room_2    
     Room_2():void =
+        # 〓 Function Scope
         Employee_2 : string = "(Eva)"
-        Print ( "Office B-Room2 Meeting:" + CEO + Manager + Employee_2 )     # ⚠️ 看不到 Sam
-        
+        Print ( "Office B-Room2 Meeting:" + CEO + Manager + Employee_2 )    # ❌ Cannot see Sam
+        # Print ( "Office B-Room1 Meeting:" + CEO + Manager + Employee_1 )    # ❌ This Eva cannot see Sam
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# Come back to review this lesson after you finish Lesson 19. If it's still not perfectly clear, review it again after Lesson 35.
+# How to handle Scope across Verse files will be explained in a future advanced lesson.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 16 – Functions (1)
+#   Lesson 16 – Function (1): The Building Blocks of Code
 # ────────────────────────────────────────────────────────────────────────────
-#   目标: 初步认识 Function
+#   Goal: Get a formal introduction to functions, and learn how to define and call a simple one.
+
 # bites_function_1
 bites_function_1 := class(creative_device):
 
-    # OnBegin
+    # `OnBegin` is a special function of `class(creative_device)` that we can just use directly.
     OnBegin<override>()<suspends>:void =
-        Function_A()
-        Function_B()
+        DisplayWelcomeMessage()
+        PlayStartSound()
 
-    # Function_A 
-    Function_A():void =
-        Print("Function_A is working!")
+    # --- Below are the functions we've defined ourselves ---
+    # Define a function named DisplayWelcomeMessage
+    DisplayWelcomeMessage():void =
+        # The purpose of this function is to print a welcome message.
+        Print("Welcome to my island!")
 
-    # `Function_A` 是方法的名字, 依照设计的场景与需求自己定义合适的命名
-    # 建立一个方法需要 `方法名字` + `()` + `:` + `void` + `=`, 结果就是 `Function_A():void=`
-    # 初学最好的方法，直接 Copy `Function_A():void=` 然后重新命名 `Function_A`
-    # `()` 括好内可以设置方法需要的参数, 并在方法中使用这些参数，现在是空的，表示这个方法不需要任何的参数代入就可以执行
-    # `void` 代表这个参数不会返回任何的参数, 在学习 Lesson 19 之前，我们就保持使用 void 就可以了
+    # Define a function named PlayStartSound
+    PlayStartSound():void =
+        # Imagine there's code here to play a sound effect.
+        Print("Played a 'beep' sound effect.")
 
-    # Function_B 
-    Function_B():void =
-        Print("Function_B is working!")
+    # Function Syntax Breakdown
+    # Let's use `DisplayWelcomeMessage():void =` as an example:
+    #   → `DisplayWelcomeMessage` : The name of the function, which you define. It's best if it describes what the function does.
+    #   → `()`                    : The parameter list. It's empty for now, meaning no outside information is needed to run this function.
+    #                             (We'll learn how to pass parameters in Lesson 18)
+    #   → `:void`                 : The return type. `void` means this function does "not return" any result after it finishes.
+    #                             (We'll be using `void` until Lesson 19)
+    #   → `=`                     : The assignment operator, indicating that the body of the function is the indented code block that follows.
 
-    # 命名建议: 
-    #   Class : 所以字母一律小写，到後面的课程你就会明白为什么
-    #   Function : 采用每个字的开头字母大写
-
+    # Naming Style Suggestions
+    #   → Function Name (e.g., `DisplayWelcomeMessage`): Recommended to use PascalCase (first letter of each word capitalized).
+    #   → Class Name (e.g., `bites_function_1`): Recommended to use all lowercase with words separated by underscores.
+    #     After Lesson 36, you will learn usage patterns like `BitesFunction_1 : bites_function_1 = bites_function_1{}`.
+    
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# At this point, you can go back and review the Functions from the previous lessons.
 # ═════════════════════════════════════════════════════════════════════════════
 
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 17 – Functions (2)
+#   Lesson 17 – Functions (2): Modifying Variables
 # ────────────────────────────────────────────────────────────────────────────
-#   目标: 创建 Function 来改变现有的变数
+#   Goal: Create a Function that can change existing variables.
+
 # bites_function_2
 bites_function_2 := class(creative_device):
-
-    # 在引用的 UEFN 装置命名时，推荐使用`大写缩写` + `_` 的格式
+    # When naming referenced devices, it's recommended to use a naming convention like `ALL_CAPS_` format.
+    # This makes it easier for game designers to identify them in UEFN and improves readability in the Verse code.
     @editable BTN_AddMana : button_device = button_device{}
     @editable BTN_SubMana : button_device = button_device{}
 
     # Value
-    var MyMana : int = 10   # 当前魔力
-    AddMana : int = 5
-    SubMana : int = -5
+    var MyMana : int = 10      # Current mana
+    AddAmount : int = 5      # Amount to add
+    SubAmount : int = -5     # Amount to subtract (achieved with a negative number)
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
-        Print("游戏开始，初始魔力为：{MyMana}")
+        Print("Game start, initial mana is: {MyMana}")
         BTN_AddMana.InteractedWithEvent.Subscribe(OnAddMana)
         BTN_SubMana.InteractedWithEvent.Subscribe(OnSubMana)
 
-    # OnAddMana 
+    # OnAddMana
     OnAddMana(Agent:agent):void =
-        # 对 MyMana 使用 set 命令来增加 AddMana
-        set MyMana += AddMana
-        Print("MyMana = {MyMana}")
+        set MyMana += AddAmount
+        Print("Mana increased! Current mana = {MyMana}")
 
-    # OnSubMana 
+    # OnSubMana
     OnSubMana(Agent:agent):void =
-        # 对 MyMana 使用 set 命令来增加 SubMana
-            # 因 SubMana 是负数，所以最后的结果将是减法
-        set MyMana += SubMana
-        Print("MyMana = {MyMana}")
+        # Use the `set` command on MyMana to add SubAmount
+        #   Since SubAmount is negative, the final result will be a subtraction.
+        set MyMana += SubAmount 
+        Print("Mana decreased! Current mana = {MyMana}")
 
-    # ▼▼▼ 执行流程解析 (当按下 BTN_AddMana)
-    # 1. 玩家按下按钮，触发 InteractedWithEvent 事件。
-    # 2. OnBegin 中的 Subscribe 让系统直接呼叫 OnAddMana(Agent:agent) 函式。
-    # 3. 函式内部执行 `set MyMana += AddMana`，MyMana 从 10 变为 15 (10 + 5)。
-    # 4. Print 函式在日志中印出结果："MyMana = 15"。
+    # ▼▼▼ Execution Flow Breakdown (when BTN_AddMana is pressed)
+    # 1. The `Subscribe` in `OnBegin` starts a new thread to listen for the Button Device's `InteractedWithEvent`.
+    # 2. The player presses the button, triggering the `InteractedWithEvent`, which then executes `OnAddMana(Agent:agent):void=`.
+    # 3. The code inside the `OnAddMana` function executes in order:
+    #    `set MyMana += AddAmount`, increasing MyMana by 5.
+    #    Then, `Print` outputs the result after the increase.
 
-    # ▼▼▼ 思考一下...
-    # 你是否注意到 OnAddMana 和 OnSubMana 这两个函式内部的程式码结构几乎完全一样？
-    # 它们都修改了 MyMana，然后都 Print 出来。这种程式码的「重复」是我们要尽量避免的。
-    # 在下一课，我们将学习如何用「函式参数」来解决这个问题，让程式码更简洁、更强大！
+    # ▼▼▼ Food for Thought...
+    # Have you noticed that the `OnAddMana` and `OnSubMana` functions are almost identical in structure, apart from the value being changed?
+    # They both modify `MyMana` and then `Print` the result.
+    # In the next lesson, we will learn how to use "function parameters" to create a more concise and manageable solution.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # ═════════════════════════════════════════════════════════════════════════════
@@ -870,58 +1099,72 @@ bites_function_2 := class(creative_device):
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 18 – Functions (3)
+#   Lesson 18 – Functions (3): Parameters
 # ────────────────────────────────────────────────────────────────────────────
-#   目标: 创建可输入参数的 Function
+#   Goal: Learn to create parameters for functions to eliminate code duplication and create truly flexible "functional modules".
+
+# ─── Creating a Method with Parameters
+# First, let's look at the function `HandleManaEvent(Delta:int):void =`
+#   Inside the `()`, we define the parameters this function needs to receive.
+#   The format is `Name:Type`, for example: (ID:int), (Health:float), (Name:string).
+#   This new field will only be effective within the scope of this function and cannot have the same name as a field in an outer scope.
+#   Observe where `HandleManaEvent` is called in the code, and what parameters they input and what the results are.
+
+# ─── Using a Method with Parameters
+# To use a method with parameters, you must satisfy the input parameters it requires.
+#   Look at the `OnAddMana` method. It calls `HandleManaEvent` and provides the necessary parameter inside the `()`.
+#   Two common errors when calling methods:
+#      1. Not providing the corresponding parameters, or the parameter type is wrong, or the number of parameters is incorrect.
+#      2. A common beginner mistake: when you create a method that doesn't need parameters, don't forget the `()`!
+
+# ─── Multiple Parameters
+# Next, let's look at the function `PrintInitValues(Message:string, Value:int):void =`
+#   This is a function with two parameters.
+#   Observe where `PrintInitValues` is called in the code, and what parameters they input and what the results are.
+
 # bites_function_3
 bites_function_3 := class(creative_device):
-
     @editable BTN_AddMana : button_device = button_device{}
     @editable BTN_SubMana : button_device = button_device{}
 
-    # Value
-    var MyMana  : int = 10
-    AddMana   : int = 5
-    SubMana   : int = -5
+    var MyMana      : int = 10
+    AddAmount     : int = 5
+    SubAmount     : int = -5
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
-        PrintInitValues(AddMana, SubMana)
+        PrintInitValues("Initial amount to add", AddAmount)   # When calling, "Initial amount to add" and AddAmount are the parameters we input.
+        PrintInitValues("Initial amount to subtract", SubAmount)
+        # PrintInitValues("Missing one parameter")   # ❌ Missing a parameter, this will cause an error.
+
         BTN_AddMana.InteractedWithEvent.Subscribe(OnAddMana)
         BTN_SubMana.InteractedWithEvent.Subscribe(OnSubMana)
 
-    # PrintInitValues 
-    PrintInitValues(AddValue:int, SubValue:int):void =
-        Print("AddMana = {AddValue}, SubMana = {SubValue}")
+    # HandleManaEvent
+    HandleManaEvent(Delta:int):void =   # Delta is an integer type "parameter".
+        set MyMana += Delta             # When the method executes, MyMana will be increased by the int parameter assigned to Delta.
+        PrintInitValues("Mana change complete! Current mana", MyMana)
 
-    # 创建一个名为 `HandleManaEvent` 的方法
-        # 在 () 内设置这个函式需要接收的参数(Parameter)
-        # 格式为 `Field`:`Type`，例如: (ID:int)、(Health:float)、(Name:string)
-        # 这个 Field 只会在 Function 中的作用域生效, 同样不能与上层作用域的命名重复
-    # HandleManaEvent 
-    HandleManaEvent(Delta:int):void =   # 这里设置了一个名为 Delta 的 Field，类型是 int 
-        set MyMana += Delta             # 当方法执行的时候，MyMana 就会加上 Delta 所被赋予的 int 参数
-        Print("MyMana = {MyMana}")
+    # PrintInitValues
+    PrintInitValues(Message:string, Value:int):void =   # When defining, Message and Value are "parameters".
+        Print("{Message} = {Value}")
 
+    # OnAddMana and OnSubMana now act as "task dispatchers".
+    OnAddMana(Agent:agent):void =
+        PrintInitValues("Used potion, mana restored", AddAmount)
+        HandleManaEvent(AddAmount)      # We input AddAmount (value 5) as the parameter.
+        # HandleManaEvent()             # ❌ No parameter provided, will cause an error.
+        # HandleManaEvent               # ❌❌❌ Be careful, omitting `()` won't cause an error here, but it might lead to issues after building.
 
-    # 当我們订阅按钮 InteractedWithEvent 时, API 要求對應的 Function 必須能接收一個 agent 類型的參數。
-        # 如何识别每个功能需要输入什么样的参数? 我们会在 Lesson - 21 学习到
-        # 在当前案例中，我们还不会使用到 agent
-    # `agent` 是一个代理，通常指與裝置互動的玩家或 NPC, 而 `Agent` 就是自定义的 Field，所以你可以尝试修改 Agent 的命名，但你一定修改 agent 就会报错
-    # OnAddMana 
-    OnAddMana(Agent:agent):void =  
-        HandleManaEvent(AddMana)   
+    OnSubMana(IamAgent:agent):void =
+        PrintInitValues("Used spell, mana consumed", SubAmount)
+        HandleManaEvent(SubAmount)      # We input SubAmount (value -5) as the parameter.
 
-    # OnSubMana 
-    OnSubMana(Agent:agent):void =
-        HandleManaEvent(SubMana)
-
-    # ▼▼▼ 执行流程解析 (当按下 BTN_AddMana)
-    # 1. 玩家按下按钮，因为 OnBegin 中的 Subscribe 设置，系统自动呼叫 OnAddMana 函式。
-    # 2. OnAddMana 函式接着呼叫 HandleManaEvent(AddMana)，并将 AddMana 的值 (也就是 5), 作为「引数 (Argument)」传递过去。
-    # 3. 在 HandleManaEvent(Delta:int) 中，名为 Delta 的「参数 (Parameter)」接收到值 5。
-    # 4. 执行 `set MyMana += Delta`，使得 MyMana 从 10 变为 15 (10 + 5)。
-    # 5. 最后 Print 函式在日志中印出结果："MyMana = 15"。
+    # ─── About (Agent:agent)
+    #   When we use `Subscribe` for events like button interactions, the Verse API requires that our handler function
+    #   [must] have a parameter of type `(Agent:agent)` to receive information about "who triggered this event."
+    #   Even if we don't use this information for now, we must include it as required, or it will cause an error.
+    #   As explained earlier in the course, `agent` is the type, and `Agent` is the name we give the parameter.
+    #   How do we know what parameters each function needs? We'll learn that in Lesson 21.
 
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # ═════════════════════════════════════════════════════════════════════════════
@@ -929,56 +1172,84 @@ bites_function_3 := class(creative_device):
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-#   Lesson 19 – Functions (4)
+#  Lesson 19 – Functions (4): Return Values
 # ────────────────────────────────────────────────────────────────────────────
-#   目标 : 创建可 Return 参数的 Function, 这次我们要对 void 动手了!!!
+# Goal: Create a function that can return a result. It's time to do something about `void`!
+
+# ─── Creating a Function That Can Return a Result
+# First, let's look at the function `HandleManaEvent(Delta:int):int =`
+#   1. Modify the return type: Change the `:void` at the end of the function to the data type you want to return,
+#      for example, `:int` or `:logic`.
+#   2. Use `return`: In the function body, use the `return` keyword, followed by the specific value you want to return.
+#      The type of this value must exactly match the return type you declared in step 1!
+
+# ─── Getting the Value from a Function with a Return Result
+# We've created a function that can return a result, so now we need to get that result.
+#   Look at how the `OnAddMana` method calls `HandleManaEvent`.
+#   First, we create a new constant `NewManaValue`.
+#   Here, using `:=` is equivalent to `: int =`. When capturing a return value, `:=` automatically infers the type of the returned value.
+#   Then, its value becomes the result returned by `HandleManaEvent`.
+
+# ─── Using if Statements in a Function with a Return Result
+#   Functions often need `if` statements to process results, but be aware that `if` must be paired with `else` in this context.
+#   Look at the `CheckMana` function. Did you notice? This function can have multiple `return` results.
+#   You can see more applications of multiple `return`s in the Verse-Bites project.
+
 # bites_function_return
 bites_function_return := class(creative_device):
 
     @editable BTN_AddMana : button_device = button_device{}
     @editable BTN_SubMana : button_device = button_device{}
 
-    # Value
-    var MyMana  : int = 10
-    AddMana : int = 5 
-    SubMana   : int = -5   # 减少量
+    var MyMana      : int = 10
+    AddAmount     : int = 5
+    SubAmount     : int = -5
 
-    # OnBegin
     OnBegin<override>()<suspends>:void =
         BTN_AddMana.InteractedWithEvent.Subscribe(OnAddMana)
         BTN_SubMana.InteractedWithEvent.Subscribe(OnSubMana)
 
-    # OnAddMana 
+    # OnAddMana
     OnAddMana(Agent:agent):void =
-        # ResultValue : int = HandleManaEvent(AddMana)
-        ResultValue := HandleManaEvent(AddMana)
-        Print ("MyMana = {ResultValue}")
-
-        NoMana := CheckMana(ResultValue)
-        if (NoMana?):
-            Print ("MyMana < 0")
+        # First, create a new constant `NewManaValue`, whose value is the result of `HandleManaEvent`.
+        NewManaValue := HandleManaEvent(AddAmount)
+        # Then, we input the result of this value into the PrintManaState method to print the result.
+        PrintManaState(NewManaValue)
 
     # OnSubMana 
     OnSubMana(Agent:agent):void =
-        ResultValue := HandleManaEvent(SubMana)
-        Print ("MyMana = {ResultValue}")
+        PrintManaState(HandleManaEvent(SubAmount))    # A more concise usage.
 
-        NoMana := CheckMana(ResultValue)
-        if (NoMana?):
-            Print ("MyMana < 0")
+    # PrintManaState
+    PrintManaState(ManaValue:int):void =
+        # Here, we use the CheckMana method to check and get the state's logic value.
+        IsManaNegative := CheckMana(ManaValue)
+        if (IsManaNegative?):
+            Print("Warning: Mana value {ManaValue} is now negative!")
+        else:
+            Print("Mana value {ManaValue} is still sufficient!")
 
-    # HandleManaEvent (return int) 
+    # --- Function Definitions with Return Values ---
+    # 1. This function returns a result of type `int`.
     HandleManaEvent(Delta:int):int =
         set MyMana += Delta
-        return MyMana
+        return MyMana       # `return` followed by MyMana means the function will return MyMana as the result.
 
-    # CheckMana (return logic) 
-    CheckMana(Value:int):logic=   
+    # 2. This function returns a result of type `logic`.
+    CheckMana(Value:int):logic =
         if (Value < 0):
-            return true
+            return true     # If mana is less than 0, return true.
         else:
-            return false
+            return false    # Otherwise, return false.
 
-# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+    # ─── Common Questions
+    #   1. Can `HandleManaEvent` work even if I delete `return`? Yes, when a function has a return type, as long as the very last line
+    #      evaluates to the correct type, it will work. But! Please maintain good habits and add `return` where it belongs.
+    #   2. When a function has an `if` statement, does it need an `else`? Yes, if the `if` could be the last expression in the function,
+    #      it must have an `else` to guarantee the function always produces a value of the declared return type.
+
+
+# ── TRY IT YOURSELF (The Ultimate Refactoring Challenge!) ──────────────────────
+# This is a milestone in your learning. Take a break and review the previous lessons. The upcoming lessons
+# will require you to have a solid understanding of lessons 1-19.
 # ═════════════════════════════════════════════════════════════════════════════
-
