@@ -2,7 +2,7 @@
 #   Verse-Bites: Level 1 (UEFN Verse Tutorial)
 #   Author: UnrealRider
 #   Project Homepage:   https://github.com/UnrealRider/Verse-Bites
-#   Description: This Verse file contains the complete source code for the Verse-Bites Level 1 tutorial series (Lessons 00-19).
+#   Description: This Verse file contains the complete source code for the Verse-Bites Level 1 tutorial series (Lessons 00-22).
 # -----------------------------------------------------------------------------
 #   Copyright & License:
 #   Copyright (c) 2025 UnrealRider
@@ -13,7 +13,7 @@
 # --- Lesson Content Starts Below ---
 
 # Lesson-Bites Level 1
-# Version: beta 1.0
+# Version: beta 1.1
 
 using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
@@ -1253,3 +1253,253 @@ bites_function_return := class(creative_device):
 # This is a milestone in your learning. Take a break and review the previous lessons. The upcoming lessons
 # will require you to have a solid understanding of lessons 1-19.
 # ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#   Lesson - 20 : Option
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn to use the `option` type to safely handle values that "might not exist."
+# You can think of it as a [box]: it either [contains an integer] or it's [empty].
+# For example: a player might have a weapon equipped, or they might not; a treasure chest might contain an item, or it might be empty.
+# To handle these situations safely, Verse provides the [option type].
+
+# bites_option
+bites_option := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+
+    # Creating variables of an option type
+    # Add `?` before any type to make it an option type.
+    # An option type can hold two kinds of values: one is `false`, and the other is a value of the original type.
+    var oOption_A : ?int = false         # Initialize with `false`
+    var oOption_B : ?int = option{72}  # Initialize with a value of 72, using the `option{}` syntax, then fill in `72`
+    var oOption_C : ?float = false       
+    var oOption_D : ?string = false   
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+
+    # Print_oOption_A  
+    Print_oOption_A():void=  
+        # ‼️ To get the value of an Option, you must use the Query method from Lesson 14. Remember? Go back and review!
+        # Add `?` after `oOption_A` to query it.
+        # `Option_A` uses `:=` to get the same type and value as `oOption_A`.
+
+        if (Option_A := oOption_A?):    
+            Print ("If oOption_A has a value, display oOption_A = {Option_A}")
+        else:
+            Print ("If oOption_A has no value, display oOption_A = false")
+
+        # Naming Suggestion
+        #   Have you noticed the naming convention I use for option types?
+        #   I add a lowercase `o` at the beginning of the name, which makes it easy to identify this field as an Option type.
+        #   When querying for the value, I remove the `o` to represent the actual result.
+
+    # OnBTN_1
+    OnBTN_1(Agent:agent):void =
+        Print_oOption_A()
+
+    # OnBTN_2
+    OnBTN_2(Agent:agent):void =
+        # How to set the value of an option type
+        # It's also done with `set`, but you must add the `option{}` syntax, then fill in the value you want to input.
+        set oOption_A = option{55}
+        Print_oOption_A()
+
+    # OnBTN_3
+    OnBTN_3(Agent:agent):void =
+        # To set an option to a state with no value, just `set` it directly to `false`.
+        set oOption_A = false
+        Print_oOption_A()
+
+    # `option` is used for handling special types, like `player` and `agent`.
+    #   This is because when creating fields of these types, you can't directly assign a specific value; the value needs to be passed in during runtime.
+    #   For example, `var FirstPlayer : player = `, you can't provide a specific value after `=`.
+    #   The correct way is `var FirstPlayer : ?player = false`. We'll learn the detailed usage in later lessons.
+
+    # Extended Topic
+    # (1). When to use `A := 6`? (2). When to use `A : int = 6`? (3). When to use `A : int`?
+    # You can understand it more simply like this:
+    #   - When you want to create a new field, use `: int =`.
+    #   - When your field is equal to another field, use `:=`, for example when querying or getting a return value from a Function.
+    #   - In fixed-functionality syntax where you only need the field and type, such as when creating a Function with input Parameters.
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#   Lesson - 21 : Array (1)
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn to use arrays to store and manage a sequential series of data.
+# In programming, we often need to store an ordered "series" of data, like a team's scores, a list of items in an inventory, etc.
+#
+# Arrays have two core rules:
+# 1. All lockers must contain items of the [same type]. (For example, in an `[]int` array, each locker can only hold an integer).
+# 2. Each locker has a unique number, which is its [Index].
+# ‼️ Important Rule: Index numbers always start from [0]! The first locker is number 0, the second is 1, and so on.
+
+# bites_array_1
+bites_array_1 := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+
+    # Create an Array
+    #   Add `[]` before any type to create an array of that type.
+    #   Array values need to use the `array{}` syntax, and each "value" is placed inside, separated by commas.
+    # Below, `Array_1`'s `array{}` has no values (an empty row of lockers).
+    var Array_1 : []int = array{}
+    # Below, `Array_2`'s `array{}` has 5 values. No comma is needed after the last value.
+    var Array_2 : []int = array{10, 20, 30, 40, 50}
+    var Array_3 : []float = array{25.56, 10.7, 15.5, 3.5}       # `Array_3` has 4 values in its `array{}`.
+    var Array_4 : []logic = array{false, false, true}          # `Array_4` has 3 values in its `array{}`.
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+
+    IndexToGet : int = 3    # Prepare an int field to represent which locker number we want to open.
+
+    # OnBTN_1: Accessing values in an array
+    OnBTN_1(Agent:agent):void =
+        # To access a value in an array, you must use `if`, because the value you're trying to get might not exist (e.g., you look for locker #10 when there are only 5).
+        #   Use the syntax `Array_2[]`, and inside `[]`, enter the index ID you want, which must be an int.
+        #   Remember: in code, numbers start from 0.
+        if (Value := Array_2[1]):       # Input the index ID you want in `[]`, then test the result.
+            Print("Successfully opened locker #1, the value inside is: {Value}")
+        else:
+            Print("Failed to open locker #1, perhaps this number doesn't exist.")   # If the input index ID has no value, it will fail, and you'll see this message.
+ 
+    # OnBTN_2
+    OnBTN_2(Agent:agent):void =
+        # You can use a field for the integer index. This can be more intuitive in some development processes and allows you to modify the value to retrieve.
+        if (Value := Array_2[IndexToGet]):
+            Print("Successfully opened locker #{IndexToGet}, the value inside is: {Value}")
+        else:
+            Print("Failed to open locker #{IndexToGet}!")
+
+    # OnBTN_3: Getting the length of an array
+    OnBTN_3(Agent:agent):void =
+        # Add `.Length` after the Array field, and it will directly return the total number of values in that Array field (as an int).
+        ArrayLength := Array_2.Length        
+        Print("Array_X Length = {ArrayLength}")
+        # Or use a more direct method
+        Print("Array_X Length = {Array_2.Length}")
+
+    # Remember in `Lesson 12 – Data Type Conversion`, the method to convert a float to an int?
+    #   `if (NewInt_B := Int[Value_B]):`
+    #   Did you notice? When getting or indexing inside an `if`, `[]` is used instead of `()`. Why?
+    #   This is related to failable expressions, but for now, you just need to remember that most of the time when you get or index inside an `if`, you use `[]`.
+
+    # Note: This course tries to reduce the number of new terms during the learning process.
+    #   For example, in the official documentation, the items inside an Array are called Elements.
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#   Lesson - 22 : For and Range 
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn to use the `for` loop to automate repetitive tasks, especially for iterating over all elements in an array.
+
+# When we need to perform the [same operation] on a series of data (like all elements in an array),
+# writing the code one by one is very tedious. This is when we need a [loop] to help us automate the repetitive work.
+#
+# You can think of a `for` loop as a [hardworking robot]. You give it a list (like a row of lockers)
+# and a set of instructions. It will start from the first one and faithfully execute your instructions on [every single] locker
+# until it's all done.
+
+# bites_for
+bites_for := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+    @editable BTN_4 : button_device = button_device{}
+
+    var Array_1 : []int = array{10, 20, 30}
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+        BTN_4.InteractedWithEvent.Subscribe(OnBTN_4)
+
+    # OnBTN_1
+    OnBTN_1(Agent:agent):void =
+        # `range` uses the syntax `start_integer..end_integer` to create a sequence of numbers.
+        #   Method to create a range: `starting int value` + `..` + `ending int value`
+        # `for` is a loop syntax. `for` will complete its internal loop before executing the next piece of code.
+        # The code below commands the robot to count from 0 to 2.
+        Print ("Robot starts counting...")   # This code executes before the for loop.
+
+        for (Count := 0..2):
+            # The code inside the loop body will be executed 3 times (for 0, 1, 2).
+            Print("Current count: {Count}")
+
+        Print ("...counting finished.")    # This code executes after the for loop.
+
+    # OnBTN_2
+    OnBTN_2(Agent:agent):void =
+        # Using `for` to process an array.
+        # You can use a range to create the scope for indexing an array.
+        for (Index := 0..2):
+            if (Value := Array_1[Index]):       # Remember this from the last lesson?
+                Print("Step1 : Array_1 ID_{Index} = {Value}")
+
+        # You can also use an integer-type field instead of literal numbers in the range.
+        #   This way, you can dynamically modify the range's scope.
+        #   Did you notice? In Verse code, parameters of the same type can all be handled using fields.
+        var RangeMini : int = 0
+        var RangeMax : int = 1
+        for (Index := RangeMini..RangeMax):
+            if (Value := Array_1[Index]):
+                Print("Step2 : Array_1 ID_{Index} = {Value}")
+
+        # In many cases, you'll need to iterate through all items in an array, making a fixed range inconvenient.
+        #   We can directly get the total count of the array, then `-1` to automatically adjust the range.
+        #   We use `-1` because code starts counting from `0`, so the total count must be reduced by 1 to get the max index.
+        for (Index := 0..Array_1.Length - 1):
+            if (Value := Array_1[Index]):
+                Print("Step3 : Array_1 ID_{Index} = {Value}")
+
+    # OnBTN_3
+    OnBTN_3(Agent:agent):void =
+        # Next, we'll introduce a method that doesn't use `range`. This is the more common method.
+        #   In a `for` loop, use the `Key -> Element : Array_1` syntax. Here, `Key` and `Element` are custom-named fields.
+        #   When indexing an `Array` in a `for` loop, `Key` will equal `0..Array_1.Length - 1`.
+        #   `Element` is the value obtained after indexing.
+        for (Key -> Element : Array_1):
+            Print("Step1 : {Element} in Array_1 at index {Key}")
+
+        # When iterating through an Array, I usually name the `Key` as `Index` directly, for better readability.
+        #   And `Element` is the actual result of your Array's value, which you can name according to your project's needs.
+        for (Index -> Value : Array_1):
+            Print("Step2 : {Value} in Array_1 at index {Index}")
+
+    # OnBTN_4
+    OnBTN_4(Agent:agent):void =
+        # This is a more concise method for iterating through all items in an array.
+        #   It directly omits the `Key`, using `Element : Array_1`.
+        #   Does this notation look familiar? Go review the extended topic in `Lesson 20`!
+        for (Value : Array_1):
+            Print("Array_1 = {Value}")
+
+    # ─── Summary 
+    #   - `for (i := 0..N)`: Executes a block of code N+1 times.
+    #   - `for (Index -> Value : MyArray)`: Iterates through an array, getting both the index and the value. (Most common)
+    #   - `for (Value : MyArray)`: Iterates through an array, getting only the value.
+
+    # `for` has other advanced uses that will be covered in advanced lessons.
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
+
