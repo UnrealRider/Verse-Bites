@@ -88,16 +88,17 @@
     * Learn how to create a function with a "return value" that provides a result after its execution.
     * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
----
-#### Lessons 20 - 35 📦 (Completed - Awaiting Release)
-* #### Lesson 20 – Block | Placeholder
-    * Understand the use of the `block` expression, primarily as a temporary code placeholder in functions or control flows.
-
-* #### Lesson 21 – Option | Optional Values
+* #### Lesson 20 – Option | Optional Values
     * Learn how to handle a special type of variable that may "have a value" or "have no value."
+      
+* #### Lesson 21 – Array (1) Creation & Access
+    * Learn how to create arrays, access and modify specific elements by index, and get the array's length.
 
-* #### Lesson 22 – API & Device Interaction
-    * Learn how to use UEFN's built-in devices and call their functions, as well as how to view the Verse API files to discover more functionalities.
+* #### Lesson 22 – For | Looping
+    * Learn to use the `for` loop to iterate over a range or all elements of an array.
+      
+---
+#### Lessons 23 - 36 📦 (Completed - Awaiting Release)
 
 * #### Lesson 23 – Array (1) Creation & Access
     * Learn how to create arrays, access and modify specific elements by index, and get the array's length.
@@ -126,13 +127,16 @@
 * #### Lesson 31 – Tuple (3) Function Return
     * Learn how to make a function return a `tuple`, allowing it to pass back multiple results of different types at once.
 
-* #### Lesson 32 – suspends Keyword & spawn
+* #### Lesson 32 – suspends & spawn & Sleep
+    
+* #### Lesson 33 – loop, return & break
   
-* #### Lesson 33 – Sleep
-  
-* #### Lesson 34 – loop, return & break
-  
-* #### Lesson 35 – Class
+* #### Lesson 34 – Class (1)
+
+* #### Lesson 35 – Class (2)
+
+* #### Lesson 36 – API & Device Interaction
+    * Learn how to use UEFN's built-in devices and call their functions, as well as how to view the Verse API files to discover more functionalities.
 
 ---
 
