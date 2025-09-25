@@ -84,13 +84,13 @@ The entire open-source content system is divided into four main parts:
 
 ### Latest Update
 
-  * **Date:** 2025/09/22 (UTC)
+  * **Date:** 2025/09/25 (UTC)
   * **Changes:**
-      * `Lesson-Bites`: Added beta code for lessons 20-22.
+      * `Lesson-Bites`: Added beta code for lessons 23-24.
 
 ### Next Planned Update
 
-  * `Lesson-Bites`: Update beta code for lessons 23-26.
+  * `Lesson-Bites`: Update beta code for lessons 25-26.
   * `Lesson-Bites`: Update short video tutorials for lessons 0-5.
 
 -----
