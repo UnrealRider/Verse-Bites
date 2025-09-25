@@ -2,7 +2,7 @@
 #   Verse-Bites: Level 1 (UEFN Verse Tutorial)
 #   Author: UnrealRider
 #   Project Homepage:   https://github.com/UnrealRider/Verse-Bites
-#   Description: This Verse file contains the complete source code for the Verse-Bites Level 1 tutorial series (Lessons 00-22).
+#   Description: This Verse file contains the complete source code for the Verse-Bites Level 1 tutorial series (Lessons 00-24).
 # -----------------------------------------------------------------------------
 #   Copyright & License:
 #   Copyright (c) 2025 UnrealRider
@@ -13,7 +13,7 @@
 # --- Lesson Content Starts Below ---
 
 # Lesson-Bites Level 1
-# Version: beta 1.1
+# Version: beta 1.2
 
 using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
@@ -1503,3 +1503,224 @@ bites_for := class(creative_device):
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # ═════════════════════════════════════════════════════════════════════════════
 
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#   Lesson - 23 : Array (2) - Adding and Modifying Arrays
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn how to add elements to, modify, and dynamically build an array.
+
+# bites_array_2
+bites_array_2 := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+
+    var IntBOX : []int = array{}
+    var FloatBOX : []float = array{}
+    var LogicBOX : []logic = array{}
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+
+    # A helper function to print the current state of IntBox, making it easy to observe changes.
+    PrintArray(StepID:int):void=
+        Print("Step_{StepID} IntBOX Length = {IntBOX.Length}")
+        for (Index -> Value : IntBOX):
+            Print("IntBOX Index_{Index} = {Value}")
+
+    # OnBTN_1: Adding elements to an array
+    OnBTN_1(Agent:agent):void =
+        # Step 1: Initial state. The array is empty, so nothing will be printed.
+        PrintArray(1)
+
+        # Step 2: Adding elements to the array.
+        #   Use `+=` to [append] new elements to the end of the array. It's like adding a new locker to the end of the row.
+        #   The elements to be added must be placed in `array{}`.
+        set IntBOX += array{10}          # IntBox is now array{10}
+        PrintArray(2)
+
+        # Step 3: You can append multiple elements at once.
+        set IntBOX += array{20, 15}      # IntBox is now array{10, 20, 15}
+        PrintArray(3)
+
+        # Step 4: Use `=` to directly [overwrite] the entire array. This example shows clearing it, so it resets every time the button is pressed.
+        set IntBOX = array{}             # IntBOX is now an empty array{}
+        PrintArray(4)
+        
+    # OnBTN_2: Combining and modifying array elements
+    OnBTN_2(Agent:agent):void =
+        # Step 1: Arrays can be combined using `+`.
+        IntBOX_2 : []int = array{3, 1}
+        IntBOX_3 : []int = array{0}
+        set IntBOX = IntBOX_2 + array{5, 4} + IntBOX_3   # The result for IntBOX is array{3, 1, 5, 4, 0}
+        PrintArray(1)
+
+        # Step 2: Modifying an element at a specific index.
+        #   When we add elements, we use `set` directly, but that action adds elements to the array, it doesn't modify them.
+        #   Since the index might not exist, this operation is a [failable expression] and requires `if`. For example, if you input an index greater than the array size.
+        #   Use `[]` to input which element you want to modify. Remember! The first number in code starts from `0`!
+        if (set IntBOX[2] = 77) {}      # Modify the element at index 2 (the third one) to 77. Try changing the parameters and observe the result.
+        PrintArray(2)
+        # Reset the array for the next test.
+        set IntBOX = array{}    
+
+    # OnBTN_3: Using a for loop to build an array
+    OnBTN_3(Agent:agent):void =
+        # In games, we often need to create temporary data or lists. Using a for loop is the most common way.
+        # Case 1: For the empty array FloatBOX, add {5.0, 4.0, 3.0, 2.0, 1.0}.
+        for (RangeValue := 1..5):
+            # Remember! The value from `range` is an `int`. We need to multiply by 1.0 here to convert it to a float.
+            set FloatBOX += array{ 6.0 - (RangeValue * 1.0) }
+        # Print the result directly with a for loop.
+        for (Value : FloatBOX):
+            Print("FloatBOX = {Value}")
+        set FloatBOX = array{}      # Reset Array
+
+        # Case 2: Creating and processing a logic array.
+        #   You might suddenly not know how to use it when the type isn't a number. Here's an example.
+        set LogicBOX += array{true, false, false, true} 
+        Print("Logic Length = {LogicBOX.Length}")
+        for (Index -> Logic : LogicBOX):
+            if (Logic?):
+                Print("Index_{Index} = true")
+            else:
+                Print("Index_{Index} = false")    
+        set LogicBOX = array{}      # Reset Array
+
+        <# Tips
+        # Did you notice something different about `if (set IntBOX[2] = 77) {}`?
+        # In this case, the `if` statement ends with `{}` instead of `:`. Here are the two styles:
+        # Style 1 is the one you're familiar with, using `:`.
+        ```
+        if (set IntBOX[2] = 77):
+            Print ("Style A")
+        ```  
+        # Style 2 uses `{}` at the end, which can save some vertical space.
+        ```
+        if (set IntBOX[2] = 77) { Print ("Style B") }
+        ```
+        # Good habit to build: For some failable expressions that must use an `if` but have no further code to execute upon success, use `{}` at the end.
+        #>
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Create a string array `var PlayerInventory : []string = array{"Sword"}`.
+# 2. In OnBTN_1, use `+=` to add "Shield" and "Potion" to your inventory.
+# 3. In OnBTN_2, the player's "Sword" has been upgraded. Please use `set PlayerInventory[0] = "Magic Sword"` to update it.
+# 4. After each operation, use a `for` loop to print out all items in the current inventory to check if the operation was successful!
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#   Lesson - 24 : Array (3) - Finding, Removing, and More Tools
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Understand the underlying logic of removing array elements and master the powerful built-in tools Verse provides to simplify these operations.
+
+# bites_array_3
+bites_array_3 := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+
+    var IntBOX : []int = array{5, 6, 7, 8, 9}    
+    IntBOX_Default : []int = array{5, 6, 7, 8, 9} 
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+
+    # Helper function to print and reset IntBox.
+    PrintAndResetIntBOX(StepID:int):void=  
+        Print("Step_{StepID} IntBOX Length = {IntBOX.Length}")
+        for (Value : IntBOX):
+            Print("IntBOX = {Value}")
+        set IntBOX = IntBOX_Default     # Reset the array
+
+    # OnBTN_1: Removing elements manually (to understand the underlying logic)
+    OnBTN_1(Agent:agent):void =
+        # Step 1: Find and remove. Remove 7 from {5, 6, 7, 8, 9}.
+        # (1) Create a new empty int array variable to act as a container for the "filtered" results.
+        var NewArray : []int = array{} 
+        # (2) Iterate through the entire original Array.
+        for (IntValue : IntBOX):
+            # (3) In each loop, compare the element with the target value 7.
+            if (IntValue <> 7):
+                # (4) If the element is not 7, then add it to the new NewArray.
+                set NewArray += array{IntValue}
+        # After the for loop finishes, we have a NewArray that does not contain 7.
+        # (5) Assign the result to IntBOX. Done.
+        set IntBOX = NewArray       
+        PrintAndResetIntBOX(1)
+
+        # Cool. Now you might be exclaiming, "Wow, what did I just go through!?"
+        # If you can, try to understand this logic. It's helpful for developing your logical thinking for future designs.
+        # The way to learn more logic is to see more logic. You don't need to understand it completely, but the more you know, the better it helps your thinking.
+
+    # OnBTN_2: Tools for Finding and Removing
+    OnBTN_2(Agent:agent):void =
+        # Fortunately, Verse now provides many built-in tools that can simplify a lot of work.
+
+        # Step 1: Find the element 8.
+        # .Find not only finds the target element but also returns its position (index) in the Array.
+        # .Find will only return the position of the first occurrence.
+        if (Index := IntBOX.Find[8]):   
+            Print ("Find at index: {Index}")
+        else:    
+            Print ("Not Found")
+
+        # Step 2: Remove the 3rd element (at index 2).
+        # An array cannot be changed directly. Similar to the complex logic above, you need a "filtered" container, then set the result back to IntBOX.
+        if (NewBox := IntBOX.RemoveElement[2]):   
+            set IntBOX = NewBox
+            PrintAndResetIntBOX(2)
+
+        # Step 3: Insert the element 4 at the 2nd position (index 1).
+        if (NewBox := IntBOX.Insert[1, array{4}]):    
+            set IntBOX = NewBox
+            PrintAndResetIntBOX(3)
+
+        # ------ You can be aware of the following functions, but you don't need to memorize them --------    
+
+        # Step 4: Remove elements from StartIndex(2) up to, but not including, StopIndex(4).
+        if (NewBox := IntBOX.Remove[2, 4]): 
+            set IntBOX = NewBox
+            PrintAndResetIntBOX(4)
+
+        # Step 5: Remove the first element that is equal to 6.
+        if (NewBox := IntBOX.RemoveFirstElement[6]):   
+            set IntBOX = NewBox
+            PrintAndResetIntBOX(5)
+        
+        # Step 6: Replace the 2nd element (at index 1) with 5.
+        if (NewBox := IntBOX.ReplaceElement[1, 5]): 
+            set IntBOX = NewBox
+            PrintAndResetIntBOX(6)
+
+    # OnBTN_3
+    OnBTN_3(Agent:agent):void =
+        # Step 1: Replace the first element equal to Value(9) with NewValue(20).
+        if (NewBox := IntBOX.ReplaceFirstElement[9, 20]): 
+            set IntBOX = NewBox
+            PrintAndResetIntBOX(1)
+
+        # Step 2: Remove all elements equal to Value.
+        NewBox2 := IntBOX.RemoveAllElements(8)
+        set IntBOX = NewBox2
+        PrintAndResetIntBOX(2)
+
+        # Step 3: Replace all 7s with 35s.
+        NewBox3 := IntBOX.ReplaceAllElements(7, 35) 
+        set IntBOX = NewBox3
+        PrintAndResetIntBOX(3)
+        
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Create a quest log: `var Quests : []string = array{"Defeat Goblins", "Find the Gem", "Speak to the King", "Find the Gem"}`.
+# 2. [Find]: Use `.Find[]` to find and print the index of the "Speak to the King" quest.
+# 3. [Complete Quest]: The player has completed the first "Find the Gem" quest. Use `.RemoveFirstElement[]` to remove it.
+# 4. [Update Quest]: Use `.ReplaceElement[,]` to update the quest at index 0 ("Defeat Goblins") to "Report to the Guard".
+# 5. After each operation, use a `for` loop to print out the latest quest list!
+# ═════════════════════════════════════════════════════════════════════════════
