@@ -6,87 +6,87 @@
 #### Lessons 00 - 19 🧪 (Public Beta)
 * #### Lesson 00 – Before You Start Learning
     * Preparation of the environment and files before learning.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Work in Progress(WIP)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 01 – Creating Your First Verse Device
     * Learn to create a basic `creative_device` and use the `Print` function to display text in the game.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Work in Progress(WIP](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 02 – Making a Device "Talk" to a Button
     * Learn how to use `@editable` to link a Verse device with a button in UEFN.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Work in Progress(WIP](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 03 – Comments
     * Learn how to add single-line comments (`#`) and block comments (`<# #>`) in your code.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Work in Progress(WIP](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 04 – Creating Fields (Constants and Variables)
     * Learn how to define immutable "constants" and "variables" that can be modified with `set`.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Work in Progress(WIP](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson Template – Create a General Testing Template in MyBites.verse
     * Prepare a general testing template with multiple buttons for subsequent lessons.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Work in Progress(WIP](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 05 – Common Type: string
     * Learn how to use the `string` type to handle text and display it in combination with other fields.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 06 – Common Types: int, float & Math Operations
     * Get to know integers (`int`) and floating-point numbers (`float`), and learn basic math operations like addition, subtraction, multiplication, and division.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 07 – Advanced Fields: Field & @editable
     * Learn how to use `@editable` to expose fields like numbers or text to the UEFN editor for direct adjustment.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 08 – Control Flow: Making Decisions with if
     * Learn to use `if`, `else if`, and `else` statements to execute different logic based on different conditions.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 09 – Making More Precise Decisions: Comparison Operators
     * Learn to use comparison operators like `>` (greater than), `<` (less than), `=` (equal to), and `<>` (not equal to).
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 10 – Compound Conditions: or & and
     * Learn how to combine multiple conditions using `or` and `and` to implement more complex logic.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 11 – Core Concept of Verse: Failable Expressions
     * Understand the core concept that "failure" does not equal "error" in Verse, and how `if` statements handle success and failure.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 12 – Data Type Conversion: int, float & string
     * Learn how to convert between basic data types like `int`, `float`, and `string`.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 13 – Common Type: logic
     * Learn to use the `logic` type (`true`/`false`) to represent on/off switches or states.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 14 – Query & not
     * Learn to use the `?` and `not` keywords to write cleaner and more professional `logic` type conditions.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 15 – Scope
     * Understand the concept of "scope" for variables and functions in code, i.e., the contexts in which they are visible and usable.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 16 – Functions (1) The Building Blocks of Code
     * A formal introduction to defining and calling a simple function, encapsulating code into reusable modules.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 17 – Functions (2)
     * Learn to create a function that can modify existing variables.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 18 – Functions (3) Parameters
     * Learn how to create "parameters" for functions to make them more flexible and versatile.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 19 – Functions (4) Return
     * Learn how to create a function with a "return value" that provides a result after its execution.
-    * 🎥 [Coming Soon...](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 * #### Lesson 20 – Option | Optional Values
     * Learn how to handle a special type of variable that may "have a value" or "have no value."
