@@ -5,168 +5,148 @@
 
 #### Lessons 00 - 19 🧪 (Public Beta)
 * #### Lesson 00 – Before You Start Learning
-    * Preparation of the environment and files before learning.
-    * 🎥 [Work in Progress (WIP)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+   * Preparation of the environment and files before learning.
+   * 🎥 Work in Progress (WIP)...
 
-* #### Lesson 01 – Creating Your First Verse Device
-    * Learn to create a basic `creative_device` and use the `Print` function to display text in the game.
-    * 🎥 [Work in Progress (WIP)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 01 – Creating Your First Verse Device**:
+   * Create your first Verse device and learn to output messages using `Print`.
 
-* #### Lesson 02 – Making a Device "Talk" to a Button
-    * Learn how to use `@editable` to link a Verse device with a button in UEFN.
-    * 🎥 [Work in Progress (WIP)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 02 – Making a Device and a Button "Talk"**:
+   * Connect a button to a Verse device using `@editable` and `Subscribe`.
 
-* #### Lesson 03 – Comments
-    * Learn how to add single-line comments (`#`) and block comments (`<# #>`) in your code.
-    * 🎥 [Work in Progress (WIP)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 03 – Comments**:
+   * Learn how to use single-line (`#`) and block (`<# #>`) comments.
 
-* #### Lesson 04 – Creating Fields (Constants and Variables)
-    * Learn how to define immutable "constants" and "variables" that can be modified with `set`.
-    * 🎥 [Work in Progress (WIP)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 04 – Creating Fields (Constants and Variables)**:
+   * Create constants and variables (`var`), and modify variables using `set`.
 
-* #### Lesson Template – Create a General Testing Template in MyBites.verse
-    * Prepare a general testing template with multiple buttons for subsequent lessons.
-    * 🎥 [Work in Progress (WIP)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 05 – Common Type: string**:
+   * Learn the `string` type and how to embed variables (`{}`) within strings.
 
-* #### Lesson 05 – Common Type: string
-    * Learn how to use the `string` type to handle text and display it in combination with other fields.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 06 – Common Types: int, float & Math**:
+   * Learn about `int` and `float` number types and basic math operations like `+`, `-`, `*`, `/`.
 
-* #### Lesson 06 – Common Types: int, float & Math Operations
-    * Get to know integers (`int`) and floating-point numbers (`float`), and learn basic math operations like addition, subtraction, multiplication, and division.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 07 – Advanced Fields: Fields & @editable**:
+   * Use `@editable` to expose fields to the UEFN editor for visual configuration.
 
-* #### Lesson 07 – Advanced Fields: Field & @editable
-    * Learn how to use `@editable` to expose fields like numbers or text to the UEFN editor for direct adjustment.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 08 – Control Flow: Making Decisions with if**:
+   * Learn to use `if`, `else if`, `else`, and `if...then` for conditional logic.
 
-* #### Lesson 08 – Control Flow: Making Decisions with if
-    * Learn to use `if`, `else if`, and `else` statements to execute different logic based on different conditions.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 09 – Making More Precise Decisions:
+   * Comparison Operators**: Master the 6 common comparison operators such as `>`, `<`, `=`, and `<>`.
 
-* #### Lesson 09 – Making More Precise Decisions: Comparison Operators
-    * Learn to use comparison operators like `>` (greater than), `<` (less than), `=` (equal to), and `<>` (not equal to).
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 10 – Compound Conditions: or & and**:
+   * Combine multiple conditions using `or` and `and` to implement complex logic.
 
-* #### Lesson 10 – Compound Conditions: or & and
-    * Learn how to combine multiple conditions using `or` and `and` to implement more complex logic.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 11 – Core Verse Concept: Failable Expressions**:
+   * Understand the core concept of failable expressions and the difference between "failure" and "error".
 
-* #### Lesson 11 – Core Concept of Verse: Failable Expressions
-    * Understand the core concept that "failure" does not equal "error" in Verse, and how `if` statements handle success and failure.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 12 – Data Type Conversion: int, float & string**:
+   * Convert between `int`, `float`, and `string` data types.
 
-* #### Lesson 12 – Data Type Conversion: int, float & string
-    * Learn how to convert between basic data types like `int`, `float`, and `string`.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 13 – Common Type: logic**:
+   * Learn the `logic` type (`true`/`false`) to handle on/off states.
 
-* #### Lesson 13 – Common Type: logic
-    * Learn to use the `logic` type (`true`/`false`) to represent on/off switches or states.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 14 – Query & not**:
+   * Use the `?` query and `not` keyword to write more concise logical checks.
 
-* #### Lesson 14 – Query & not
-    * Learn to use the `?` and `not` keywords to write cleaner and more professional `logic` type conditions.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 15 – Scope**:
+   * Understand the rules of variable scope (Global, Class, Function, and Block).
 
-* #### Lesson 15 – Scope
-    * Understand the concept of "scope" for variables and functions in code, i.e., the contexts in which they are visible and usable.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 16 – Function (1): The Building Blocks of Code**:
+   * Learn to define and call simple functions.
 
-* #### Lesson 16 – Functions (1) The Building Blocks of Code
-    * A formal introduction to defining and calling a simple function, encapsulating code into reusable modules.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 16 – Function (1): The Building Blocks of Code**:
+   * Learn to define and call simple functions.
 
-* #### Lesson 17 – Functions (2)
-    * Learn to create a function that can modify existing variables.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 17 – Functions (2): Modifying Variables**:
+   * Create functions that can modify variables within a class.
 
-* #### Lesson 18 – Functions (3) Parameters
-    * Learn how to create "parameters" for functions to make them more flexible and versatile.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 18 – Functions (3): Parameters**:
+   * Add parameters to functions to make them more flexible and reusable.
 
-* #### Lesson 19 – Functions (4) Return
-    * Learn how to create a function with a "return value" that provides a result after its execution.
-    * 🎥 [Planned](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
+* #### **Lesson 19 – Functions (4): Return Values**:
+   * Create functions that return a result using the `return` keyword.
 
-* #### Lesson 20 – Option | Optional Values
-    * Learn how to handle a special type of variable that may "have a value" or "have no value."
-      
-* #### Lesson 21 – Array (1) Creation & Access
-    * Learn how to create arrays, access and modify specific elements by index, and get the array's length.
+* #### **Lesson 20 – Option**:
+   * Learn the `option` type to safely handle values that might not exist.
 
-* #### Lesson 22 – For | Looping
-    * Learn to use the `for` loop to iterate over a range or all elements of an array.
-      
----
-#### Lessons 23 - 36 📦 (Completed - Awaiting Release)
+* #### **Lesson 21 – Array (1)**:
+   * Learn how to create and access elements in an `array`.
 
-* #### Lesson 23 – Array (1) Creation & Access
-    * Learn how to create arrays, access and modify specific elements by index, and get the array's length.
+* #### **Lesson 22 – For and Range**:
+   * Use `for` loops and `range` to iterate through arrays and perform repetitive tasks.
 
-* #### Lesson 24 – For | Looping
-    * Learn to use the `for` loop to iterate over a range or all elements of an array.
+* #### **Lesson 23 – Array (2) - Adding and Modifying Arrays**:
+   * Learn to add (`+=`) and modify (`set Array[Index] = ...`) elements in an array.
 
-* #### Lesson 25 – Array (2) Dynamic Modification
-    * Learn how to dynamically add one or more new elements to an existing array.
+* #### **Lesson 24 – Array (3) - Finding, Removing, and More Tools**:
+   * Master built-in array tools for finding, removing, and replacing elements.
 
-* #### Lesson 26 – Array (3) Removing Elements
-    * Learn the common method for removing an element from an array: by creating a new array that excludes the element.
+* #### **Lesson 25 – Map (1) - The Key-Value Dictionary**:
+   * Learn about the `map`, a key-value pair data structure.
 
-* #### Lesson 27 – Map (1) Key-Value Pairs
-    * Get to know the `map` data structure, learning how to store and access a "Value" using its corresponding "Key."
+* #### **Lesson 26 – Map (2) - Adding, Modifying, and Removing**:
+   * Learn how to add, modify, and remove elements from a `map`.
 
-* #### Lesson 28 – Map (2) Add, Remove, Modify
-    * Learn how to add new key-value pairs to a `map`, modify existing values, and remove specified pairs.
+* #### **Lesson 27 – Scope Supplement (1) - The Lifetime of Variables**:
+   * Deepen your understanding of scope with the concept of variable "lifetime".
 
-* #### Lesson 29 – Tuple (1) Compound Data
-    * Learn the basics of the `tuple`, a structure that can group a fixed collection of different data types.
+* #### **Lesson 28 – Tuple (1)**:
+   * Learn to use `tuple` to package multiple different data types together.
 
-* #### Lesson 30 – Tuple (2) Tuple as a Parameter
-    * Learn how to pass an entire `tuple` as a parameter to a function for convenient handling of structured data.
+* #### **Lesson 29 – Tuple (2)**:
+   * Learn advanced uses of `tuple` combined with arrays and functions.
 
-* #### Lesson 31 – Tuple (3) Function Return
-    * Learn how to make a function return a `tuple`, allowing it to pass back multiple results of different types at once.
+* #### **Lesson 30 – suspends, spawn & Sleep**:
+   * Learn asynchronous programming and concurrent tasks with `<suspends>`, `spawn`, and `Sleep`.
 
-* #### Lesson 32 – suspends & spawn & Sleep
-    
-* #### Lesson 33 – loop, return & break
-  
-* #### Lesson 34 – Class (1)
+* #### **Lesson 31 – loop & break & return**:
+   * Create infinite loops with `loop` and control them with `break` and `return`.
 
-* #### Lesson 35 – Class (2)
+* #### **Lesson 32 – Enum**:
+   * Use `enum` to create named constants, replacing "magic numbers" for better code readability and safety.
 
-* #### Lesson 36 – API & Device Interaction
-    * Learn how to use UEFN's built-in devices and call their functions, as well as how to view the Verse API files to discover more functionalities.
+* #### **Lesson 33 – Player & Message**:
+   * Differentiate between `agent` and `player`, and use the `message` type to interact with UI devices.
+
+* #### **Lesson 34 – Class(1): Building a Timer Robot**:
+   * Learn the basics of `class`, including custom classes, inheritance, and instantiation.
+
+* #### **Lesson 35 – Class(2): Mass Production and Automation of Robots**:
+   * Learn about mass production and automation of objects using classes to achieve a "separation of concerns" design pattern.
+
+* #### **Lesson 36 – Class(3): Building Device Systems and Communication**:
+   * Build device systems and establish one-way communication between devices (e.g., a central hub model).
+
+* #### **Lesson 37 – Class(4) Event & Await : The Ultimate Communication Solution Between Devices**:
+   * Implement two-way communication between devices using the `event` and `Await` system.
+
+* #### **Lesson 38 – Struct**:
+   * Learn to use `struct` to create pure data containers.
+
+* #### **Lesson 39 – Common Issues**:
+   * Address common beginner issues such as function call syntax, escaping special characters, and the risks of renaming classes.
+
+* #### **Lesson 40 – Common Features**:
+   * Learn to import modules with `using` and get an overview of common functionalities like random numbers and prop teleportation.
 
 ---
 
 ## UEFN Verse: Intermediate Course
-### Lesson-Bites_L2.verse
-#### ✏️ (In Design)
-- **Lesson 36:** Event & Await  
-- **Lesson 37:** Struct  
-- **Lesson 38:** Enum  
-- **Lesson 39:** Player & Character  
-- **Lesson 40:** Props & Teleportation  
-- **Lesson 41:** Persistent Data  
-- **Lesson 42:** Verse UI  
-- **Lesson 43:** Animation  
-- **Lesson 44:** Multiplayer  
-- **Lesson 45:** Flow – Defer  
-- **Lesson 46:** Flow – Task  
-- **Lesson 47:** Flow – Branch  
-- **Lesson 48:** Flow – Sync  
-- **Lesson 49:** Flow – Race  
-- **Lesson 50:** Flow – Rush  
-- **Lesson 51:** Class (Level 2)  
-- **Lesson 52:** Functions (Level 2)  
-- **Lesson 53:** For (Level 2)  
-- **Lesson 54:** Scope (Level 2)  
-- **Lesson 55:** Failable Expressions (Level 2)  
+### ✏️ (In Design)
+- API & Device Interaction
+- Persistent Data
+- Multiplayer  
+- Animation  
+- Verse UI  
+- Flow – Defer  
+- Flow – Task  
+- Flow – Branch  
+- Flow – Sync  
+- Flow – Race  
+- Flow – Rush  
+- Class (Level 2)  
+- Functions (Level 2)  
 
----
 
-## UEFN Verse: Specialized Topics
-### Lesson-Bites_L3.verse
-#### ✏️ (In Design)
-* *(Topics to be determined)*
