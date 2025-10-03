@@ -2,8 +2,6 @@
 
 ## UEFN Verse: Foundational Course
 ### Lesson-Bites_L1.verse
-
-#### Lessons 00 - 19 🧪 (Public Beta)
 * #### Lesson 00 – Before You Start Learning
    * Preparation of the environment and files before learning.
    * 🎥 Work in Progress (WIP)...
@@ -97,7 +95,8 @@
 
 * #### **Lesson 29 – Tuple (2)**:
    * Learn advanced uses of `tuple` combined with arrays and functions.
-
+     
+### Lesson-Bites_L2.verse
 * #### **Lesson 30 – suspends, spawn & Sleep**:
    * Learn asynchronous programming and concurrent tasks with `<suspends>`, `spawn`, and `Sleep`.
 
