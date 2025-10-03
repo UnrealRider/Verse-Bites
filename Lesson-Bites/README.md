@@ -2,7 +2,8 @@
 
 Ready to dive into the world of Verse programming? This guide will walk you through all the necessary preparations to get you started smoothly with your first lesson.
 
-[⚡️Jump to .Lesson-Bites.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)   
+[⚡️Jump to .Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)   
+[⚡️Jump to .Lesson-Bites_L2.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L2.verse)   
 [⚡️Jump to .Lesson-Bites Roadmap](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 ## A Friendly Tip Before You Begin
