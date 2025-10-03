@@ -2,6 +2,8 @@
 
 ## UEFN Verse: Foundational Course
 ### Lesson-Bites_L1.verse
+[⚡️Jump to .Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)   
+
 * #### Lesson 00 – Before You Start Learning
    * Preparation of the environment and files before learning.
    * 🎥 Work in Progress (WIP)...
@@ -97,6 +99,8 @@
    * Learn advanced uses of `tuple` combined with arrays and functions.
      
 ### Lesson-Bites_L2.verse
+[⚡️Jump to .Lesson-Bites_L2.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L2.verse)  
+
 * #### **Lesson 30 – suspends, spawn & Sleep**:
    * Learn asynchronous programming and concurrent tasks with `<suspends>`, `spawn`, and `Sleep`.
 
