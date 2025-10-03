@@ -32,8 +32,8 @@
 * #### **Lesson 08 – Control Flow: Making Decisions with if**:
    * Learn to use `if`, `else if`, `else`, and `if...then` for conditional logic.
 
-* #### **Lesson 09 – Making More Precise Decisions:
-   * Comparison Operators**: Master the 6 common comparison operators such as `>`, `<`, `=`, and `<>`.
+* #### **Lesson 09 – Making More Precise Decisions: Comparison Operators**:
+  * Master the 6 common comparison operators such as `>`, `<`, `=`, and `<>`.
 
 * #### **Lesson 10 – Compound Conditions: or & and**:
    * Combine multiple conditions using `or` and `and` to implement complex logic.
