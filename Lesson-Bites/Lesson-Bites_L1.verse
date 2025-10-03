@@ -1,8 +1,8 @@
 # ═════════════════════════════════════════════════════════════════════════════
-#   Verse-Bites: Level 1 (UEFN Verse Tutorial)
+#   Verse-Bites: Lesson-Bites (UEFN Verse Tutorial)
 #   Author: UnrealRider
 #   Project Homepage:   https://github.com/UnrealRider/Verse-Bites
-#   Description: This Verse file contains the complete source code for the Verse-Bites Level 1 tutorial series (Lessons 00-24).
+#   Description: This Verse file contains the complete source code for the Verse-Bites: Lesson-Bites Level 1-1 tutorial series (Lessons 00-29).
 # -----------------------------------------------------------------------------
 #   Copyright & License:
 #   Copyright (c) 2025 UnrealRider
@@ -12,8 +12,8 @@
 
 # --- Lesson Content Starts Below ---
 
-# Lesson-Bites Level 1
-# Version: beta 1.2
+# Lesson-Bites Level 1-1
+# Version: beta 1.3
 
 using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
@@ -1605,6 +1605,7 @@ bites_array_2 := class(creative_device):
         # Good habit to build: For some failable expressions that must use an `if` but have no further code to execute upon success, use `{}` at the end.
         #>
 
+
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # 1. Create a string array `var PlayerInventory : []string = array{"Sword"}`.
 # 2. In OnBTN_1, use `+=` to add "Shield" and "Potion" to your inventory.
@@ -1717,10 +1718,530 @@ bites_array_3 := class(creative_device):
         set IntBOX = NewBox3
         PrintAndResetIntBOX(3)
         
+
 # ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
 # 1. Create a quest log: `var Quests : []string = array{"Defeat Goblins", "Find the Gem", "Speak to the King", "Find the Gem"}`.
 # 2. [Find]: Use `.Find[]` to find and print the index of the "Speak to the King" quest.
 # 3. [Complete Quest]: The player has completed the first "Find the Gem" quest. Use `.RemoveFirstElement[]` to remove it.
 # 4. [Update Quest]: Use `.ReplaceElement[,]` to update the quest at index 0 ("Defeat Goblins") to "Report to the Guard".
 # 5. After each operation, use a `for` loop to print out the latest quest list!
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  Lesson - 25 : Map (1) - The Key-Value Dictionary
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn a new data structure, the Map. Understand its difference from an Array, and master how to create, access, and iterate over a Map.
+
+# A Map is like a "dictionary" or a "phone book".
+# An Array is an 【ordered list】 where elements are accessed by a numeric index (0, 1, 2...).
+# A Map, on the other hand, is an 【unordered lookup table】 where you use a custom "Key" to find its corresponding "Value".
+# For example, you can use a player's name (Key) to look up their score (Value).
+
+# bites_map_1
+bites_map_1 := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+
+    # 1. Creating a Map ──────────────────────────────────
+    # If you've mastered the lesson on Arrays, then learning Maps will be very simple
+    # The syntax change from an Array to a Map:
+    #   []string         -> This is a string array
+    #   [int]string      -> Add the Key's type inside [], and it becomes a Map
+    #   array{}          -> Use map{} for initialization
+    var IamArray : []string     = array{}
+    var IamMap   : [int]string = map{}
+
+    # 2. Assigning Initial Values to a Map ────────────────────────────
+    #   In `[int]`, `int` represents the Key's type, and `logic` represents the Value's type.
+    #   The syntax for initializing values is: `Key => Value`, with each pair separated by a comma ','.
+    IamMap_A : [int]logic = map{1 => false, 2 => true, 3 => false}
+
+    # A Map is a lookup table, so the storage order of the Keys is not important. The IamMap_B below is completely equivalent to IamMap_A.
+    IamMap_B : [int]logic = map{3 => false, 2 => true, 1 => false}
+
+    # The Keys in a Map must be unique.
+    # If you use duplicate Keys during initialization, the last value provided will overwrite the previous ones.
+    # The result of IamMap_C below is still completely equivalent to IamMap_A.
+    IamMap_C : [int]logic = map{1 => false, 2 => true, 3 => false, 1 => false, 2 => true, 3 => false}
+
+    # When a Map has a lot of content, writing it on multiple lines is clearer.
+    # The {} contains a scope. After a new line, end with a comma ','. Note! The last pair does not need a comma at the end.
+    var FruitPrices : [string]int = map{
+        "Apple" => 100,
+        "Orange" => 75,
+        "Banana" => 47
+        }
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+
+    # OnBTN_1, Accessing elements in a Map
+    OnBTN_1(Agent:agent):void =
+        # The method to access a Map element is `MyMap[Key]`.
+        # Because the Key might not exist, this operation is a 【failable expression】, so you must use `if` to safely get the value.
+        # If the Key exists, the `if` will succeed, and the corresponding Value will be assigned to the new variable `State`.
+        if (State := IamMap_A[2]):
+            # Key 2 exists, and the State variable now holds its corresponding logic value (true)
+            if (State?):
+                Print ("The state of Key 2 is: true")
+            else:
+                Print ("The state of Key 2 is: false")
+        else:
+            Print ("Key 2 not found in IamMap_A.")
+
+        # Now let's access the FruitPrices Map, its Key is of type string.
+        # Try adding more fruits and prices, then modify the code below to query them!
+        if (Price := FruitPrices["Banana"]):
+            Print ("The price of a banana is: {Price}")
+        else:
+            Print("We don't sell bananas.")
+
+    # OnBTN_2, Iterating over a Map
+    OnBTN_2(Agent:agent):void =
+        # Use the `for (Key -> Value : MyMap)` syntax to iterate over all the keys and values in a Map simultaneously.
+        # This is very similar to the Array's `for (Index -> Value : MyArray)`!
+        # The code below will print all the fruits and their corresponding prices.
+        for (Key -> Value : FruitPrices):
+            Print("Step 1 : {Key} = ${Value}")
+
+        <#
+          In a for loop, Key and Value are just temporary variable names.
+          You can use more meaningful names to make the code clearer and more readable:
+          ```
+          for (Fruit -> Price : FruitPrices):
+              Print("Step 2 : {Fruit} = ${Price}")
+          ```
+        #> 
+
+    # OnBTN_3: Iterating over only the Map's values or getting the count
+    OnBTN_3(Agent:agent):void =
+        # If you only care about all the values (e.g., you just want to list all prices), you can omit `Key ->`.
+        Print("--- Fruit Price List ---")
+        for (Price : FruitPrices):
+            Print("${Price}")
+
+        # Same as with an Array, you can use `.Length` to get the total number of key-value pairs in the Map.
+        Print("Total number of fruit types: {FruitPrices.Length}")
+    
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Create a Map to record player scores: `var PlayerScores : [string]int`.
+# 2. Add a few players and their scores to the Map, for example: `map{"Rider" => 100, "Zoe" => 95}`.
+# 3. In OnBTN_1, query and print the score of a specific player.
+# 4. In OnBTN_2, use a for loop to print the names and scores of all players.
+# 5. In OnBTN_3, print the total number of players whose scores have been recorded.
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  Lesson - 26 : Map (2) - Adding, Modifying, and Removing
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn how to dynamically add, modify, and remove elements from a Map, and master some practical advanced techniques like bulk creation and reverse lookup.
+
+# bites_map_2
+bites_map_2 := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+    @editable BTN_4 : button_device = button_device{}
+    @editable BTN_5 : button_device = button_device{}
+
+    # Initialize an empty Map, we will populate it dynamically
+    var FruitPrices : [string]int = map{}
+     
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+        BTN_4.InteractedWithEvent.Subscribe(OnBTN_4)
+        BTN_5.InteractedWithEvent.Subscribe(OnBTN_5)
+
+    # Print Map for FruitPrices  
+    PrintMap(StepID:int):void=
+        Print("Step_{StepID} FruitPrices Length = {FruitPrices.Length}")
+        for (Fruit -> Price : FruitPrices):
+            Print("{Fruit} = ${Price}") 
+
+    # OnBTN_1: Adding and modifying elements in a Map
+    OnBTN_1(Agent:agent):void =
+        # 1. Adding elements
+        #   The core operation for adding an element to a Map is: set a Value for a certain Key.
+        #   This is very similar to the operation for modifying an element at a specific index in an Array: `if (set IntBOX[2] = 77) {}`
+        #   Put the Key in `[]`, then use `=` to assign its corresponding Value.
+        #   If the Key "Banana" does not exist, this line of code will create a new key-value pair.
+        if (set FruitPrices["Banana"] = 38) {}
+        PrintMap(1)
+
+        # 2. Modifying elements
+        #   That's right! The method for adding and modifying elements in a Map is exactly the same!
+        #   If the Key "Banana" already exists, this line of code will update its corresponding Value.
+        #   Because Keys are unique in a Map, you won't see two "Banana" entries; its price will just be updated to the last set value.
+        if (set FruitPrices["Banana"] = 66) {}
+        PrintMap(2)
+
+        # Reset for the next test
+        set FruitPrices = map{}
+
+
+    # --- Data for OnBTN_2 ---
+    FruitList : []string = array{"Apple", "Orange", "Banana"}
+    PricesList : []int = array{100, 75, 47}
+
+    # OnBTN_2: Bulk-configuring a Map
+    OnBTN_2(Agent:agent):void =
+        # In games, we often need to dynamically generate statistics or lists.
+        # Let's assume we have two arrays: a list of fruits and a list of prices, and they correspond to each other.
+        # We can use a for loop to combine them into a Map in bulk.
+        for (Index -> Fruit : FruitList):            # Iterate through the fruit list to get the fruit name (Value) and index (Index)
+            if (Prices := PricesList[Index]):        # Use the same index to get the corresponding price from the price list
+                if (set FruitPrices[Fruit] = Prices) {} # Use the fruit name as the Key and the price as the Value, and add it to the Map
+        PrintMap(1)
+        set FruitPrices = map{} # Reset
+
+
+    # --- Data for OnBTN_3 ---
+    FruitToUID : [string]int = map{"Apple" => 8, "Orange" => 3, "Banana" => 12}  
+    var UIDToFruit : [int]string = map{}  
+
+    # OnBTN_3: Reverse lookup in a Map
+    OnBTN_3(Agent:agent):void =
+        # We can use a Key to look up a Value, but we cannot directly use a Value to look up a Key.
+        # If a reverse lookup is needed, the best practice is to create a "reversed" Map.
+        for (Fruit -> UID : FruitToUID):
+            if (set UIDToFruit[UID] = Fruit) {}
+        # ‼️ Important Tip: The prerequisite for creating a reverse lookup Map is that the Values in the original Map must also be unique!
+        #   Otherwise, if multiple Keys share the same Value, the reverse lookup will cause information loss due to the uniqueness of Keys.
+        #   This is why we use FruitToUID (IDs are usually unique) for this demonstration, not FruitPrices (prices can be duplicated).
+
+        Print("--- Forward lookup (Fruit -> UID) ---")
+        for (Fruit -> UID : FruitToUID):
+            Print("{Fruit} = UID{UID}") 
+
+        Print("--- Reverse lookup (UID -> Fruit) ---")      
+        for (UID -> Fruit : UIDToFruit):
+            Print("UID{UID} = {Fruit}") 
+
+    # --- Data for OnBTN_4/5 ---
+    var FruitPrices_2 : [string]int = map{"Apple" => 8, "Orange" => 3, "Banana" => 12}  
+    FruitPrices_Default : [string]int = map{"Apple" => 8, "Orange" => 3, "Banana" => 12}  
+
+    # OnBTN_4: Removing elements from a Map (Manual method)
+    OnBTN_4(Agent:agent):void =
+        # Unfortunately, Map doesn't have as many built-in utility functions as Array. But the logic for removing elements is exactly the same as for an Array.
+        # Let's manually remove "Apple" from `FruitToUID`.
+        var NewMap : [string]int = map{}            # Create a new Map
+        for (Fruit -> Price : FruitPrices_2):       # Iterate over the Map
+            if (Fruit <> "Apple"):                  # Filter out all elements that are not equal to "Apple"
+                if (set NewMap[Fruit] = Price) {}   # Add them to the new Map
+        set FruitPrices_2 = NewMap                  # set the result to FruitPrices_2
+
+        # Print the result, then reset the data
+        Print ("Step 1")
+        for (Fruit -> Price : FruitPrices_2) { Print("{Fruit} = ${Price}") }
+        set FruitPrices_2 = FruitPrices_Default
+            
+        # Let's go back to `Lesson 18/19 – Functions`      
+        #   Since there are no built-in tools, we can create our own Function to achieve a simplified and reusable utility function
+        set FruitPrices_2 = RemoveFruitPricesMap_A(FruitPrices_2, "Orange")
+
+        # Print the result, then reset the data
+        Print ("Step 2")
+        for (Fruit -> Price : FruitPrices_2) { Print("{Fruit} = ${Price}") }
+        set FruitPrices_2 = FruitPrices_Default
+
+    # RemoveFruitPricesMap_A, a reusable utility function
+    RemoveFruitPricesMap_A(Map:[string]int, KeyToRemove:string): [string]int =
+        var NewMap : [string]int = map{}
+        # Observe the difference in this for loop compared to the previous one. After `Key -> Value : Map`, a comma ',' is used, followed by an if-style condition
+        # Adding a filter condition directly in the for loop is a very concise way of writing in Verse
+        for (Key -> Value : Map, Key <> KeyToRemove):
+            set NewMap = ConcatenateMaps(NewMap, map{Key => Value})
+        return NewMap
+
+    # --- OnBTN_5 ---
+    # If you have seen the official tutorials or asked an AI for a method, you might get a solution like the one below:
+    #   This approach is indeed more recommended because the Key you provide might not exist,
+    #   in which case the returned content will be identical to the original content, which can consume unnecessary performance when the data is large.
+    OnBTN_5(Agent:agent):void =
+        # You need to note that inside this `if`, the `()` for calling the Function should be changed to `[]`
+        if (NewMap := RemoveFruitPricesMap_B[FruitPrices_2, "Orange"]):
+            set FruitPrices_2 = NewMap
+
+        for (Fruit -> Price : FruitPrices_2) { Print("{Fruit} = ${Price}") }
+        set FruitPrices_2 = FruitPrices_Default
+
+    # RemoveFruitPricesMap_B uses failable expression specifiers
+    #   The main difference is that this method adds the `<transacts><decides>` specifiers
+    #   The `<decides>` specifier is the key; it gives the function the ability to "fail".
+    #   Note that the specifiers are added after the parameter list `()`.
+    RemoveFruitPricesMap_B(Map:[string]int, KeyToRemove:string)<transacts><decides> : [string]int =
+        var NewMap : [string]int = map{}
+        for (Key -> Value : Map, Key <> KeyToRemove):
+            set NewMap = ConcatenateMaps(NewMap, map{Key => Value})
+        return NewMap
+
+    # The usage of specifiers will be discussed in-depth in the advanced course.
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Use the `PlayerScores` Map from the last lesson.
+# 2. In OnBTN_1, update the score for an existing player, and add a score for a new player. Print the Map to confirm the result.
+# 3. In OnBTN_4, try to use the manual loop method to remove a player with a score below 80.
+# 4. (Challenge) Referring to `RemoveFromMap`, create your own function `UpdateScore(OriginalScores:[string]int, PlayerName:string, NewScore:int) : [string]int`,
+#    that returns a new Map with the specified player's score updated.
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  Lesson 27 – Scope Supplement (1) - The Lifetime of Variables
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Deepen the understanding of an important Scope concept—the "lifetime" of variables. Learn how long the value of a variable persists when declared in different scopes (class, function, loop).
+
+# In Lesson 15, we learned that Scope determines the "visibility range" of a variable.
+# In this lesson, we will learn how Scope determines the "survival time" of a variable, i.e., when its value is created and when it is reset.
+
+# bites_scope_2
+bites_scope_2 := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+
+    # Class-scoped variables: Have "persistent memory" only within a single game session
+    #   As long as the Verse Device exists and is enabled in the game, its value will be continuously saved and updated
+    var ClassValue : int = 0
+
+     # OnBTN_1
+    OnBTN_1(Agent:agent):void =
+        ProcessValues()
+
+    ProcessValues():void =
+        # Function-scoped variables: Have "temporary memory"
+        #   FunctionValue is like a temporary scratchpad. Every time the ProcessValues function is called, a new scratchpad is given.
+        #   When the function finishes executing, this scratchpad is discarded. The next time it's called, it will be a brand new scratchpad with the function's preset value.
+        var FunctionValue : int = 0
+
+        set ClassValue += 5
+        set FunctionValue += 5
+
+        Print("Inside the function: ClassValue = {ClassValue}, FunctionValue = {FunctionValue}")
+    
+    # Observation (Please press BTN_1 multiple times):
+    # First press: ClassValue becomes 5, FunctionValue becomes 5.
+    # Second press: ClassValue changes from 5 to 10 (it remembers the last value!), while FunctionValue is reset from 0 to 5.
+    # Third press: ClassValue changes from 10 to 15, FunctionValue is still reset from 0 to 5.
+    # Conclusion: Class variables are used to store data that needs to be preserved long-term, while Function variables are used for temporary calculations.
+
+    # --------------------------------------------------------------------------
+    # Example Two: Scope within a For Loop
+    # --------------------------------------------------------------------------
+
+    # Some constructs also have different Scope rules, here we will demonstrate the effect of a For loop's Scope on a Field
+
+    IntBOX : []int = array{1, 2, 3}
+            
+    var ClassInt : int = 0           # Class-scoped variable
+
+    OnBTN_2(Agent:agent):void =
+        var FunctionInt : int = 0    # Function-scoped variable
+        Print("--- BTN_2 Pressed (Before execution: ClassInt={ClassInt}, FunctionInt={FunctionInt}) ---")
+
+        for (Index -> Value : IntBOX):
+            var ForInt : int = 0     # For loop block-scoped variable
+
+            set ClassInt += Value
+            set FunctionInt += Value
+            set ForInt += Value
+
+            Print ("Loop iteration {Index+1}: ClassInt={ClassInt}, FunctionInt={FunctionInt}, ForInt={ForInt}")
+        
+        Print("--- This execution has finished (After execution: ClassInt={ClassInt}, FunctionInt={FunctionInt}) ---")
+
+    # Observation (Please press BTN_2 multiple times in a row):
+    # [First Button Press]
+    #   - ClassInt: Will accumulate starting from 0, becoming 1, 3, 6 in sequence.
+    #   - FunctionInt: Will also accumulate starting from 0, becoming 1, 3, 6 in sequence.
+    #   - ForInt: Starts from 0 in 【every loop iteration】, so it becomes 1, 2, 3 in sequence.
+    #   - After execution finishes, the value of ClassInt is 【preserved】 as 6.
+    #
+    # [Second Button Press]
+    #   - ClassInt: Starts accumulating from the last preserved value of 6, becoming 7, 9, 12 in sequence.
+    #   - FunctionInt: Is 【reset】 to 0, then accumulates again, becoming 1, 3, 6 in sequence.
+    #   - ForInt: Behaves exactly the same as the first time, becoming 1, 2, 3 in sequence.
+    #   - After execution finishes, the value of ClassInt is 【preserved】 as 12.
+    #
+    # Conclusion: The lifetime of ClassInt is "global"; the lifetime of FunctionInt is limited to a "single button press"; the lifetime of ForInt is limited to a "single loop iteration".
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  Lesson 28 – Tuple (1)
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn to use Tuples, a compound type that can package several different types of data together.
+# A Tuple allows you to create such a fixed-structure data packet.
+# It's like a 【single row】 in an Excel sheet, where the type of each cell (element) is predefined.
+
+# bites_tuple
+bites_tuple := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+    @editable BTN_3 : button_device = button_device{}
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+        BTN_3.InteractedWithEvent.Subscribe(OnBTN_3)
+
+    # 1. Creating a Tuple
+    #   Syntax: `VariableName : tuple(Type1, Type2, ...) = (Value1, Value2, ...)`
+    #   The order and number of types and values must correspond exactly.
+    # It's a good habit to use comments to indicate the meaning of each position in the Tuple.
+    # IamTuple_1 : tuple(Quantity, Energy, Information)  
+    IamTuple_1 : tuple(int, float, string) = (3, 200.0, "This is an Orange energy drink")  
+
+    # When creating a Tuple, you must also provide initial values that match the types.
+    var IamTuple_2 : tuple(int, float, string) = (0, 0.0, "")  
+
+    # OnBTN_1, Accessing elements in a Tuple
+    OnBTN_1(Agent:agent):void =
+        # Access Tuple elements using `()` plus a 0-based index.
+        # This operation is 【direct and will not fail】 because the compiler knows the structure of the Tuple at compile time.
+        # Therefore, it 【does not need】 to be placed in an `if` statement like accessing an Array or Map.
+
+        Print("IamTuple_1 : Quantity={IamTuple_1(0)}, Energy={IamTuple_1(1)}, Information={IamTuple_1(2)}") 
+
+    # OnBTN_2, Modifying tuple data
+    OnBTN_2(Agent:agent):void =
+        # Important: The structure of a Tuple is "immutable"; you cannot modify just one of its elements.
+        # You need to create a 【new Tuple with the same structure】, and then use `set` to 【replace the entire】 old Tuple.
+        set IamTuple_2 = (4, 150.0, "This is an Banana energy drink")
+
+        # It's a good habit: using a suitable variable name when accessing a Tuple helps with code readability
+        Quantity := IamTuple_2(0)
+        Energy := IamTuple_2(1)
+        Information := IamTuple_2(2)        
+        Print("IamTuple_2 : Quantity={Quantity}, Energy={Energy}, Information={Information}") 
+
+    # ✨ Extended Content 
+    
+    # GetIntA  
+    GetIntA():int =
+        return 3
+
+    # GetIntB  
+    GetIntB()<transacts><decides> :int =
+        return 3
+
+    # OnBTN_3
+    OnBTN_3(Agent:agent):void =
+        # Common error situations with failable and non-failable expressions
+        # Please try removing the comment symbol `#` from the erroneous code below, then observe the error message.
+        
+    # GetIntA() is not a failable expression method
+        # if (IntA1 := GetIntA()) {}    # ❌
+        # if (IntA2 := GetIntA[]) {}    # ❌
+        IntA3 := GetIntA()             # ✅, a non-failable expression method cannot be used directly in an if statement
+        if (6 > IntA3 ) {}
+
+    # GetIntB() is a failable expression method
+        # if (IntB1 := GetIntB()) {}    # ❌
+        if (IntB2 := GetIntB[]) {}      # ✅, a failable method needs to use if, and use `[]` for the parameter input syntax
+        # IntB3 := GetIntB()            # ❌
+
+    # Confusion about Tuples in an if statement
+        #   Did you notice something interesting in the result below! Tuple(0) can be used directly in an if statement
+        #   The reason is that a Tuple has a fixed structure, and the compiler determines at compile time that the 0th element of IamTuple_1 is an int.
+        #   Therefore, it cannot fail, so we can use `()` for direct access and use it directly for comparison.
+
+        # Please try removing the comment symbol `#` from the erroneous code below, then observe the error message.
+        # if (6 > IamTuple_1[0] ) {}    # ❌
+        if (6 > IamTuple_1(0) ) {}      # ✅
+        
+    # Conclusion: `()` is used for direct access/calls that are guaranteed to succeed, while `[]` is used for access/calls that might fail and require an `if` for safe handling.
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Define a Tuple variable to store "weapon" information, which should include: weapon name (string), damage value (int), and whether it's a magic weapon (logic).
+# 2. Assign initial values to your variable, for example, a "Magic Sword" with 25 damage.
+# 3. In OnBTN_1, access and print each attribute of this sword separately.
+# 4. In OnBTN_2, "upgrade" this sword to a "Rune Greatsword" with 40 damage (remember to replace it entirely!).
+# ═════════════════════════════════════════════════════════════════════════════
+
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  Lesson 29 – Tuple (2)
+# ────────────────────────────────────────────────────────────────────────────
+# Goal: Learn how to combine Tuples with Arrays and Functions to build clear and powerful game data structures and logic.
+
+# In this lesson, we will see the true power of Tuples. It is an excellent tool for creating static game data (like item lists, character attribute tables).
+
+# bites_tuple
+bites_tuple_2 := class(creative_device):
+    @editable BTN_1 : button_device = button_device{}
+    @editable BTN_2 : button_device = button_device{}
+
+    OnBegin<override>()<suspends>:void=
+        BTN_1.InteractedWithEvent.Subscribe(OnBTN_1)
+        BTN_2.InteractedWithEvent.Subscribe(OnBTN_2)
+
+    # 1. Array of Tuples: Creating a Game Database
+    #   `[]tuple(...)` allows us to create an array of Tuples.
+    #   This is like a complete Excel data sheet: the array is the entire table, and each Tuple is a row in the table.
+    #   This structure is very suitable for managing game configuration data that does not change often.
+    # FruitData : tuple(ID, Name, Cost, AddHP)
+    FruitData : []tuple(int, string, int, float) = array{
+        ( 1, "Apple", 100, 35.0 ),
+        ( 2, "Orange", 75, 25.0 ),
+        ( 3, "Banana", 47, 15.0 )
+        }
+    
+    # OnBTN_1: Using a Tuple as a Function Parameter
+    OnBTN_1(Agent:agent):void =
+        # First, we safely get the data row at index 1 from the array (which is the Orange's data).
+        if (Fruit := FruitData[1]):
+            # Then, we pass the entire Tuple "data packet" to the function at once, making the code very clean.
+            ShowFruitInfo(Fruit)
+
+    # This function demonstrates how to receive a Tuple as an input parameter.
+    # Compared to receiving 4 separate parameters, receiving a single Tuple makes the function interface clearer.
+    ShowFruitInfo( Fruit:tuple(int, string, int, float) ) : void =
+        Print("Fruit ID={Fruit(0)}, Name={Fruit(1)}, Cost={Fruit(2)}, Add HP={Fruit(3)}")
+
+    # OnBTN_2: Returning a Tuple from a Function
+    OnBTN_2(Agent:agent):void =
+        Print("--- 70% Discount on Fruit Prices ---")
+        # Iterate through all fruits, calculate the discount price for each, and print the new information.
+        for (Index := 0..FruitData.Length -1):
+            # Call the function, it will return a 【new】 Tuple containing the discounted price
+            Fruit := FruitCostDiscount(FruitData, Index, 0.7)
+            Print("Fruit ID={Fruit(0)}, Name={Fruit(1)}, Cost={Fruit(2)}, Add HP={Fruit(3)}")
+
+    # This function demonstrates how to return a Tuple.
+    # This allows a function to return multiple related results at once, which is very practical.
+    FruitCostDiscount(Tuples:[]tuple(int, string, int, float) ,ID:int, Discount:float): tuple(int, string, int, float) =
+        if (Fruit := Tuples[ID], Cost := Fruit(2) * Discount, NewCost := Int[Cost] ):
+            return ( Fruit(0), Fruit(1), NewCost, Fruit(3) )
+        # Important! If a function is declared with a return type, then 【all possible code paths】 must have a return.
+        Print ("Error! : FruitCostDiscount")
+        return (404, "Error", 404, 404.0)
+
+
+# ── TRY IT YOURSELF ──────────────────────────────────────────────────────────
+# 1. Using the weapon Tuple definition from the previous lesson, create a `WeaponDatabase` array and add a few different weapons.
+# 2. Write a function `PrintWeaponStats(Weapon:tuple(string, int, logic)):void` for printing the attributes of a single weapon.
+# 3. In OnBTN_1, iterate through the `WeaponDatabase` and call the `PrintWeaponStats` function for each weapon.
+# 4. (Challenge) Write a function `EnchantWeapon(Weapon:tuple(string, int, logic))<decides>: tuple(string, int, logic)`.
+#    If the weapon's `IsMagic` is `false`, increase its damage by 10, change `IsMagic` to `true`, add "Magic " to the beginning of its name, and then return the new Tuple.
+#    If it's already a magic weapon, `return false` to indicate that the enchantment failed.
 # ═════════════════════════════════════════════════════════════════════════════
