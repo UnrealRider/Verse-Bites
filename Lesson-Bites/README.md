@@ -1,17 +1,20 @@
 # Welcome to the Verse-Bites Learning Journey\!
+## Ready to dive into the world of Verse programming? This guide will walk you through all the necessary preparations to get you started smoothly with your first lesson.
 
-Ready to dive into the world of Verse programming? This guide will walk you through all the necessary preparations to get you started smoothly with your first lesson.
+### A Friendly Tip Before You Begin
+> Before diving deep into Verse, we **strongly recommend** you have a basic operational knowledge of UEFN. If you're new to UEFN, no worries\! You can get up to speed by learning the fundamentals from these excellent YouTube channels first:
+>> * **Recommended for Beginners:** **[@GraemeBull](https://www.youtube.com/@GraemeBull)**
+>> * **Recommended for Advanced Skills:** **[@howtwoboss](https://www.youtube.com/@howtwoboss)**
+
+
+#### If you are already familiar with using Github and basic Verse, you can click here to get the tutorial code files directly:
 
 [⚡️Jump to .Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)   
 [⚡️Jump to .Lesson-Bites_L2.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L2.verse)   
 [⚡️Jump to .Lesson-Bites Roadmap](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
-## A Friendly Tip Before You Begin
+#### If you are not yet familiar with using Github or basic Verse, please review the content below:
 
-Before diving deep into Verse, we **strongly recommend** you have a basic operational knowledge of UEFN. If you're new to UEFN, no worries\! You can get up to speed by learning the fundamentals from these excellent YouTube channels first:
-
-  * **Recommended for Beginners:** **[@GraemeBull](https://www.youtube.com/@GraemeBull)**
-  * **Recommended for Advanced Skills:** **[@howtwoboss](https://www.youtube.com/@howtwoboss)**
 
 -----
 
@@ -99,8 +102,8 @@ A good directory structure is key to effective project management.
 
 You're all set\! Now you can officially begin your learning journey.
 
-1.  Head over to the **[Lesson-Bites Roadmap.md](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)**, choose the lesson you want to study, and watch the corresponding video tutorial.
-2.  The first lesson will explain in detail how to use the `Lesson-Bites_L1.verse` file. Once you're familiar with the basic workflow, you can learn independently by following the subsequent videos and the comments within the code.
+[Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)   
+[Lesson-Bites_L2.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L2.verse)   
 
 -----
 
