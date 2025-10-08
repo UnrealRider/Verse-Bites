@@ -9,8 +9,8 @@
 
 #### If you are already familiar with using Github and basic Verse, you can click here to get the tutorial code files directly:
 
-[⚡️Jump to .Lesson-Bites_L1.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)   
-[⚡️Jump to .Lesson-Bites_L2.verse](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L2.verse)   
+[⚡️Jump to .Lesson-Bites_L1.verse (1L~29L)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L1.verse)   
+[⚡️Jump to .Lesson-Bites_L2.verse (30L~40L)](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites_L2.verse)    
 [⚡️Jump to .Lesson-Bites Roadmap](https://github.com/UnrealRider/Verse-Bites/blob/main/Lesson-Bites/Lesson-Bites%20Roadmap.md)
 
 #### If you are not yet familiar with using Github or basic Verse, please review the content below:
