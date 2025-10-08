@@ -48,7 +48,7 @@ The entire open-source content system is divided into four main parts:
 
 ### 📚 Lesson-Bites
 
-**Focus**: Beginner (L1 - L35) and intermediate (L36 - L55+) courses designed for creators with zero coding background.
+**Focus**: Beginner (L1 - L40) and intermediate (L41+) courses designed for creators with zero coding background.
 
 **Features**: This is the best starting point for your Verse journey. You don't need to grasp everything at once; follow the pace of the lessons and understand how Verse works through hands-on practice.
 
@@ -88,14 +88,9 @@ The entire open-source content system is divided into four main parts:
 
 ### Latest Update
 
-  * **Date:** 2025/09/25 (UTC)
+  * **Date:** 2025/10/4
   * **Changes:**
-      * `Lesson-Bites`: Added beta code for lessons 23-24.
-
-### Next Planned Update
-
-  * `Lesson-Bites`: Update beta code for lessons 25-26.
-  * `Lesson-Bites`: Update short video tutorials for lessons 0-5.
+      * `Lesson-Bites`: Added beta code for lessons 25-40.
 
 -----
 
